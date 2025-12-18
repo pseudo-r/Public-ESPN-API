@@ -1,0 +1,148 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "espn-service"
+version = "1.0.0"
+description = "Production-ready Django REST API for ESPN sports data"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "ESPN Service Team", email = "team@espn-service.local"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Django :: 5.0",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "django>=5.0,<6.0",
+    "djangorestframework>=3.14,<4.0",
+    "django-environ>=0.11,<1.0",
+    "django-cors-headers>=4.3,<5.0",
+    "django-filter>=24.0,<25.0",
+    "drf-spectacular>=0.27,<1.0",
+    "psycopg[binary]>=3.1,<4.0",
+    "redis>=5.0,<6.0",
+    "django-redis>=5.4,<6.0",
+    "celery[redis]>=5.3,<6.0",
+    "httpx>=0.27,<1.0",
+    "tenacity>=8.2,<9.0",
+    "structlog>=24.0,<25.0",
+    "gunicorn>=21.0,<23.0",
+    "whitenoise>=6.6,<7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+    "pytest-django>=4.8,<5.0",
+    "pytest-cov>=4.1,<6.0",
+    "pytest-asyncio>=0.23,<1.0",
+    "pytest-httpx>=0.30,<1.0",
+    "factory-boy>=3.3,<4.0",
+    "faker>=24.0,<25.0",
+    "ruff>=0.3,<1.0",
+    "mypy>=1.9,<2.0",
+    "django-stubs>=4.2,<6.0",
+    "djangorestframework-stubs>=3.14,<4.0",
+    "pre-commit>=3.6,<4.0",
+    "ipython>=8.22,<9.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["config*", "apps*", "clients*"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+    "venv",
+    "__pycache__",
+    "migrations",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # Pyflakes
+    "I",      # isort
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "UP",     # pyupgrade
+    "ARG",    # flake8-unused-arguments
+    "SIM",    # flake8-simplify
+]
+ignore = [
+    "E501",   # line too long (handled by formatter)
+    "B008",   # do not perform function calls in argument defaults
+    "ARG001", # unused function argument
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["config", "apps", "clients"]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = [
+    "mypy_django_plugin.main",
+    "mypy_drf_plugin.main",
+]
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "*.migrations.*"
+ignore_errors = true
+
+[tool.django-stubs]
+django_settings_module = "config.settings.local"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.test"
+python_files = ["test_*.py", "*_test.py"]
+addopts = [
+    "--strict-markers",
+    "-ra",
+    "-q",
+    "--cov=apps",
+    "--cov=clients",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-fail-under=80",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["apps", "clients"]
+omit = [
+    "*/migrations/*",
+    "*/tests/*",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+]
