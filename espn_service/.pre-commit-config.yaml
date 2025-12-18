@@ -1,0 +1,39 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.4
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.9.0
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - django-stubs>=4.2
+          - djangorestframework-stubs>=3.14
+          - types-requests
+        args: [--ignore-missing-imports]
+        exclude: ^(migrations/|tests/)
+
+  - repo: local
+    hooks:
+      - id: django-check
+        name: Django Check
+        entry: python manage.py check
+        language: system
+        pass_filenames: false
+        types: [python]

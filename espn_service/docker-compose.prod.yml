@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      target: production
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.production
+      - DATABASE_URL=${DATABASE_URL}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-}
+      - SENTRY_DSN=${SENTRY_DSN:-}
+    depends_on:
+      - redis
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+
+  celery:
+    build:
+      context: .
+      target: production
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.production
+      - DATABASE_URL=${DATABASE_URL}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND}
+      - SECRET_KEY=${SECRET_KEY}
+      - SENTRY_DSN=${SENTRY_DSN:-}
+    depends_on:
+      - redis
+    restart: unless-stopped
+    command: celery -A config worker -l INFO --concurrency=2
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+
+  celery-beat:
+    build:
+      context: .
+      target: production
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings.production
+      - DATABASE_URL=${DATABASE_URL}
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND}
+      - SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - redis
+      - celery
+    restart: unless-stopped
+    command: celery -A config beat -l INFO
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+
+volumes:
+  redis_data:
