@@ -4,6 +4,11 @@
 
 **Disclaimer:** This is documentation for ESPN's undocumented public API. I am not affiliated with ESPN. Use responsibly and follow ESPN's terms of service.
 
+<a href="https://buymeacoffee.com/pseudo_r" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" width="217">
+</a>
+
+
 ## GitAds Sponsored
 [![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=pseudo-r/public-espn-api@github)](https://gitads.dev/v1/ad-track?source=pseudo-r/public-espn-api@github)
 
