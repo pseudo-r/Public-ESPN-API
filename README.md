@@ -4,17 +4,10 @@
 
 **Disclaimer:** This is documentation for ESPN's undocumented public API. I am not affiliated with ESPN. Use responsibly and follow ESPN's terms of service.
 
-<!-- GitAds Sponsorship Badge -->
-<p align="center">
-  <a href="https://docs.gitads.dev/">
-    <img src="https://gitads.dev/assets/images/sponsor/camos/camo-3.png" alt="Sponsored by GitAds" />
-  </a>
-</p>
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=pseudo-r/public-espn-api@github)](https://gitads.dev/v1/ad-track?source=pseudo-r/public-espn-api@github)
 
-<p align="center">
-  This project is <strong>sponsored by <a href="https://docs.gitads.dev/docs/getting-started/publishers">GitAds</a></strong>.<br>
-  You can get your GitHub repository sponsored too — <a href="https://docs.gitads.dev/docs/getting-started/publishers">create your account now</a>.
-</p>
+
 
 
 ## Table of Contents
