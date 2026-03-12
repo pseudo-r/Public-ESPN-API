@@ -6,19 +6,23 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
 
-# Database - SQLite for local development
+# Database - PostgreSQL on Fedora server, fallback to SQLite if unavailable
 DATABASES = {
-    "default": env.db("DATABASE_URL", default="sqlite:///db.sqlite3"),  # noqa: F405
+    "default": env.db(  # noqa: F405
+        "DATABASE_URL",
+        default="sqlite:///db.sqlite3",
+    ),
 }
 
 # CORS - Allow all in development
 CORS_ALLOW_ALL_ORIGINS = True
 
-# Cache - Local memory cache for development
+# Cache - Redis on Fedora server, fallback to local memory
 CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-    }
+    "default": env.cache(  # noqa: F405
+        "CACHE_URL",
+        default="locmemcache://",
+    ),
 }
 
 # Add browsable API renderer in development
@@ -34,5 +38,7 @@ LOGGING["root"]["level"] = "DEBUG"  # noqa: F405
 # Email - Console backend for development
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-# Celery - Use Redis if available, otherwise use eager mode
-CELERY_TASK_ALWAYS_EAGER = env.bool("CELERY_TASK_ALWAYS_EAGER", default=True)  # noqa: F405
+# Celery - Use Redis on Fedora server
+CELERY_TASK_ALWAYS_EAGER = env.bool("CELERY_TASK_ALWAYS_EAGER", default=False)  # noqa: F405
+CELERY_BROKER_URL = env("CELERY_BROKER_URL", default="redis://localhost:6379/0")  # noqa: F405
+CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND", default="redis://localhost:6379/0")  # noqa: F405
