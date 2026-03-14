@@ -5,7 +5,7 @@ from django.db.models import QuerySet
 from django.http import HttpRequest
 from django.utils.html import format_html
 
-from apps.espn.models import Athlete, Competitor, Event, League, Odds, Sport, Team, Venue
+from apps.espn.models import Athlete, Competitor, Event, League, Odds, Season, Sport, Team, Venue
 
 
 @admin.register(Sport)
@@ -86,6 +86,16 @@ class VenueAdmin(admin.ModelAdmin):
     readonly_fields = ["created_at", "updated_at"]
 
 
+@admin.register(Season)
+class SeasonAdmin(admin.ModelAdmin):
+    """Admin for Season model."""
+
+    list_display = ["league", "year", "season_type", "start_date", "end_date", "display_name"]
+    list_filter = ["league", "year", "season_type"]
+    search_fields = ["display_name", "slug"]
+    readonly_fields = ["created_at", "updated_at"]
+
+
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     """Admin for Event model."""
@@ -98,7 +108,7 @@ class EventAdmin(admin.ModelAdmin):
         "venue",
         "espn_id",
     ]
-    list_filter = ["league", "status", "season_year", "season_type"]
+    list_filter = ["league", "status", "season__year", "season__season_type"]
     search_fields = ["name", "short_name", "espn_id"]
     readonly_fields = ["created_at", "updated_at"]
     date_hierarchy = "date"
