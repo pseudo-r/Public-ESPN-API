@@ -1,10 +1,11 @@
 """Tests for ESPN models."""
 
 from datetime import UTC, datetime
+from decimal import Decimal
 
 import pytest
 
-from apps.espn.models import Athlete, Competitor, Event, League, Sport, Team, Venue
+from apps.espn.models import Athlete, Competitor, Event, League, Odds, Sport, Team, Venue
 
 
 @pytest.mark.django_db
@@ -200,3 +201,43 @@ class TestAthleteModel:
             display_name="T. Player",
         )
         assert str(athlete) == "T. Player (FA)"
+
+
+@pytest.mark.django_db
+class TestOddsModel:
+    """Tests for Odds model."""
+
+    def test_create_odds(self, event: Event):
+        odds = Odds.objects.create(
+            event=event,
+            provider="bet365",
+            odds_home=Decimal("1.27"),
+            odds_draw=Decimal("5.75"),
+            odds_away=Decimal("10.0"),
+            odds_over=Decimal("1.875"),
+            odds_under=Decimal("1.975"),
+            over_under_line=Decimal("3.25"),
+        )
+        assert odds.provider == "bet365"
+        assert odds.odds_home == Decimal("1.27")
+        assert odds.over_under_line == Decimal("3.25")
+
+    def test_odds_str(self, event: Event):
+        odds = Odds.objects.create(event=event, provider="bet365")
+        assert "bet365" in str(odds)
+
+    def test_odds_unique_together(self, event: Event):
+        Odds.objects.create(event=event, provider="bet365")
+        with pytest.raises(Exception):
+            Odds.objects.create(event=event, provider="bet365")
+
+    def test_odds_allows_different_providers(self, event: Event):
+        Odds.objects.create(event=event, provider="bet365")
+        Odds.objects.create(event=event, provider="draftkings")
+        assert event.odds.count() == 2
+
+    def test_odds_nullable_fields(self, event: Event):
+        odds = Odds.objects.create(event=event, provider="bet365")
+        assert odds.odds_home is None
+        assert odds.odds_draw is None
+        assert odds.over_under_line is None

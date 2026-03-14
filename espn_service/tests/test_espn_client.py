@@ -189,6 +189,29 @@ class TestESPNClient:
 
         assert response.is_success
 
+    def test_get_event_odds_success(self, httpx_mock: HTTPXMock):
+        """Test successful event odds fetch."""
+        mock_response = {
+            "provider": {"id": "2000", "name": "Bet 365"},
+            "bettingOdds": {
+                "teamOdds": {
+                    "preMatchFullTimeResultHome": {"value": "27/100"},
+                    "preMatchFullTimeResultDraw": {"value": "19/4"},
+                    "preMatchFullTimeResultAway": {"value": "9/1"},
+                }
+            },
+        }
+        httpx_mock.add_response(
+            url="https://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/events/746630/competitions/746630/odds/2000",
+            json=mock_response,
+        )
+
+        with ESPNClient() as client:
+            response = client.get_event_odds("soccer", "fra.1", "746630")
+
+        assert response.is_success
+        assert response.data["provider"]["id"] == "2000"
+
     def test_get_league_info_success(self, httpx_mock: HTTPXMock):
         """Test successful league info fetch from core API."""
         mock_response = {"id": "46", "name": "NBA"}

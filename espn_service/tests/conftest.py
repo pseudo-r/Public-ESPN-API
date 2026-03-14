@@ -5,7 +5,7 @@ from datetime import UTC
 import pytest
 from rest_framework.test import APIClient
 
-from apps.espn.models import Competitor, Event, League, Sport, Team, Venue
+from apps.espn.models import Competitor, Event, League, Odds, Sport, Team, Venue
 
 
 @pytest.fixture
@@ -128,6 +128,23 @@ def competitor_away(db, event: Event, team2: Team) -> Competitor:
         score="105",
         winner=False,
         order=0,
+    )
+
+
+@pytest.fixture
+def odds(db, event: Event) -> Odds:
+    """Create test odds."""
+    from decimal import Decimal
+
+    return Odds.objects.create(
+        event=event,
+        provider="bet365",
+        odds_home=Decimal("1.50"),
+        odds_draw=Decimal("4.00"),
+        odds_away=Decimal("6.00"),
+        odds_over=Decimal("1.90"),
+        odds_under=Decimal("1.90"),
+        over_under_line=Decimal("2.50"),
     )
 
 

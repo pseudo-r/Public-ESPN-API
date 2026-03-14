@@ -5,7 +5,7 @@ from django.db.models import QuerySet
 from django.http import HttpRequest
 from django.utils.html import format_html
 
-from apps.espn.models import Athlete, Competitor, Event, League, Sport, Team, Venue
+from apps.espn.models import Athlete, Competitor, Event, League, Odds, Sport, Team, Venue
 
 
 @admin.register(Sport)
@@ -151,3 +151,24 @@ class AthleteAdmin(admin.ModelAdmin):
         return "-"
 
     headshot_preview.short_description = "Headshot"  # type: ignore[attr-defined]
+
+
+@admin.register(Odds)
+class OddsAdmin(admin.ModelAdmin):
+    """Admin for Odds model."""
+
+    list_display = [
+        "event",
+        "provider",
+        "odds_home",
+        "odds_draw",
+        "odds_away",
+        "over_under_line",
+        "fetched_at",
+    ]
+    list_filter = ["provider"]
+    search_fields = ["event__name", "event__short_name"]
+    readonly_fields = ["created_at", "updated_at", "fetched_at"]
+
+    def get_queryset(self, request: HttpRequest) -> QuerySet:
+        return super().get_queryset(request).select_related("event")

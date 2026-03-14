@@ -252,6 +252,31 @@ class Competitor(TimestampMixin):
             return None
 
 
+class Odds(TimestampMixin):
+    """Betting odds for an event from a specific provider."""
+
+    event = models.ForeignKey(
+        Event,
+        on_delete=models.CASCADE,
+        related_name="odds",
+    )
+    provider = models.CharField(max_length=50, default="bet365")
+    odds_home = models.DecimalField(max_digits=8, decimal_places=4, null=True, blank=True)
+    odds_draw = models.DecimalField(max_digits=8, decimal_places=4, null=True, blank=True)
+    odds_away = models.DecimalField(max_digits=8, decimal_places=4, null=True, blank=True)
+    odds_over = models.DecimalField(max_digits=8, decimal_places=4, null=True, blank=True)
+    odds_under = models.DecimalField(max_digits=8, decimal_places=4, null=True, blank=True)
+    over_under_line = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
+    raw_data = models.JSONField(default=dict, blank=True)
+    fetched_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = [["event", "provider"]]
+
+    def __str__(self) -> str:
+        return f"Odds {self.provider} @ {self.event.short_name}"
+
+
 class Athlete(TimestampMixin):
     """Athlete entity (optional - for detailed stats)."""
 

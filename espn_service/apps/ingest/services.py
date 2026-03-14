@@ -6,13 +6,14 @@ and persisting it to the database using idempotent upserts.
 
 from dataclasses import dataclass
 from datetime import datetime
+from decimal import Decimal, InvalidOperation
 from typing import Any
 
 import structlog
 from django.db import transaction
 
 from apps.core.exceptions import IngestionError
-from apps.espn.models import Competitor, Event, League, Sport, Team, Venue
+from apps.espn.models import Competitor, Event, League, Odds, Sport, Team, Venue
 from clients.espn_client import ESPNClient, get_espn_client
 
 logger = structlog.get_logger(__name__)
@@ -74,6 +75,61 @@ def get_or_create_sport_and_league(sport_slug: str, league_slug: str) -> tuple[S
     )
 
     return sport, league
+
+
+def fraction_to_decimal(fraction_str: str) -> Decimal | None:
+    """Convert a UK fractional odds string to decimal odds.
+
+    Examples:
+        '7/8' → Decimal('1.875')
+        '9/1' → Decimal('10')
+
+    Returns None for invalid input.
+    """
+    if not fraction_str or "/" not in fraction_str:
+        return None
+    try:
+        num, den = fraction_str.split("/")
+        return Decimal(num) / Decimal(den) + 1
+    except (InvalidOperation, ZeroDivisionError, ValueError):
+        return None
+
+
+def parse_bet365_odds(raw_data: dict[str, Any]) -> dict[str, Any] | None:
+    """Parse Bet365 odds from ESPN core API response.
+
+    Extracts pre-match odds from bettingOdds.teamOdds.
+    Converts fractional UK odds to decimal.
+
+    Returns dict of odds fields, or None if no betting data.
+    """
+    betting_odds = raw_data.get("bettingOdds", {})
+    team_odds = betting_odds.get("teamOdds")
+    if not team_odds:
+        return None
+
+    mapping = {
+        "odds_home": "preMatchFullTimeResultHome",
+        "odds_draw": "preMatchFullTimeResultDraw",
+        "odds_away": "preMatchFullTimeResultAway",
+        "odds_over": "preMatchGoalLineOver",
+        "odds_under": "preMatchGoalLineUnder",
+    }
+
+    result: dict[str, Any] = {}
+    for field, key in mapping.items():
+        market = team_odds.get(key, {})
+        value = market.get("value")
+        result[field] = fraction_to_decimal(value) if value else None
+
+    # Over/under line is a decimal string, not a fraction
+    handicap = team_odds.get("preMatchOverUnderHandicap", {}).get("value")
+    try:
+        result["over_under_line"] = Decimal(handicap) if handicap else None
+    except InvalidOperation:
+        result["over_under_line"] = None
+
+    return result
 
 
 class TeamIngestionService:
@@ -379,6 +435,24 @@ class ScoreboardIngestionService:
 
         return count
 
+    def _ingest_odds(self, event: Event, sport: str, league: str) -> None:
+        """Fetch and store Bet365 odds for an event."""
+        try:
+            response = self.client.get_event_odds(sport, league, event.espn_id)
+            parsed = parse_bet365_odds(response.data)
+            if parsed:
+                Odds.objects.update_or_create(
+                    event=event,
+                    provider="bet365",
+                    defaults={**parsed, "raw_data": response.data},
+                )
+        except Exception as e:
+            logger.warning(
+                "odds_ingestion_skipped",
+                event_id=event.espn_id,
+                error=str(e),
+            )
+
     @transaction.atomic
     def ingest_scoreboard(
         self,
@@ -440,6 +514,9 @@ class ScoreboardIngestionService:
                     # Clear existing competitors and recreate
                     event.competitors.all().delete()
                     self._create_competitors(event, competitors_data, league_obj)
+
+                    # Fetch and store odds
+                    self._ingest_odds(event, sport, league)
 
                     if created:
                         result.created += 1

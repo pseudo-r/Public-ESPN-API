@@ -860,6 +860,34 @@ class ESPNClient:
         logger.info("fetching_odds", sport=sport, league=league, event_id=event_id)
         return self.get(path, domain=ESPNEndpointDomain.CORE)
 
+    def get_event_odds(
+        self,
+        sport: str,
+        league: str,
+        event_id: str,
+        provider: int = 2000,
+    ) -> ESPNResponse:
+        """Get odds for an event from a specific provider.
+
+        Args:
+            sport: Sport slug (e.g., "soccer")
+            league: League slug (e.g., "fra.1")
+            event_id: ESPN event ID
+            provider: Provider ID (default: 2000 for Bet365)
+
+        Returns:
+            ESPNResponse with odds data
+        """
+        path = f"/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{event_id}/odds/{provider}"
+        logger.info(
+            "fetching_event_odds",
+            sport=sport,
+            league=league,
+            event_id=event_id,
+            provider=provider,
+        )
+        return self.get(path, domain=ESPNEndpointDomain.CORE)
+
     def get_win_probabilities(
         self,
         sport: str,
