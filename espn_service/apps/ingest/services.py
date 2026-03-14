@@ -13,7 +13,7 @@ import structlog
 from django.db import transaction
 
 from apps.core.exceptions import IngestionError
-from apps.espn.models import Competitor, Event, League, Odds, Sport, Team, Venue
+from apps.espn.models import Competitor, Event, League, Odds, Season, Sport, Team, Venue
 from clients.espn_client import ESPNClient, get_espn_client
 
 logger = structlog.get_logger(__name__)
@@ -388,9 +388,29 @@ class ScoreboardIngestionService:
 
         return status_map.get(state, Event.STATUS_SCHEDULED), type_data.get("detail", "")
 
+    def _get_or_create_season(
+        self, league: League, season_data: dict[str, Any]
+    ) -> Season | None:
+        """Get or create a Season from event season data."""
+        year = season_data.get("year")
+        season_type = season_data.get("type", 2)
+        if not year:
+            return None
+
+        season, _ = Season.objects.get_or_create(
+            league=league,
+            year=year,
+            season_type=season_type,
+            defaults={
+                "slug": season_data.get("slug", ""),
+                "display_name": season_data.get("displayName", ""),
+            },
+        )
+        return season
+
     def _parse_event_data(
         self, event_data: dict[str, Any], league: League  # noqa: ARG002
-    ) -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, Any] | None]:
+    ) -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, Any] | None, dict[str, Any]]:
         """Parse event data from ESPN API.
 
         Args:
@@ -398,7 +418,7 @@ class ScoreboardIngestionService:
             league: League object
 
         Returns:
-            Tuple of (event_fields, competitors_data, venue_data)
+            Tuple of (event_fields, competitors_data, venue_data, season_data)
         """
         # Get competition data (usually only one)
         competitions = event_data.get("competitions", [])
@@ -444,7 +464,7 @@ class ScoreboardIngestionService:
         # Parse competitors
         competitors_data = competition.get("competitors", [])
 
-        return event_fields, competitors_data, venue_data
+        return event_fields, competitors_data, venue_data, season_data
 
     def _get_or_create_venue(self, venue_data: dict[str, Any] | None) -> Venue | None:
         """Get or create venue from parsed data."""
@@ -600,8 +620,8 @@ class ScoreboardIngestionService:
             for event_data in events_data:
                 try:
                     # Parse event data
-                    event_fields, competitors_data, venue_data = self._parse_event_data(
-                        event_data, league_obj
+                    event_fields, competitors_data, venue_data, season_data = (
+                        self._parse_event_data(event_data, league_obj)
                     )
 
                     espn_id = event_fields.pop("espn_id")
@@ -612,11 +632,14 @@ class ScoreboardIngestionService:
                     # Get or create venue
                     venue = self._get_or_create_venue(venue_data)
 
+                    # Get or create season
+                    season = self._get_or_create_season(league_obj, season_data)
+
                     # Create or update event
                     event, created = Event.objects.update_or_create(
                         league=league_obj,
                         espn_id=espn_id,
-                        defaults={**event_fields, "venue": venue},
+                        defaults={**event_fields, "venue": venue, "season": season},
                     )
 
                     # Clear existing competitors and recreate

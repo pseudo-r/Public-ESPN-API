@@ -6,7 +6,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from apps.espn.models import Competitor, Event, League, Odds, Sport, Team
+from apps.espn.models import Competitor, Event, League, Odds, Season, Sport, Team
 from apps.ingest.services import (
     IngestionResult,
     ScoreboardIngestionService,
@@ -599,6 +599,32 @@ class TestBackfillCommand:
 
         # Should not crash, event count unchanged
         assert Event.objects.filter(espn_id="401584666").count() == 1
+
+
+@pytest.mark.django_db
+class TestSeasonIngestion:
+    def test_scoreboard_creates_season(self, mock_scoreboard_response):
+        """Scoreboard ingestion should create a Season and link events."""
+        mock_client = MagicMock()
+        mock_client.get_scoreboard.return_value = ESPNResponse(
+            data=mock_scoreboard_response,
+            status_code=200,
+            url="mock",
+        )
+        mock_client.get_odds.return_value = ESPNResponse(
+            data={"items": []}, status_code=200, url="mock",
+        )
+
+        service = ScoreboardIngestionService(client=mock_client)
+        service.ingest_scoreboard("basketball", "nba")
+
+        assert Season.objects.count() == 1
+        season = Season.objects.first()
+        assert season.year == 2024
+        assert season.season_type == 2
+
+        event = Event.objects.first()
+        assert event.season == season
 
 
 class TestIngestionResult:

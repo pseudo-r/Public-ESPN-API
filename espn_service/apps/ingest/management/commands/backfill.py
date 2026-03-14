@@ -75,7 +75,7 @@ class Command(BaseCommand):
                             events_data = [self._header_to_event(header, response.data)]
 
                     for event_data in events_data:
-                        event_fields, competitors_data, venue_data = (
+                        event_fields, competitors_data, venue_data, season_data = (
                             service._parse_event_data(event_data, league_obj)
                         )
                         espn_id = event_fields.pop("espn_id")
@@ -83,12 +83,13 @@ class Command(BaseCommand):
                             continue
 
                         venue = service._get_or_create_venue(venue_data)
+                        season = service._get_or_create_season(league_obj, season_data)
                         from apps.espn.models import Event
 
                         event, was_created = Event.objects.update_or_create(
                             league=league_obj,
                             espn_id=espn_id,
-                            defaults={**event_fields, "venue": venue},
+                            defaults={**event_fields, "venue": venue, "season": season},
                         )
                         event.competitors.all().delete()
                         service._create_competitors(event, competitors_data, league_obj)
