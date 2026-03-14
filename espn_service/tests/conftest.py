@@ -5,7 +5,7 @@ from datetime import UTC
 import pytest
 from rest_framework.test import APIClient
 
-from apps.espn.models import Competitor, Event, League, Odds, Sport, Team, Venue
+from apps.espn.models import Competitor, Event, League, Odds, Season, Sport, Team, Venue
 
 
 @pytest.fixture
@@ -82,6 +82,22 @@ def team2(db, league: League) -> Team:
         location="Opponent City",
         color="00FF00",
         is_active=True,
+    )
+
+
+@pytest.fixture
+def season(db, league: League) -> Season:
+    """Create a test season."""
+    from datetime import date
+
+    return Season.objects.create(
+        league=league,
+        year=2024,
+        season_type=2,
+        start_date=date(2024, 10, 22),
+        end_date=date(2025, 4, 13),
+        display_name="2024-25 Regular Season",
+        slug="regular-season",
     )
 
 

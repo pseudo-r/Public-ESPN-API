@@ -5,7 +5,7 @@ from decimal import Decimal
 
 import pytest
 
-from apps.espn.models import Athlete, Competitor, Event, League, Odds, Sport, Team, Venue
+from apps.espn.models import Athlete, Competitor, Event, League, Odds, Season, Sport, Team, Venue
 
 
 @pytest.mark.django_db
@@ -201,6 +201,61 @@ class TestAthleteModel:
             display_name="T. Player",
         )
         assert str(athlete) == "T. Player (FA)"
+
+
+@pytest.mark.django_db
+class TestSeason:
+    """Tests for Season model."""
+
+    def test_create_season(self, db, league):
+        from datetime import date
+
+        season = Season.objects.create(
+            league=league,
+            year=2024,
+            season_type=2,
+            start_date=date(2024, 10, 22),
+            end_date=date(2025, 4, 13),
+            display_name="2024-25 Regular Season",
+            slug="regular-season",
+        )
+        assert season.year == 2024
+        assert season.season_type == 2
+        assert str(season) == "NBA 2024 Regular (2)"
+
+    def test_season_unique_constraint(self, db, league):
+        from datetime import date
+
+        Season.objects.create(
+            league=league,
+            year=2024,
+            season_type=2,
+            start_date=date(2024, 10, 22),
+            end_date=date(2025, 4, 13),
+        )
+        with pytest.raises(Exception):
+            Season.objects.create(
+                league=league,
+                year=2024,
+                season_type=2,
+                start_date=date(2024, 10, 22),
+                end_date=date(2025, 4, 13),
+            )
+
+    def test_event_season_fk(self, db, event, league):
+        from datetime import date
+
+        season = Season.objects.create(
+            league=league,
+            year=2024,
+            season_type=2,
+            start_date=date(2024, 10, 22),
+            end_date=date(2025, 4, 13),
+        )
+        event.season = season
+        event.save()
+        event.refresh_from_db()
+        assert event.season == season
 
 
 @pytest.mark.django_db

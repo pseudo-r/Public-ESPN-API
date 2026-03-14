@@ -119,6 +119,34 @@ class Team(TimestampMixin):
         return None
 
 
+class Season(TimestampMixin):
+    """Season entity — caches ESPN season metadata."""
+
+    league = models.ForeignKey(
+        League,
+        on_delete=models.CASCADE,
+        related_name="seasons",
+    )
+    year = models.PositiveIntegerField()
+    season_type = models.PositiveSmallIntegerField(
+        default=2,
+        help_text="1=preseason, 2=regular, 3=postseason",
+    )
+    start_date = models.DateField(null=True, blank=True)
+    end_date = models.DateField(null=True, blank=True)
+    display_name = models.CharField(max_length=128, blank=True)
+    slug = models.CharField(max_length=64, blank=True)
+    raw_data = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["-year", "season_type"]
+        unique_together = [["league", "year", "season_type"]]
+
+    def __str__(self) -> str:
+        type_names = {1: "Pre", 2: "Regular", 3: "Post"}
+        return f"{self.league.abbreviation} {self.year} {type_names.get(self.season_type, '?')} ({self.season_type})"
+
+
 class Event(TimestampMixin):
     """Event/game entity."""
 
@@ -129,6 +157,13 @@ class Event(TimestampMixin):
     )
     venue = models.ForeignKey(
         Venue,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="events",
+    )
+    season = models.ForeignKey(
+        Season,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
