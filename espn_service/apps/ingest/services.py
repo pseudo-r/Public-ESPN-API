@@ -95,39 +95,91 @@ def fraction_to_decimal(fraction_str: str) -> Decimal | None:
         return None
 
 
-def parse_bet365_odds(raw_data: dict[str, Any]) -> dict[str, Any] | None:
-    """Parse Bet365 odds from ESPN core API response.
+import re
 
-    Extracts pre-match odds from bettingOdds.teamOdds.
-    Converts fractional UK odds to decimal.
+# Provider priority: try Bet365 first, then Unibet
+PROVIDER_PRIORITY = [
+    re.compile(r"bet\s*365", re.IGNORECASE),
+    re.compile(r"unibet", re.IGNORECASE),
+]
 
-    Returns dict of odds fields, or None if no betting data.
-    """
-    betting_odds = raw_data.get("bettingOdds", {})
-    team_odds = betting_odds.get("teamOdds")
-    if not team_odds:
+
+def _safe_decimal(value: Any) -> Decimal | None:
+    """Safely convert a value to Decimal."""
+    if value is None:
+        return None
+    try:
+        return Decimal(str(value))
+    except (InvalidOperation, ValueError):
         return None
 
-    mapping = {
-        "odds_home": "preMatchFullTimeResultHome",
-        "odds_draw": "preMatchFullTimeResultDraw",
-        "odds_away": "preMatchFullTimeResultAway",
-        "odds_over": "preMatchGoalLineOver",
-        "odds_under": "preMatchGoalLineUnder",
+
+def select_provider(items: list[dict[str, Any]]) -> dict[str, Any] | None:
+    """Select best provider from odds items list by priority.
+
+    Tries Bet365 first (matches 'Bet365', 'Bet 365', etc.),
+    then Unibet as fallback.
+
+    Returns the provider's odds data dict, or None.
+    """
+    for pattern in PROVIDER_PRIORITY:
+        for item in items:
+            provider = item.get("provider", {})
+            name = provider.get("name", "")
+            if pattern.search(name):
+                return item
+    return None
+
+
+def parse_odds_data(provider_data: dict[str, Any]) -> dict[str, Any] | None:
+    """Parse odds from a single provider's data (format from /odds endpoint).
+
+    Extracts decimal odds from homeTeamOdds/awayTeamOdds/drawOdds
+    and over/under from current/close.
+
+    Returns dict of odds fields, or None if insufficient data.
+    """
+    home_odds = provider_data.get("homeTeamOdds", {})
+    away_odds = provider_data.get("awayTeamOdds", {})
+
+    # Use close odds (final pre-match), fallback to current
+    home_ml = (
+        home_odds.get("close", {}).get("moneyLine", {})
+        or home_odds.get("current", {}).get("moneyLine", {})
+    )
+    away_ml = (
+        away_odds.get("close", {}).get("moneyLine", {})
+        or away_odds.get("current", {}).get("moneyLine", {})
+    )
+
+    # Draw odds — from close/current draw market
+    close_data = provider_data.get("close", {})
+    current_data = provider_data.get("current", {})
+    draw_decimal = (
+        (close_data.get("draw", {}) or current_data.get("draw", {})).get("decimal")
+    )
+
+    # Over/under
+    over_decimal = (
+        (close_data.get("over", {}) or current_data.get("over", {})).get("decimal")
+    )
+    under_decimal = (
+        (close_data.get("under", {}) or current_data.get("under", {})).get("decimal")
+    )
+    over_under_line = provider_data.get("overUnder")
+
+    result = {
+        "odds_home": _safe_decimal(home_ml.get("decimal") if isinstance(home_ml, dict) else None),
+        "odds_away": _safe_decimal(away_ml.get("decimal") if isinstance(away_ml, dict) else None),
+        "odds_draw": _safe_decimal(draw_decimal),
+        "odds_over": _safe_decimal(over_decimal),
+        "odds_under": _safe_decimal(under_decimal),
+        "over_under_line": _safe_decimal(over_under_line),
     }
 
-    result: dict[str, Any] = {}
-    for field, key in mapping.items():
-        market = team_odds.get(key, {})
-        value = market.get("value")
-        result[field] = fraction_to_decimal(value) if value else None
-
-    # Over/under line is a decimal string, not a fraction
-    handicap = team_odds.get("preMatchOverUnderHandicap", {}).get("value")
-    try:
-        result["over_under_line"] = Decimal(handicap) if handicap else None
-    except InvalidOperation:
-        result["over_under_line"] = None
+    # If we got nothing useful, return None
+    if not any(v is not None for v in result.values()):
+        return None
 
     return result
 
@@ -436,15 +488,32 @@ class ScoreboardIngestionService:
         return count
 
     def _ingest_odds(self, event: Event, sport: str, league: str) -> None:
-        """Fetch and store Bet365 odds for an event."""
+        """Fetch and store odds for an event.
+
+        Calls /odds (all providers), selects Bet365 or Unibet by name,
+        parses the decimal odds, and stores them.
+        """
         try:
-            response = self.client.get_event_odds(sport, league, event.espn_id)
-            parsed = parse_bet365_odds(response.data)
+            response = self.client.get_odds(sport, league, event.espn_id)
+            items = response.data.get("items", [])
+            if not items:
+                return
+
+            provider_data = select_provider(items)
+            if not provider_data:
+                logger.debug(
+                    "no_preferred_provider",
+                    event_id=event.espn_id,
+                )
+                return
+
+            provider_name = provider_data.get("provider", {}).get("name", "unknown")
+            parsed = parse_odds_data(provider_data)
             if parsed:
                 Odds.objects.update_or_create(
                     event=event,
-                    provider="bet365",
-                    defaults={**parsed, "raw_data": response.data},
+                    provider=provider_name.lower().replace(" ", ""),
+                    defaults={**parsed, "raw_data": provider_data},
                 )
         except Exception as e:
             logger.warning(

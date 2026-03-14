@@ -13,7 +13,8 @@ from apps.ingest.services import (
     TeamIngestionService,
     fraction_to_decimal,
     get_or_create_sport_and_league,
-    parse_bet365_odds,
+    parse_odds_data,
+    select_provider,
 )
 from clients.espn_client import ESPNResponse
 
@@ -278,59 +279,104 @@ class TestFractionToDecimal:
         assert fraction_to_decimal("1/0") is None
 
 
-class TestParseBet365Odds:
+class TestSelectProvider:
+    def test_selects_bet365(self):
+        items = [
+            {"provider": {"id": "58", "name": "ESPN BET"}},
+            {"provider": {"id": "1001", "name": "Bet365"}},
+            {"provider": {"id": "36", "name": "Unibet"}},
+        ]
+        result = select_provider(items)
+        assert result["provider"]["name"] == "Bet365"
+
+    def test_selects_bet365_with_space(self):
+        items = [
+            {"provider": {"id": "2000", "name": "Bet 365"}},
+            {"provider": {"id": "36", "name": "Unibet"}},
+        ]
+        result = select_provider(items)
+        assert result["provider"]["name"] == "Bet 365"
+
+    def test_fallback_to_unibet(self):
+        items = [
+            {"provider": {"id": "58", "name": "ESPN BET"}},
+            {"provider": {"id": "36", "name": "Unibet"}},
+        ]
+        result = select_provider(items)
+        assert result["provider"]["name"] == "Unibet"
+
+    def test_no_preferred_provider(self):
+        items = [
+            {"provider": {"id": "58", "name": "ESPN BET"}},
+            {"provider": {"id": "52", "name": "Caesars"}},
+        ]
+        result = select_provider(items)
+        assert result is None
+
+    def test_empty_items(self):
+        assert select_provider([]) is None
+
+
+class TestParseOddsData:
     def test_parse_complete_odds(self):
         raw = {
-            "bettingOdds": {
-                "teamOdds": {
-                    "preMatchFullTimeResultHome": {"value": "27/100"},
-                    "preMatchFullTimeResultDraw": {"value": "19/4"},
-                    "preMatchFullTimeResultAway": {"value": "9/1"},
-                    "preMatchGoalLineOver": {"value": "7/8"},
-                    "preMatchGoalLineUnder": {"value": "39/40"},
-                    "preMatchOverUnderHandicap": {"value": "3.25"},
-                }
-            }
+            "homeTeamOdds": {
+                "close": {"moneyLine": {"decimal": 1.5}},
+            },
+            "awayTeamOdds": {
+                "close": {"moneyLine": {"decimal": 7.0}},
+            },
+            "close": {
+                "draw": {"decimal": 4.33},
+                "over": {"decimal": 2.0},
+                "under": {"decimal": 1.72},
+            },
+            "overUnder": 2.5,
         }
-        result = parse_bet365_odds(raw)
-        assert result["odds_home"] == Decimal("1.27")
-        assert result["odds_draw"] == Decimal("5.75")
-        assert result["odds_away"] == Decimal("10")
-        assert result["odds_over"] == Decimal("1.875")
-        assert result["odds_under"] == Decimal("1.975")
-        assert result["over_under_line"] == Decimal("3.25")
+        result = parse_odds_data(raw)
+        assert result["odds_home"] == Decimal("1.5")
+        assert result["odds_away"] == Decimal("7.0")
+        assert result["odds_draw"] == Decimal("4.33")
+        assert result["odds_over"] == Decimal("2.0")
+        assert result["odds_under"] == Decimal("1.72")
+        assert result["over_under_line"] == Decimal("2.5")
 
-    def test_parse_no_betting_odds(self):
-        result = parse_bet365_odds({})
-        assert result is None
-
-    def test_parse_no_team_odds(self):
-        result = parse_bet365_odds({"bettingOdds": {}})
-        assert result is None
-
-    def test_parse_missing_market(self):
+    def test_parse_current_fallback(self):
+        """Uses current when close is absent."""
         raw = {
-            "bettingOdds": {
-                "teamOdds": {
-                    "preMatchFullTimeResultHome": {"value": "27/100"},
-                }
-            }
+            "homeTeamOdds": {
+                "current": {"moneyLine": {"decimal": 1.5}},
+            },
+            "awayTeamOdds": {
+                "current": {"moneyLine": {"decimal": 7.0}},
+            },
+            "current": {
+                "draw": {"decimal": 4.33},
+                "over": {"decimal": 2.0},
+                "under": {"decimal": 1.72},
+            },
+            "overUnder": 2.5,
         }
-        result = parse_bet365_odds(raw)
-        assert result["odds_home"] == Decimal("1.27")
-        assert result["odds_draw"] is None
+        result = parse_odds_data(raw)
+        assert result["odds_home"] == Decimal("1.5")
+        assert result["odds_away"] == Decimal("7.0")
+
+    def test_parse_empty_data(self):
+        result = parse_odds_data({})
+        assert result is None
+
+    def test_parse_partial_data(self):
+        raw = {
+            "homeTeamOdds": {
+                "close": {"moneyLine": {"decimal": 1.5}},
+            },
+            "awayTeamOdds": {},
+            "overUnder": 2.5,
+        }
+        result = parse_odds_data(raw)
+        assert result["odds_home"] == Decimal("1.5")
         assert result["odds_away"] is None
-
-    def test_parse_missing_value_key(self):
-        raw = {
-            "bettingOdds": {
-                "teamOdds": {
-                    "preMatchFullTimeResultHome": {"oddId": "123"},
-                }
-            }
-        }
-        result = parse_bet365_odds(raw)
-        assert result["odds_home"] is None
+        assert result["over_under_line"] == Decimal("2.5")
 
 
 @pytest.mark.django_db
@@ -354,18 +400,25 @@ class TestScoreboardIngestionWithOdds:
             status_code=200,
             url="test",
         )
-        mock_client.get_event_odds.return_value = ESPNResponse(
+        mock_client.get_odds.return_value = ESPNResponse(
             data={
-                "bettingOdds": {
-                    "teamOdds": {
-                        "preMatchFullTimeResultHome": {"value": "1/2"},
-                        "preMatchFullTimeResultDraw": {"value": "3/1"},
-                        "preMatchFullTimeResultAway": {"value": "5/1"},
-                        "preMatchGoalLineOver": {"value": "1/1"},
-                        "preMatchGoalLineUnder": {"value": "4/5"},
-                        "preMatchOverUnderHandicap": {"value": "2.5"},
+                "items": [
+                    {
+                        "provider": {"id": "1001", "name": "Bet365"},
+                        "homeTeamOdds": {
+                            "close": {"moneyLine": {"decimal": 1.5}},
+                        },
+                        "awayTeamOdds": {
+                            "close": {"moneyLine": {"decimal": 7.0}},
+                        },
+                        "close": {
+                            "draw": {"decimal": 4.33},
+                            "over": {"decimal": 2.0},
+                            "under": {"decimal": 1.72},
+                        },
+                        "overUnder": 2.5,
                     }
-                }
+                ]
             },
             status_code=200,
             url="test",
@@ -389,8 +442,8 @@ class TestScoreboardIngestionWithOdds:
             status_code=200,
             url="test",
         )
-        mock_client.get_event_odds.return_value = ESPNResponse(
-            data={},
+        mock_client.get_odds.return_value = ESPNResponse(
+            data={"items": []},
             status_code=200,
             url="test",
         )
@@ -434,9 +487,9 @@ class TestBackfillCommand:
             status_code=200,
             url="test",
         )
-        # Mock get_event_odds
-        mock_client.get_event_odds.return_value = ESPNResponse(
-            data={},
+        # Mock get_odds
+        mock_client.get_odds.return_value = ESPNResponse(
+            data={"items": []},
             status_code=200,
             url="test",
         )
@@ -478,8 +531,8 @@ class TestBackfillCommand:
             status_code=200,
             url="test",
         )
-        mock_client.get_event_odds.return_value = ESPNResponse(
-            data={},
+        mock_client.get_odds.return_value = ESPNResponse(
+            data={"items": []},
             status_code=200,
             url="test",
         )
