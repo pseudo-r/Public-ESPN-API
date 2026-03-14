@@ -1,19 +1,19 @@
-"""Celery tasks for data ingestion.
+"""Task functions for Django-Q2.
 
-These tasks can be scheduled via Celery Beat or triggered manually.
+These functions are referenced by name in Django-Q2 schedules
+and can be triggered manually via the admin.
 """
 
-from datetime import datetime
+from datetime import timedelta
 
 import structlog
-from celery import shared_task
+from django.utils import timezone
 
 from apps.ingest.services import ScoreboardIngestionService, TeamIngestionService
 
 logger = structlog.get_logger(__name__)
 
 # All major leagues to refresh in scheduled tasks.
-# Covers all 17 ESPN sports with primary professional leagues.
 ALL_LEAGUES_CONFIG: list[tuple[str, str]] = [
     # Football
     ("football", "nfl"),
@@ -77,112 +77,41 @@ ALL_LEAGUES_CONFIG: list[tuple[str, str]] = [
 ]
 
 
-@shared_task(
-    bind=True,
-    autoretry_for=(Exception,),
-    retry_backoff=True,
-    retry_backoff_max=600,
-    max_retries=3,
-    acks_late=True,
-)
-def refresh_scoreboard_task(
-    self,
-    sport: str,
-    league: str,
-    date: str | None = None,
-) -> dict:
-    """Celery task to refresh scoreboard data.
-
-    Args:
-        sport: Sport slug (e.g., "basketball")
-        league: League slug (e.g., "nba")
-        date: Optional date in YYYYMMDD format
-
-    Returns:
-        Dict with ingestion results
-    """
-    logger.info(
-        "starting_scoreboard_refresh_task",
-        sport=sport,
-        league=league,
-        date=date,
-        task_id=self.request.id,
-    )
-
+def refresh_scoreboard(sport: str, league: str, date: str | None = None) -> dict:
+    """Refresh scoreboard data for a sport/league."""
+    logger.info("starting_scoreboard_refresh", sport=sport, league=league, date=date)
     service = ScoreboardIngestionService()
     result = service.ingest_scoreboard(sport, league, date)
-
     logger.info(
-        "completed_scoreboard_refresh_task",
+        "completed_scoreboard_refresh",
         sport=sport,
         league=league,
-        date=date,
         created=result.created,
         updated=result.updated,
         errors=result.errors,
-        task_id=self.request.id,
     )
-
     return result.to_dict()
 
 
-@shared_task(
-    bind=True,
-    autoretry_for=(Exception,),
-    retry_backoff=True,
-    retry_backoff_max=600,
-    max_retries=3,
-    acks_late=True,
-)
-def refresh_teams_task(
-    self,
-    sport: str,
-    league: str,
-) -> dict:
-    """Celery task to refresh team data.
-
-    Args:
-        sport: Sport slug (e.g., "basketball")
-        league: League slug (e.g., "nba")
-
-    Returns:
-        Dict with ingestion results
-    """
-    logger.info(
-        "starting_teams_refresh_task",
-        sport=sport,
-        league=league,
-        task_id=self.request.id,
-    )
-
+def refresh_teams(sport: str, league: str) -> dict:
+    """Refresh team data for a sport/league."""
+    logger.info("starting_teams_refresh", sport=sport, league=league)
     service = TeamIngestionService()
     result = service.ingest_teams(sport, league)
-
     logger.info(
-        "completed_teams_refresh_task",
+        "completed_teams_refresh",
         sport=sport,
         league=league,
         created=result.created,
         updated=result.updated,
         errors=result.errors,
-        task_id=self.request.id,
     )
-
     return result.to_dict()
 
 
-@shared_task(bind=True)
-def refresh_all_teams_task(self) -> dict:
-    """Celery task to refresh team data for all configured leagues.
-
-    Covers all 17 ESPN sports. Failures per league are logged and
-    aggregated; the task completes even if individual leagues fail.
-
-    Returns:
-        Dict with aggregated results by league key (sport/league)
-    """
+def refresh_all_teams() -> dict:
+    """Refresh team data for all configured leagues."""
     results = {}
-
     for sport, league in ALL_LEAGUES_CONFIG:
         try:
             service = TeamIngestionService()
@@ -190,29 +119,16 @@ def refresh_all_teams_task(self) -> dict:
             results[f"{sport}/{league}"] = result.to_dict()
         except Exception as e:
             logger.error(
-                "league_teams_refresh_failed",
-                sport=sport,
-                league=league,
-                error=str(e),
+                "league_teams_refresh_failed", sport=sport, league=league, error=str(e)
             )
             results[f"{sport}/{league}"] = {"error": str(e)}
-
     return results
 
 
-@shared_task(bind=True)
-def refresh_daily_scoreboards_task(self) -> dict:
-    """Celery task to refresh today's scoreboards for all leagues.
-
-    Covers all 17 ESPN sports. Failures per league are logged and
-    aggregated; the task completes even if individual leagues fail.
-
-    Returns:
-        Dict with aggregated results by league key (sport/league)
-    """
-    today = datetime.now().strftime("%Y%m%d")
+def refresh_daily_scoreboards() -> dict:
+    """Refresh today's scoreboards for all configured leagues."""
+    today = timezone.now().strftime("%Y%m%d")
     results = {}
-
     for sport, league in ALL_LEAGUES_CONFIG:
         try:
             service = ScoreboardIngestionService()
@@ -227,6 +143,14 @@ def refresh_daily_scoreboards_task(self) -> dict:
                 error=str(e),
             )
             results[f"{sport}/{league}"] = {"error": str(e)}
-
     return results
 
+
+def purge_old_results() -> dict:
+    """Delete task results older than 90 days."""
+    from django_q.models import Failure, Success
+
+    cutoff = timezone.now() - timedelta(days=90)
+    s_count, _ = Success.objects.filter(stopped__lt=cutoff).delete()
+    f_count, _ = Failure.objects.filter(stopped__lt=cutoff).delete()
+    return {"purged_success": s_count, "purged_failure": f_count}
