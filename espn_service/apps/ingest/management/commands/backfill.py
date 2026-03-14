@@ -23,6 +23,12 @@ class Command(BaseCommand):
             "--season", type=int, required=True, help="Season year (e.g., 2024)"
         )
         parser.add_argument(
+            "--dates",
+            type=str,
+            default=None,
+            help="Date range YYYYMMDD-YYYYMMDD (overrides --season auto-detection)",
+        )
+        parser.add_argument(
             "--delay",
             type=float,
             default=0.5,
@@ -33,19 +39,23 @@ class Command(BaseCommand):
         sport = options["sport"].lower()
         league = options["league"].lower()
         season = options["season"]
+        dates = options["dates"]
         delay = options["delay"]
 
-        self.stdout.write(
-            f"Backfilling {sport}/{league} season {season} (delay: {delay}s)..."
-        )
+        self.stdout.write(f"Backfilling {sport}/{league} season {season} (delay: {delay}s)...")
 
         try:
             client = get_espn_client()
             service = ScoreboardIngestionService(client=client)
             _, league_obj = get_or_create_sport_and_league(sport, league)
 
+            # Get date range from season metadata or --dates override
+            if not dates:
+                dates = self._get_season_dates(client, sport, league, season)
+            self.stdout.write(f"Date range: {dates}")
+
             # List all events for the season via core API
-            event_ids = self._list_season_events(client, sport, league, season, delay)
+            event_ids = self._list_season_events(client, sport, league, dates, delay)
             total = len(event_ids)
             self.stdout.write(f"Found {total} events")
 
@@ -129,8 +139,24 @@ class Command(BaseCommand):
             "competitions": competitions,
         }
 
+    def _get_season_dates(self, client, sport: str, league: str, season: int) -> str:
+        """Fetch season start/end dates from ESPN API."""
+        response = client.get(
+            f"/v2/sports/{sport}/leagues/{league}/seasons/{season}",
+            domain=ESPNEndpointDomain.CORE,
+        )
+        data = response.data
+        start = data.get("startDate", "")[:10].replace("-", "")
+        end = data.get("endDate", "")[:10].replace("-", "")
+        if not start or not end:
+            raise CommandError(
+                f"Could not determine dates for season {season}. "
+                f"Use --dates YYYYMMDD-YYYYMMDD manually."
+            )
+        return f"{start}-{end}"
+
     def _list_season_events(
-        self, client, sport: str, league: str, season: int, delay: float
+        self, client, sport: str, league: str, dates: str, delay: float
     ) -> list[str]:
         """List all event IDs for a season using core API pagination."""
         event_ids = []
@@ -140,7 +166,7 @@ class Command(BaseCommand):
             response = client.get(
                 f"/v2/sports/{sport}/leagues/{league}/events",
                 domain=ESPNEndpointDomain.CORE,
-                params={"dates": str(season), "limit": 100, "page": page},
+                params={"dates": dates, "limit": 100, "page": page},
             )
             data = response.data
             items = data.get("items", [])

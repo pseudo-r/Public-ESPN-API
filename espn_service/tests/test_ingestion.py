@@ -501,29 +501,37 @@ class TestBackfillCommand:
         from django.core.management import call_command
 
         mock_client = MagicMock()
-        # Mock listing events
-        mock_client.get.return_value = ESPNResponse(
-            data={
-                "count": 1,
-                "pageIndex": 1,
-                "pageSize": 100,
-                "pageCount": 1,
-                "items": [
-                    {
-                        "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401584666"
-                    }
-                ],
-            },
-            status_code=200,
-            url="test",
-        )
-        # Mock get_event (summary)
+        # Mock get() — first call: season metadata, second call: event listing
+        mock_client.get.side_effect = [
+            ESPNResponse(
+                data={
+                    "startDate": "2024-10-01T04:00Z",
+                    "endDate": "2025-06-01T03:59Z",
+                },
+                status_code=200,
+                url="test",
+            ),
+            ESPNResponse(
+                data={
+                    "count": 1,
+                    "pageIndex": 1,
+                    "pageSize": 100,
+                    "pageCount": 1,
+                    "items": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401584666"
+                        }
+                    ],
+                },
+                status_code=200,
+                url="test",
+            ),
+        ]
         mock_client.get_event.return_value = ESPNResponse(
             data={"events": [mock_scoreboard_response["events"][0]]},
             status_code=200,
             url="test",
         )
-        # Mock get_odds
         mock_client.get_odds.return_value = ESPNResponse(
             data={"items": []},
             status_code=200,
@@ -547,21 +555,31 @@ class TestBackfillCommand:
         from django.core.management import call_command
 
         mock_client = MagicMock()
-        mock_client.get.return_value = ESPNResponse(
-            data={
-                "count": 1,
-                "pageIndex": 1,
-                "pageSize": 100,
-                "pageCount": 1,
-                "items": [
-                    {
-                        "$ref": "http://sports.core.api.espn.com/v2/events/401584666"
-                    }
-                ],
-            },
-            status_code=200,
-            url="test",
-        )
+        mock_client.get.side_effect = [
+            ESPNResponse(
+                data={
+                    "startDate": "2024-10-01T04:00Z",
+                    "endDate": "2025-06-01T03:59Z",
+                },
+                status_code=200,
+                url="test",
+            ),
+            ESPNResponse(
+                data={
+                    "count": 1,
+                    "pageIndex": 1,
+                    "pageSize": 100,
+                    "pageCount": 1,
+                    "items": [
+                        {
+                            "$ref": "http://sports.core.api.espn.com/v2/events/401584666"
+                        }
+                    ],
+                },
+                status_code=200,
+                url="test",
+            ),
+        ]
         mock_client.get_event.return_value = ESPNResponse(
             data={"events": [mock_scoreboard_response["events"][0]]},
             status_code=200,
