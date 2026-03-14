@@ -3,7 +3,7 @@
 import django_filters
 from django.db.models import Q, QuerySet
 
-from apps.espn.models import Event, Team
+from apps.espn.models import Event, Season, Team
 
 
 class TeamFilter(django_filters.FilterSet):
@@ -47,6 +47,25 @@ class TeamFilter(django_filters.FilterSet):
             | Q(location__icontains=value)
             | Q(name__icontains=value)
         )
+
+
+class SeasonFilter(django_filters.FilterSet):
+    """Filter for Season queryset."""
+
+    sport = django_filters.CharFilter(
+        field_name="league__sport__slug",
+        lookup_expr="iexact",
+    )
+    league = django_filters.CharFilter(
+        field_name="league__slug",
+        lookup_expr="iexact",
+    )
+    year = django_filters.NumberFilter()
+    season_type = django_filters.NumberFilter()
+
+    class Meta:
+        model = Season
+        fields = ["sport", "league", "year", "season_type"]
 
 
 class EventFilter(django_filters.FilterSet):

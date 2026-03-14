@@ -7,12 +7,13 @@ from rest_framework.decorators import action
 from rest_framework.request import Request
 from rest_framework.response import Response
 
-from apps.espn.filters import EventFilter, TeamFilter
-from apps.espn.models import Event, League, Sport, Team
+from apps.espn.filters import EventFilter, SeasonFilter, TeamFilter
+from apps.espn.models import Event, League, Season, Sport, Team
 from apps.espn.serializers import (
     EventListSerializer,
     EventSerializer,
     LeagueSerializer,
+    SeasonSerializer,
     SportSerializer,
     TeamListSerializer,
     TeamSerializer,
@@ -171,6 +172,33 @@ class TeamViewSet(viewsets.ReadOnlyModelViewSet):
             return Response({"error": "Team not found"}, status=404)
         serializer = TeamSerializer(team)
         return Response(serializer.data)
+
+
+class SeasonViewSet(viewsets.ReadOnlyModelViewSet):
+    """ViewSet for Season data."""
+
+    serializer_class = SeasonSerializer
+    filterset_class = SeasonFilter
+    ordering_fields = ["year", "season_type"]
+    ordering = ["-year", "season_type"]
+
+    def get_queryset(self) -> QuerySet[Season]:
+        return Season.objects.select_related("league", "league__sport")
+
+    @extend_schema(
+        tags=["Seasons"],
+        summary="List seasons",
+        description="Get all seasons with optional filtering by league, year, type.",
+    )
+    def list(self, request: Request, *args, **kwargs) -> Response:
+        return super().list(request, *args, **kwargs)
+
+    @extend_schema(
+        tags=["Seasons"],
+        summary="Get season details",
+    )
+    def retrieve(self, request: Request, *args, **kwargs) -> Response:
+        return super().retrieve(request, *args, **kwargs)
 
 
 class EventViewSet(viewsets.ReadOnlyModelViewSet):

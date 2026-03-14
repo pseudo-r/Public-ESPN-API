@@ -6,7 +6,7 @@ import pytest
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from apps.espn.models import Competitor, Event, League, Sport, Team
+from apps.espn.models import Competitor, Event, League, Season, Sport, Team
 from clients.espn_client import ESPNResponse
 
 
@@ -441,3 +441,31 @@ class TestLeagueEndpoints:
         response = api_client.get("/api/v1/leagues/999/")
 
         assert response.status_code == status.HTTP_404_NOT_FOUND
+
+
+@pytest.mark.django_db
+class TestSeasonAPI:
+    """Tests for Season API endpoints."""
+
+    def test_list_seasons(self, api_client: APIClient, season: Season):
+        response = api_client.get("/api/v1/seasons/")
+        assert response.status_code == 200
+        assert response.data["count"] == 1
+        result = response.data["results"][0]
+        assert result["year"] == 2024
+        assert result["season_type"] == 2
+
+    def test_filter_season_by_league(self, api_client: APIClient, season: Season):
+        response = api_client.get("/api/v1/seasons/?league=nba")
+        assert response.status_code == 200
+        assert response.data["count"] == 1
+
+    def test_filter_season_by_year(self, api_client: APIClient, season: Season):
+        response = api_client.get("/api/v1/seasons/?year=2024")
+        assert response.status_code == 200
+        assert response.data["count"] == 1
+
+    def test_retrieve_season(self, api_client: APIClient, season: Season):
+        response = api_client.get(f"/api/v1/seasons/{season.pk}/")
+        assert response.status_code == 200
+        assert response.data["year"] == 2024

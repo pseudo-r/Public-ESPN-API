@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from apps.espn.models import Athlete, Competitor, Event, League, Sport, Team, Venue
+from apps.espn.models import Athlete, Competitor, Event, League, Season, Sport, Team, Venue
 
 
 class SportSerializer(serializers.ModelSerializer):
@@ -43,6 +43,36 @@ class LeagueMinimalSerializer(serializers.ModelSerializer):
     class Meta:
         model = League
         fields = ["id", "slug", "name", "abbreviation", "sport_slug"]
+
+
+class SeasonSerializer(serializers.ModelSerializer):
+    """Serializer for Season model."""
+
+    league = LeagueMinimalSerializer(read_only=True)
+
+    class Meta:
+        model = Season
+        fields = [
+            "id",
+            "league",
+            "year",
+            "season_type",
+            "start_date",
+            "end_date",
+            "display_name",
+            "slug",
+            "created_at",
+            "updated_at",
+        ]
+        read_only_fields = ["id", "created_at", "updated_at"]
+
+
+class SeasonMinimalSerializer(serializers.ModelSerializer):
+    """Minimal Season serializer for nested use in Event."""
+
+    class Meta:
+        model = Season
+        fields = ["id", "year", "season_type", "display_name"]
 
 
 class VenueSerializer(serializers.ModelSerializer):
@@ -168,6 +198,7 @@ class EventSerializer(serializers.ModelSerializer):
 
     league = LeagueMinimalSerializer(read_only=True)
     venue = VenueSerializer(read_only=True)
+    season = SeasonMinimalSerializer(read_only=True)
     competitors = CompetitorSerializer(many=True, read_only=True)
 
     class Meta:
@@ -192,6 +223,7 @@ class EventSerializer(serializers.ModelSerializer):
             "links",
             "league",
             "venue",
+            "season",
             "competitors",
             "created_at",
             "updated_at",
