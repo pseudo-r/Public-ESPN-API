@@ -25,8 +25,8 @@ class TestScheduleRunNowAction:
         admin_instance = ScheduleRunNowAdmin(Schedule, AdminSite())
         factory = RequestFactory()
         request = factory.post("/admin/")
-        setattr(request, "session", "session")
-        setattr(request, "_messages", FallbackStorage(request))
+        request.session = "session"
+        request._messages = FallbackStorage(request)
 
         with patch("apps.ingest.admin.async_task") as mock_async:
             admin_instance.run_now(request, Schedule.objects.filter(pk=schedule.pk))
