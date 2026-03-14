@@ -1,0 +1,1995 @@
+{"count":3,"pageIndex":1,"pageSize":25,"pageCount":1,"items":[{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/events/706555/competitions/706555/odds/2000?lang=en&region=us","provider":{"id":"2000","name":"Bet 365","priority":0},"awayTeamOdds":{"team":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/174?lang=en&region=us"},"odds":{"summary":"13/2","value":7.5,"handicap":0.0}},"homeTeamOdds":{"team":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/3243?lang=en&region=us"},"odds":{"summary":"16/1","value":17.0,"handicap":0.0}},"drawOdds":{"summary":"1/7","value":1.143,"handicap":0.0},"bettingOdds":{"homeTeam":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/3243?lang=en&region=us"},"awayTeam":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/174?lang=en&region=us"},"teamOdds":{"preMatchFullTimeResultDraw":{"oddId":"1798546683","value":"12/5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1798546683~12/5&bet=1"},"liveGoalLineOver":{"oddId":"1861330822","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330822~9/1&bet=1"},"liveOverUnderHandicap":{"oddId":"1861330822","value":"0.5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330822~0.5&bet=1"},"liveDoubleChanceHomeOrDraw":{"oddId":"1861330874","value":"1/25","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330874~1/25&bet=1"},"preMatchDoubleChanceHomeOrAway":{"oddId":"1800355231","value":"3/10","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1800355231~3/10&bet=1"},"preMatchGoalLineOver":{"oddId":"1798546689","value":"22/25","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061075-1798546689~22/25&bet=1"},"preMatchDoubleChanceHomeOrDraw":{"oddId":"1800355235","value":"4/6","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1800355235~4/6&bet=1"},"liveDoubleChanceHomeOrAway":{"oddId":"1861330876","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330876~10/1&bet=1"},"liveGoalLineUnder":{"oddId":"1861330835","value":"1/16","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330835~1/16&bet=1"},"preMatchFullTimeResultAway":{"oddId":"1798546684","value":"6/5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1798546684~6/5&bet=1"},"preMatchDoubleChanceDrawOrAway":{"oddId":"1800355229","value":"1/3","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1800355229~1/3&bet=1"},"liveFullTimeResultHome":{"oddId":"1861330755","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330755~33/1&bet=1"},"liveFullTimeResultDraw":{"oddId":"1861330785","value":"1/66","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330785~1/66&bet=1"},"preMatchOverUnderHandicap":{"oddId":"1798546689","value":"2.5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061075-1798546689~2.5&bet=1"},"preMatchFullTimeResultHome":{"oddId":"1798546682","value":"23/10","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1798546682~23/10&bet=1"},"preMatchGoalLineUnder":{"oddId":"1798546690","value":"51/50","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061075-1798546690~51/50&bet=1"},"liveFullTimeResultAway":{"oddId":"1861330804","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330804~20/1&bet=1"},"liveDoubleChanceDrawOrAway":{"oddId":"1861330875","value":"1/100","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330875~1/100&bet=1"}},"playerOdds":{"preMatchFirstGoalScorer":[{"oddId":"1827563765","value":"9/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563765~9/2&bet=1","player":"Breel Embolo"},{"oddId":"1827563715","value":"9/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563715~9/2&bet=1","player":"Folarin Balogun"},{"oddId":"1827563687","value":"6/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563687~6/1&bet=1","player":"George Ilenikhena"},{"oddId":"1827563703","value":"6/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563703~6/1&bet=1","player":"Lucas Michal"},{"oddId":"1827563758","value":"13/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563758~13/2&bet=1","player":"Niama Sissoko"},{"oddId":"1827563747","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563747~7/1&bet=1","player":"Joan Tincres"},{"oddId":"1827563754","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563754~15/2&bet=1","player":"Eliesse Seghir"},{"oddId":"1827563722","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563722~15/2&bet=1","player":"Keito Nakamura"},{"oddId":"1827563757","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563757~15/2&bet=1","player":"Maghnes Akliouche"},{"oddId":"1827563763","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563763~15/2&bet=1","player":"Takumi Minamino"},{"oddId":"1827563719","value":"8/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563719~8/1&bet=1","player":"Krepin Diatta"},{"oddId":"1827563727","value":"17/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563727~17/2&bet=1","player":"Alexandr Golovin"},{"oddId":"1827563759","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563759~9/1&bet=1","player":"Amine Salama"},{"oddId":"1827563751","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563751~9/1&bet=1","player":"Junya Ito"},{"oddId":"1827563762","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563762~9/1&bet=1","player":"Mohamed Daramy"},{"oddId":"1827563766","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563766~9/1&bet=1","player":"Oumar Diakite"},{"oddId":"1827563749","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563749~9/1&bet=1","player":"Reda Khadra"},{"oddId":"1827563712","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563712~9/1&bet=1","player":"Teddy Teuma"},{"oddId":"1827563706","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563706~10/1&bet=1","player":"Denis Zakaria"},{"oddId":"1827563734","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563734~10/1&bet=1","player":"Marshall Munetsi"},{"oddId":"1827563739","value":"11/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563739~11/1&bet=1","player":"Mamadou Diakhon"},{"oddId":"1827563750","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563750~12/1&bet=1","player":"Edan Diop"},{"oddId":"1827563748","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563748~12/1&bet=1","player":"Lamine Camara"},{"oddId":"1827563696","value":"14/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563696~14/1&bet=1","player":"No Goalscorer"},{"oddId":"1827563742","value":"16/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563742~16/1&bet=1","player":"Mohamed Diadie"},{"oddId":"1827563694","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563694~18/1&bet=1","player":"Amadou Kone"},{"oddId":"1827563701","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563701~18/1&bet=1","player":"Mohamed Bamba"},{"oddId":"1827563761","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563761~18/1&bet=1","player":"Stephane Singo"},{"oddId":"1827563709","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563709~18/1&bet=1","player":"Valentin Atangana Edoa"},{"oddId":"1827563767","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563767~18/1&bet=1","player":"Yaya Fofana"},{"oddId":"1827563746","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563746~20/1&bet=1","player":"Aladji Bamba"},{"oddId":"1827563755","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563755~20/1&bet=1","player":"Campos Vanderson"},{"oddId":"1827563736","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563736~20/1&bet=1","player":"Christian Mawissa Elebi"},{"oddId":"1827563744","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563744~20/1&bet=1","player":"de Salles Gabriel Moscardo"},{"oddId":"1827563752","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563752~20/1&bet=1","player":"Emmanuel Agbadou"},{"oddId":"1827563725","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563725~20/1&bet=1","player":"Saimon Bouabre"},{"oddId":"1827563691","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563691~20/1&bet=1","player":"Samuel Nibombe"},{"oddId":"1827563760","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563760~20/1&bet=1","player":"Sergio Akieme"},{"oddId":"1827563764","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563764~20/1&bet=1","player":"Thilo Kehrer"},{"oddId":"1827563733","value":"22/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563733~22/1&bet=1","player":"Aurelio Buta"},{"oddId":"1827563756","value":"22/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563756~22/1&bet=1","player":"Soungoutou Magassa"},{"oddId":"1827563680","value":"25/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563680~25/1&bet=1","player":"Kassoum Ouattara"},{"oddId":"1827563740","value":"28/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563740~28/1&bet=1","player":"Bradel Kiwa"},{"oddId":"1827563730","value":"28/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563730~28/1&bet=1","player":"Eliot Matazo"},{"oddId":"1827563728","value":"28/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563728~28/1&bet=1","player":"Maxime Busi"},{"oddId":"1827563732","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563732~33/1&bet=1","player":"Abdoul Kone"},{"oddId":"1827563743","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563743~33/1&bet=1","player":"Caio Henrique"},{"oddId":"1827563735","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563735~33/1&bet=1","player":"Cedric Kipre"},{"oddId":"1827563753","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563753~33/1&bet=1","player":"Jordan Teze"},{"oddId":"1827563737","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563737~33/1&bet=1","player":"Joseph Okumu"},{"oddId":"1827563745","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563745~33/1&bet=1","player":"Mohammed Salisu"},{"oddId":"1827563741","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563741~33/1&bet=1","player":"Nhoa Sangui"},{"oddId":"1827563738","value":"50/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563738~50/1&bet=1","player":"Thibault De Smet"}],"preMatchAnyTimeGoalScorer":[{"oddId":"1827563916","value":"7/5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563916~7/5&bet=1","player":"Breel Embolo"},{"oddId":"1827563936","value":"7/5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563936~7/5&bet=1","player":"Folarin Balogun"},{"oddId":"1827563914","value":"2/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563914~2/1&bet=1","player":"George Ilenikhena"},{"oddId":"1827563919","value":"2/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563919~2/1&bet=1","player":"Lucas Michal"},{"oddId":"1827563912","value":"11/5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563912~11/5&bet=1","player":"Niama Sissoko"},{"oddId":"1827563900","value":"12/5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563900~12/5&bet=1","player":"Joan Tincres"},{"oddId":"1827563938","value":"5/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563938~5/2&bet=1","player":"Eliesse Seghir"},{"oddId":"1827563898","value":"5/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563898~5/2&bet=1","player":"Keito Nakamura"},{"oddId":"1827563869","value":"5/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563869~5/2&bet=1","player":"Maghnes Akliouche"},{"oddId":"1827563908","value":"5/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563908~5/2&bet=1","player":"Takumi Minamino"},{"oddId":"1827563882","value":"11/4","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563882~11/4&bet=1","player":"Krepin Diatta"},{"oddId":"1827563940","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563940~3/1&bet=1","player":"Alexandr Golovin"},{"oddId":"1827563866","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563866~3/1&bet=1","player":"Amine Salama"},{"oddId":"1827563892","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563892~3/1&bet=1","player":"Junya Ito"},{"oddId":"1827563934","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563934~3/1&bet=1","player":"Mohamed Daramy"},{"oddId":"1827563893","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563893~3/1&bet=1","player":"Oumar Diakite"},{"oddId":"1827563929","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563929~3/1&bet=1","player":"Reda Khadra"},{"oddId":"1827563884","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563884~3/1&bet=1","player":"Teddy Teuma"},{"oddId":"1827563923","value":"7/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563923~7/2&bet=1","player":"Denis Zakaria"},{"oddId":"1827563865","value":"7/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563865~7/2&bet=1","player":"Marshall Munetsi"},{"oddId":"1827563880","value":"15/4","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563880~15/4&bet=1","player":"Mamadou Diakhon"},{"oddId":"1827563875","value":"4/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563875~4/1&bet=1","player":"Edan Diop"},{"oddId":"1827563886","value":"4/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563886~4/1&bet=1","player":"Lamine Camara"},{"oddId":"1827563878","value":"11/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563878~11/2&bet=1","player":"Mohamed Diadie"},{"oddId":"1827563885","value":"13/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563885~13/2&bet=1","player":"Amadou Kone"},{"oddId":"1827563889","value":"13/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563889~13/2&bet=1","player":"Mohamed Bamba"},{"oddId":"1827563879","value":"13/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563879~13/2&bet=1","player":"Stephane Singo"},{"oddId":"1827563910","value":"13/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563910~13/2&bet=1","player":"Valentin Atangana Edoa"},{"oddId":"1827563942","value":"13/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563942~13/2&bet=1","player":"Yaya Fofana"},{"oddId":"1827563915","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563915~7/1&bet=1","player":"Aladji Bamba"},{"oddId":"1827563918","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563918~7/1&bet=1","player":"Campos Vanderson"},{"oddId":"1827563901","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563901~7/1&bet=1","player":"Christian Mawissa Elebi"},{"oddId":"1827563872","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563872~7/1&bet=1","player":"de Salles Gabriel Moscardo"},{"oddId":"1827563877","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563877~7/1&bet=1","player":"Emmanuel Agbadou"},{"oddId":"1827563913","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563913~7/1&bet=1","player":"Saimon Bouabre"},{"oddId":"1827563871","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563871~7/1&bet=1","player":"Samuel Nibombe"},{"oddId":"1827563881","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563881~7/1&bet=1","player":"Sergio Akieme"},{"oddId":"1827563867","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563867~7/1&bet=1","player":"Thilo Kehrer"},{"oddId":"1827563891","value":"8/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563891~8/1&bet=1","player":"Aurelio Buta"},{"oddId":"1827563888","value":"8/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563888~8/1&bet=1","player":"Soungoutou Magassa"},{"oddId":"1827563883","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563883~9/1&bet=1","player":"Kassoum Ouattara"},{"oddId":"1827563903","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563903~10/1&bet=1","player":"Bradel Kiwa"},{"oddId":"1827563874","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563874~10/1&bet=1","player":"Eliot Matazo"},{"oddId":"1827563873","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563873~10/1&bet=1","player":"Maxime Busi"},{"oddId":"1827563907","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563907~12/1&bet=1","player":"Abdoul Kone"},{"oddId":"1827563902","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563902~12/1&bet=1","player":"Caio Henrique"},{"oddId":"1827563876","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563876~12/1&bet=1","player":"Cedric Kipre"},{"oddId":"1827563890","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563890~12/1&bet=1","player":"Jordan Teze"},{"oddId":"1827563945","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563945~12/1&bet=1","player":"Joseph Okumu"},{"oddId":"1827563887","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563887~12/1&bet=1","player":"Mohammed Salisu"},{"oddId":"1827563896","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563896~12/1&bet=1","player":"Nhoa Sangui"},{"oddId":"1827563906","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563906~18/1&bet=1","player":"Thibault De Smet"}],"liveAnyTimeGoalScorer":[{"oddId":"1875763478","value":"12/5","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763478~12/5&bet=1","player":"George Ilenikhena"},{"oddId":"1875763521","value":"11/4","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763521~11/4&bet=1","player":"Eliesse Seghir"},{"oddId":"1875763496","value":"11/4","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763496~11/4&bet=1","player":"Keito Nakamura"},{"oddId":"1875763541","value":"11/4","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763541~11/4&bet=1","player":"Takumi Minamino"},{"oddId":"1875763557","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763557~3/1&bet=1","player":"Junya Ito"},{"oddId":"1875763579","value":"3/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763579~3/1&bet=1","player":"Oumar Diakite"},{"oddId":"1875763595","value":"10/3","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763595~10/3&bet=1","player":"Alexandr Golovin"},{"oddId":"1875763613","value":"15/4","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763613~15/4&bet=1","player":"Marshall Munetsi"},{"oddId":"1875763645","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763645~7/1&bet=1","player":"Amadou Kone"},{"oddId":"1875763667","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763667~7/1&bet=1","player":"Stephane Singo"},{"oddId":"1875763629","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763629~7/1&bet=1","player":"Valentin Atangana Edoa"},{"oddId":"1875763683","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763683~15/2&bet=1","player":"Emmanuel Agbadou"},{"oddId":"1875763702","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763702~15/2&bet=1","player":"Sergio Akieme"},{"oddId":"1875764221","value":"8/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764221~8/1&bet=1","player":"Breel Embolo"},{"oddId":"1875763761","value":"17/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763761~17/2&bet=1","player":"Aurelio Buta"},{"oddId":"1875763741","value":"17/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763741~17/2&bet=1","player":"Christian Mawissa Elebi"},{"oddId":"1875763724","value":"17/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763724~17/2&bet=1","player":"Thilo Kehrer"},{"oddId":"1875763795","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763795~10/1&bet=1","player":"Kassoum Ouattara"},{"oddId":"1875763782","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763782~10/1&bet=1","player":"Soungoutou Magassa"},{"oddId":"1875763896","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763896~12/1&bet=1","player":"Cedric Kipre"},{"oddId":"1875764069","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764069~12/1&bet=1","player":"Maghnes Akliouche"},{"oddId":"1875763854","value":"14/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763854~14/1&bet=1","player":"Jordan Teze"},{"oddId":"1875763965","value":"25/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763965~25/1&bet=1","player":"Amine Salama"},{"oddId":"1875764129","value":"25/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764129~25/1&bet=1","player":"Lamine Camara"},{"oddId":"1875763910","value":"25/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763910~25/1&bet=1","player":"Yaya Fofana"},{"oddId":"1875764317","value":"28/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764317~28/1&bet=1","player":"Mamadou Diakhon"},{"oddId":"1875764465","value":"40/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764465~40/1&bet=1","player":"Mohammed Salisu"},{"oddId":"1875764023","value":"80/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764023~80/1&bet=1","player":"Caio Henrique"}],"preMatchLastGoalScorer":[{"oddId":"1827563821","value":"9/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563821~9/2&bet=1","player":"Breel Embolo"},{"oddId":"1827563864","value":"9/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563864~9/2&bet=1","player":"Folarin Balogun"},{"oddId":"1827563785","value":"6/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563785~6/1&bet=1","player":"George Ilenikhena"},{"oddId":"1827563853","value":"6/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563853~6/1&bet=1","player":"Lucas Michal"},{"oddId":"1827563789","value":"13/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563789~13/2&bet=1","player":"Niama Sissoko"},{"oddId":"1827563855","value":"7/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563855~7/1&bet=1","player":"Joan Tincres"},{"oddId":"1827563794","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563794~15/2&bet=1","player":"Eliesse Seghir"},{"oddId":"1827563797","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563797~15/2&bet=1","player":"Keito Nakamura"},{"oddId":"1827563857","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563857~15/2&bet=1","player":"Maghnes Akliouche"},{"oddId":"1827563792","value":"15/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563792~15/2&bet=1","player":"Takumi Minamino"},{"oddId":"1827563790","value":"8/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563790~8/1&bet=1","player":"Krepin Diatta"},{"oddId":"1827563838","value":"17/2","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563838~17/2&bet=1","player":"Alexandr Golovin"},{"oddId":"1827563859","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563859~9/1&bet=1","player":"Amine Salama"},{"oddId":"1827563777","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563777~9/1&bet=1","player":"Junya Ito"},{"oddId":"1827563799","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563799~9/1&bet=1","player":"Mohamed Daramy"},{"oddId":"1827563772","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563772~9/1&bet=1","player":"Oumar Diakite"},{"oddId":"1827563793","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563793~9/1&bet=1","player":"Reda Khadra"},{"oddId":"1827563769","value":"9/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563769~9/1&bet=1","player":"Teddy Teuma"},{"oddId":"1827563775","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563775~10/1&bet=1","player":"Denis Zakaria"},{"oddId":"1827563863","value":"10/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563863~10/1&bet=1","player":"Marshall Munetsi"},{"oddId":"1827563858","value":"11/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563858~11/1&bet=1","player":"Mamadou Diakhon"},{"oddId":"1827563779","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563779~12/1&bet=1","player":"Edan Diop"},{"oddId":"1827563846","value":"12/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563846~12/1&bet=1","player":"Lamine Camara"},{"oddId":"1827563770","value":"14/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563770~14/1&bet=1","player":"No Goalscorer"},{"oddId":"1827563860","value":"16/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563860~16/1&bet=1","player":"Mohamed Diadie"},{"oddId":"1827563786","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563786~18/1&bet=1","player":"Amadou Kone"},{"oddId":"1827563852","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563852~18/1&bet=1","player":"Mohamed Bamba"},{"oddId":"1827563778","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563778~18/1&bet=1","player":"Stephane Singo"},{"oddId":"1827563796","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563796~18/1&bet=1","player":"Valentin Atangana Edoa"},{"oddId":"1827563771","value":"18/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563771~18/1&bet=1","player":"Yaya Fofana"},{"oddId":"1827563774","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563774~20/1&bet=1","player":"Aladji Bamba"},{"oddId":"1827563847","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563847~20/1&bet=1","player":"Campos Vanderson"},{"oddId":"1827563805","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563805~20/1&bet=1","player":"Christian Mawissa Elebi"},{"oddId":"1827563783","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563783~20/1&bet=1","player":"de Salles Gabriel Moscardo"},{"oddId":"1827563788","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563788~20/1&bet=1","player":"Emmanuel Agbadou"},{"oddId":"1827563776","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563776~20/1&bet=1","player":"Saimon Bouabre"},{"oddId":"1827563848","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563848~20/1&bet=1","player":"Samuel Nibombe"},{"oddId":"1827563773","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563773~20/1&bet=1","player":"Sergio Akieme"},{"oddId":"1827563798","value":"20/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563798~20/1&bet=1","player":"Thilo Kehrer"},{"oddId":"1827563782","value":"22/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563782~22/1&bet=1","player":"Aurelio Buta"},{"oddId":"1827563768","value":"22/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563768~22/1&bet=1","player":"Soungoutou Magassa"},{"oddId":"1827563854","value":"25/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563854~25/1&bet=1","player":"Kassoum Ouattara"},{"oddId":"1827563849","value":"28/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563849~28/1&bet=1","player":"Bradel Kiwa"},{"oddId":"1827563784","value":"28/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563784~28/1&bet=1","player":"Eliot Matazo"},{"oddId":"1827563862","value":"28/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563862~28/1&bet=1","player":"Maxime Busi"},{"oddId":"1827563781","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563781~33/1&bet=1","player":"Abdoul Kone"},{"oddId":"1827563861","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563861~33/1&bet=1","player":"Caio Henrique"},{"oddId":"1827563787","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563787~33/1&bet=1","player":"Cedric Kipre"},{"oddId":"1827563780","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563780~33/1&bet=1","player":"Jordan Teze"},{"oddId":"1827563856","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563856~33/1&bet=1","player":"Joseph Okumu"},{"oddId":"1827563800","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563800~33/1&bet=1","player":"Mohammed Salisu"},{"oddId":"1827563791","value":"33/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563791~33/1&bet=1","player":"Nhoa Sangui"},{"oddId":"1827563795","value":"50/1","betSlipUrl":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563795~50/1&bet=1","player":"Thibault De Smet"}]}},"links":[{"language":"en-US","rel":["home","desktop","bets","bet-365"],"href":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=166569319-1861330755~16/1","text":"Home Bet","shortText":"Home Bet","isExternal":true,"isPremium":false},{"language":"en-US","rel":["away","desktop","bets","bet-365"],"href":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=166569319-1861330804~13/2","text":"Away Bet","shortText":"Away Bet","isExternal":true,"isPremium":false},{"language":"en-US","rel":["draw","desktop","bets","bet-365"],"href":"https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=166569319-1861330785~1/7","text":"Draw Bet","shortText":"Draw Bet","isExternal":true,"isPremium":false}],"moneylineWinner":false,"spreadWinner":false},{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/events/706555/competitions/706555/odds/58?lang=en&region=us","provider":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/providers/58?lang=en&region=us","id":"58","name":"ESPN BET","priority":0},"details":"MON -0.5","overUnder":2.5,"spread":0.5,"overOdds":-125.0,"underOdds":-105.0,"awayTeamOdds":{"favorite":true,"underdog":false,"moneyLine":120,"spreadOdds":105.0,"open":{"favorite":true,"pointSpread":{"alternateDisplayValue":"-0.5","american":"-0.5"},"spread":{"value":2.0,"displayValue":"1/1","alternateDisplayValue":"EVEN","decimal":2.0,"fraction":"1/1","american":"EVEN"},"moneyLine":{"value":2.05,"displayValue":"21/20","alternateDisplayValue":"+105","decimal":2.05,"fraction":"21/20","american":"+105"}},"close":{"pointSpread":{"alternateDisplayValue":"-0.5","american":"-0.5"},"spread":{"value":2.05,"displayValue":"21/20","alternateDisplayValue":"+105","decimal":2.05,"fraction":"21/20","american":"+105"},"moneyLine":{"value":2.2,"displayValue":"6/5","alternateDisplayValue":"+120","decimal":2.2,"fraction":"6/5","american":"+120"}},"current":{"pointSpread":{"alternateDisplayValue":"-0.5","american":"-0.5"},"spread":{"value":2.05,"displayValue":"21/20","alternateDisplayValue":"+105","decimal":2.05,"fraction":"21/20","american":"+105"},"moneyLine":{"value":2.2,"displayValue":"6/5","alternateDisplayValue":"+120","decimal":2.2,"fraction":"6/5","american":"+120"}},"team":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/174?lang=en&region=us"}},"homeTeamOdds":{"favorite":false,"underdog":true,"moneyLine":230,"spreadOdds":-150.0,"open":{"favorite":false,"pointSpread":{"value":1.714,"displayValue":"5/7","alternateDisplayValue":"+0.5","decimal":1.714,"fraction":"5/7","american":"+0.5"},"spread":{"value":1.714,"displayValue":"5/7","alternateDisplayValue":"-140","decimal":1.714,"fraction":"5/7","american":"-140"},"moneyLine":{"value":3.25,"displayValue":"9/4","alternateDisplayValue":"+225","decimal":3.25,"fraction":"9/4","american":"+225"}},"close":{"pointSpread":{"alternateDisplayValue":"+0.5","american":"+0.5"},"spread":{"value":1.667,"displayValue":"2/3","alternateDisplayValue":"-150","decimal":1.667,"fraction":"2/3","american":"-150"},"moneyLine":{"value":3.3,"displayValue":"23/10","alternateDisplayValue":"+230","decimal":3.3,"fraction":"23/10","american":"+230"}},"current":{"pointSpread":{"alternateDisplayValue":"+0.5","american":"+0.5"},"spread":{"value":1.667,"displayValue":"2/3","alternateDisplayValue":"-150","decimal":1.667,"fraction":"2/3","american":"-150"},"moneyLine":{"value":3.3,"displayValue":"23/10","alternateDisplayValue":"+230","decimal":3.3,"fraction":"23/10","american":"+230"}},"team":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/3243?lang=en&region=us"}},"drawOdds":{"moneyLine":235.0},"links":[{"language":"en-US","rel":["home","desktop","bets","espn-bet"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=724b51ae-8433-413b-84b4-a74454216679&odds_numerator[0]=33&odds_denominator[0]=10","text":"Home Bet","shortText":"Home Bet","isExternal":true,"isPremium":false},{"language":"en-US","rel":["away","desktop","bets","espn-bet"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=09b47aeb-44bf-452b-b23e-6b04015e6a6c&odds_numerator[0]=11&odds_denominator[0]=5","text":"Away Bet","shortText":"Away Bet","isExternal":true,"isPremium":false},{"language":"en-US","rel":["draw","desktop","bets","espn-bet"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=0d8600ef-ea68-4f74-812c-0a8e7116a335&odds_numerator[0]=67&odds_denominator[0]=20","text":"Draw Bet","shortText":"Draw Bet","isExternal":true,"isPremium":false},{"language":"en-US","rel":["homeSpread","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=7dcf80af-5560-47ec-8954-c15dc20a92d2&odds_numerator[0]=5&odds_denominator[0]=3","text":"Home Point Spread","shortText":"Home Point Spread","isExternal":true,"isPremium":false},{"language":"en-US","rel":["awaySpread","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=0c2da5d9-401b-4182-be31-3fc8f3706703&odds_numerator[0]=41&odds_denominator[0]=20","text":"Away Point Spread","shortText":"Away Point Spread","isExternal":true,"isPremium":false},{"language":"en-US","rel":["over","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=ada7d59a-59b2-43c9-9a52-71bc4a5c4402&odds_numerator[0]=9&odds_denominator[0]=5","text":"Over Odds","shortText":"Over Odds","isExternal":true,"isPremium":false},{"language":"en-US","rel":["under","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=15c6ab22-102c-47ab-a8c4-62819e4c874e&odds_numerator[0]=41&odds_denominator[0]=21","text":"Under Odds","shortText":"Under Odds","isExternal":true,"isPremium":false},{"language":"en-US","rel":["game","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96","text":"Game","shortText":"Game","isExternal":true,"isPremium":false}],"moneylineWinner":false,"spreadWinner":false,"open":{"over":{"value":1.588,"displayValue":"10/17","alternateDisplayValue":"-170","decimal":1.588,"fraction":"10/17","american":"-170"},"under":{"value":2.2,"displayValue":"6/5","alternateDisplayValue":"+120","decimal":2.2,"fraction":"6/5","american":"+120"},"total":{"value":1.588,"displayValue":"10/17","alternateDisplayValue":"2.5","decimal":1.588,"fraction":"10/17","american":"2.5"},"draw":{"value":3.6,"displayValue":"13/5","alternateDisplayValue":"+260","decimal":3.6,"fraction":"13/5","american":"+260"}},"close":{"over":{"value":1.8,"displayValue":"4/5","alternateDisplayValue":"-125","decimal":1.8,"fraction":"4/5","american":"-125"},"under":{"value":1.952,"displayValue":"20/21","alternateDisplayValue":"-105","decimal":1.952,"fraction":"20/21","american":"-105"},"total":{"alternateDisplayValue":"2.5","american":"2.5"},"draw":{"value":3.35,"displayValue":"47/20","alternateDisplayValue":"+235","decimal":3.35,"fraction":"47/20","american":"+235"}},"current":{"over":{"value":1.8,"displayValue":"4/5","alternateDisplayValue":"-125","decimal":1.8,"fraction":"4/5","american":"-125"},"under":{"value":1.952,"displayValue":"20/21","alternateDisplayValue":"-105","decimal":1.952,"fraction":"20/21","american":"-105"},"total":{"alternateDisplayValue":"2.5","american":"2.5"},"draw":{"value":3.35,"displayValue":"47/20","alternateDisplayValue":"+235","decimal":3.35,"fraction":"47/20","american":"+235"}}},{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/events/706555/competitions/706555/odds/59?lang=en&region=us","provider":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/providers/59?lang=en&region=us","id":"59","name":"ESPN BET - Live Odds","priority":0},"details":"MON -0.5","overUnder":0.5,"spread":0.5,"overOdds":700.0,"underOdds":-2500.0,"awayTeamOdds":{"favorite":true,"underdog":false,"moneyLine":1300,"spreadOdds":750.0,"open":{"favorite":true,"pointSpread":{"alternateDisplayValue":"-0.5","american":"-0.5"},"spread":{"value":2.0,"displayValue":"1/1","alternateDisplayValue":"EVEN","decimal":2.0,"fraction":"1/1","american":"EVEN"},"moneyLine":{"value":2.05,"displayValue":"21/20","alternateDisplayValue":"+105","decimal":2.05,"fraction":"21/20","american":"+105"}},"current":{"pointSpread":{"alternateDisplayValue":"-0.5","american":"-0.5"},"spread":{"value":8.5,"displayValue":"15/2","alternateDisplayValue":"+750","decimal":8.5,"fraction":"15/2","american":"+750"},"moneyLine":{"value":14.0,"displayValue":"13/1","alternateDisplayValue":"+1300","decimal":14.0,"fraction":"13/1","american":"+1300"}},"team":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/174?lang=en&region=us"}},"homeTeamOdds":{"favorite":false,"underdog":true,"moneyLine":2300,"spreadOdds":-7500.0,"open":{"favorite":false,"pointSpread":{"value":1.714,"displayValue":"5/7","alternateDisplayValue":"+0.5","decimal":1.714,"fraction":"5/7","american":"+0.5"},"spread":{"value":1.714,"displayValue":"5/7","alternateDisplayValue":"-140","decimal":1.714,"fraction":"5/7","american":"-140"},"moneyLine":{"value":3.25,"displayValue":"9/4","alternateDisplayValue":"+225","decimal":3.25,"fraction":"9/4","american":"+225"}},"current":{"pointSpread":{"alternateDisplayValue":"+0.5","american":"+0.5"},"spread":{"value":1.013,"displayValue":"1/75","alternateDisplayValue":"-7500","decimal":1.013,"fraction":"1/75","american":"-7500"},"moneyLine":{"value":24.0,"displayValue":"23/1","alternateDisplayValue":"+2300","decimal":24.0,"fraction":"23/1","american":"+2300"}},"team":{"$ref":"http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/3243?lang=en&region=us"}},"drawOdds":{"moneyLine":-2500.0},"links":[{"language":"en-US","rel":["home","desktop","bets","espn-bet---live-odds"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=724b51ae-8433-413b-84b4-a74454216679&odds_numerator[0]=24&odds_denominator[0]=1","text":"Home Bet","shortText":"Home Bet","isExternal":true,"isPremium":false},{"language":"en-US","rel":["away","desktop","bets","espn-bet---live-odds"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=09b47aeb-44bf-452b-b23e-6b04015e6a6c&odds_numerator[0]=14&odds_denominator[0]=1","text":"Away Bet","shortText":"Away Bet","isExternal":true,"isPremium":false},{"language":"en-US","rel":["draw","desktop","bets","espn-bet---live-odds"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=0d8600ef-ea68-4f74-812c-0a8e7116a335&odds_numerator[0]=26&odds_denominator[0]=25","text":"Draw Bet","shortText":"Draw Bet","isExternal":true,"isPremium":false},{"language":"en-US","rel":["homeSpread","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=7dcf80af-5560-47ec-8954-c15dc20a92d2&odds_numerator[0]=76&odds_denominator[0]=75","text":"Home Point Spread","shortText":"Home Point Spread","isExternal":true,"isPremium":false},{"language":"en-US","rel":["awaySpread","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=0c2da5d9-401b-4182-be31-3fc8f3706703&odds_numerator[0]=17&odds_denominator[0]=2","text":"Away Point Spread","shortText":"Away Point Spread","isExternal":true,"isPremium":false},{"language":"en-US","rel":["over","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=f11f64aa-a623-4829-9e89-e2e9886dd363&odds_numerator[0]=8&odds_denominator[0]=1","text":"Over Odds","shortText":"Over Odds","isExternal":true,"isPremium":false},{"language":"en-US","rel":["under","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=a1142fda-9f41-4412-b8dd-fbbaf85ceb35&odds_numerator[0]=26&odds_denominator[0]=25","text":"Under Odds","shortText":"Under Odds","isExternal":true,"isPremium":false},{"language":"en-US","rel":["game","desktop","bets"],"href":"https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96","text":"Game","shortText":"Game","isExternal":true,"isPremium":false}],"moneylineWinner":false,"spreadWinner":false,"open":{"over":{"value":1.588,"displayValue":"10/17","alternateDisplayValue":"-170","decimal":1.588,"fraction":"10/17","american":"-170"},"under":{"value":2.2,"displayValue":"6/5","alternateDisplayValue":"+120","decimal":2.2,"fraction":"6/5","american":"+120"},"total":{"value":1.588,"displayValue":"10/17","alternateDisplayValue":"2.5","decimal":1.588,"fraction":"10/17","american":"2.5"},"draw":{"value":3.6,"displayValue":"13/5","alternateDisplayValue":"+260","decimal":3.6,"fraction":"13/5","american":"+260"}},"current":{"over":{"value":8.0,"displayValue":"7/1","alternateDisplayValue":"+700","decimal":8.0,"fraction":"7/1","american":"+700"},"under":{"value":1.04,"displayValue":"1/25","alternateDisplayValue":"-2500","decimal":1.04,"fraction":"1/25","american":"-2500"},"total":{"alternateDisplayValue":"0.5","american":"0.5"},"draw":{"value":1.04,"displayValue":"1/25","alternateDisplayValue":"-2500","decimal":1.04,"fraction":"1/25","american":"-2500"}}}]}{
+  "count": 3,
+  "pageIndex": 1,
+  "pageSize": 25,
+  "pageCount": 1,
+  "items": [
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/events/706555/competitions/706555/odds/2000?lang=en&region=us",
+      "provider": {
+        "id": "2000",
+        "name": "Bet 365",
+        "priority": 0
+      },
+      "awayTeamOdds": {
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/174?lang=en&region=us"
+        },
+        "odds": {
+          "summary": "13/2",
+          "value": 7.5,
+          "handicap": 0.0
+        }
+      },
+      "homeTeamOdds": {
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/3243?lang=en&region=us"
+        },
+        "odds": {
+          "summary": "16/1",
+          "value": 17.0,
+          "handicap": 0.0
+        }
+      },
+      "drawOdds": {
+        "summary": "1/7",
+        "value": 1.143,
+        "handicap": 0.0
+      },
+      "bettingOdds": {
+        "homeTeam": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/3243?lang=en&region=us"
+        },
+        "awayTeam": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/174?lang=en&region=us"
+        },
+        "teamOdds": {
+          "preMatchFullTimeResultDraw": {
+            "oddId": "1798546683",
+            "value": "12/5",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1798546683~12/5&bet=1"
+          },
+          "liveGoalLineOver": {
+            "oddId": "1861330822",
+            "value": "9/1",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330822~9/1&bet=1"
+          },
+          "liveOverUnderHandicap": {
+            "oddId": "1861330822",
+            "value": "0.5",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330822~0.5&bet=1"
+          },
+          "liveDoubleChanceHomeOrDraw": {
+            "oddId": "1861330874",
+            "value": "1/25",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330874~1/25&bet=1"
+          },
+          "preMatchDoubleChanceHomeOrAway": {
+            "oddId": "1800355231",
+            "value": "3/10",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1800355231~3/10&bet=1"
+          },
+          "preMatchGoalLineOver": {
+            "oddId": "1798546689",
+            "value": "22/25",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061075-1798546689~22/25&bet=1"
+          },
+          "preMatchDoubleChanceHomeOrDraw": {
+            "oddId": "1800355235",
+            "value": "4/6",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1800355235~4/6&bet=1"
+          },
+          "liveDoubleChanceHomeOrAway": {
+            "oddId": "1861330876",
+            "value": "10/1",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330876~10/1&bet=1"
+          },
+          "liveGoalLineUnder": {
+            "oddId": "1861330835",
+            "value": "1/16",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330835~1/16&bet=1"
+          },
+          "preMatchFullTimeResultAway": {
+            "oddId": "1798546684",
+            "value": "6/5",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1798546684~6/5&bet=1"
+          },
+          "preMatchDoubleChanceDrawOrAway": {
+            "oddId": "1800355229",
+            "value": "1/3",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1800355229~1/3&bet=1"
+          },
+          "liveFullTimeResultHome": {
+            "oddId": "1861330755",
+            "value": "33/1",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330755~33/1&bet=1"
+          },
+          "liveFullTimeResultDraw": {
+            "oddId": "1861330785",
+            "value": "1/66",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330785~1/66&bet=1"
+          },
+          "preMatchOverUnderHandicap": {
+            "oddId": "1798546689",
+            "value": "2.5",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061075-1798546689~2.5&bet=1"
+          },
+          "preMatchFullTimeResultHome": {
+            "oddId": "1798546682",
+            "value": "23/10",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1798546682~23/10&bet=1"
+          },
+          "preMatchGoalLineUnder": {
+            "oddId": "1798546690",
+            "value": "51/50",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061075-1798546690~51/50&bet=1"
+          },
+          "liveFullTimeResultAway": {
+            "oddId": "1861330804",
+            "value": "20/1",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330804~20/1&bet=1"
+          },
+          "liveDoubleChanceDrawOrAway": {
+            "oddId": "1861330875",
+            "value": "1/100",
+            "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1861330875~1/100&bet=1"
+          }
+        },
+        "playerOdds": {
+          "preMatchFirstGoalScorer": [
+            {
+              "oddId": "1827563765",
+              "value": "9/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563765~9/2&bet=1",
+              "player": "Breel Embolo"
+            },
+            {
+              "oddId": "1827563715",
+              "value": "9/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563715~9/2&bet=1",
+              "player": "Folarin Balogun"
+            },
+            {
+              "oddId": "1827563687",
+              "value": "6/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563687~6/1&bet=1",
+              "player": "George Ilenikhena"
+            },
+            {
+              "oddId": "1827563703",
+              "value": "6/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563703~6/1&bet=1",
+              "player": "Lucas Michal"
+            },
+            {
+              "oddId": "1827563758",
+              "value": "13/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563758~13/2&bet=1",
+              "player": "Niama Sissoko"
+            },
+            {
+              "oddId": "1827563747",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563747~7/1&bet=1",
+              "player": "Joan Tincres"
+            },
+            {
+              "oddId": "1827563754",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563754~15/2&bet=1",
+              "player": "Eliesse Seghir"
+            },
+            {
+              "oddId": "1827563722",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563722~15/2&bet=1",
+              "player": "Keito Nakamura"
+            },
+            {
+              "oddId": "1827563757",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563757~15/2&bet=1",
+              "player": "Maghnes Akliouche"
+            },
+            {
+              "oddId": "1827563763",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563763~15/2&bet=1",
+              "player": "Takumi Minamino"
+            },
+            {
+              "oddId": "1827563719",
+              "value": "8/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563719~8/1&bet=1",
+              "player": "Krepin Diatta"
+            },
+            {
+              "oddId": "1827563727",
+              "value": "17/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563727~17/2&bet=1",
+              "player": "Alexandr Golovin"
+            },
+            {
+              "oddId": "1827563759",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563759~9/1&bet=1",
+              "player": "Amine Salama"
+            },
+            {
+              "oddId": "1827563751",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563751~9/1&bet=1",
+              "player": "Junya Ito"
+            },
+            {
+              "oddId": "1827563762",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563762~9/1&bet=1",
+              "player": "Mohamed Daramy"
+            },
+            {
+              "oddId": "1827563766",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563766~9/1&bet=1",
+              "player": "Oumar Diakite"
+            },
+            {
+              "oddId": "1827563749",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563749~9/1&bet=1",
+              "player": "Reda Khadra"
+            },
+            {
+              "oddId": "1827563712",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563712~9/1&bet=1",
+              "player": "Teddy Teuma"
+            },
+            {
+              "oddId": "1827563706",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563706~10/1&bet=1",
+              "player": "Denis Zakaria"
+            },
+            {
+              "oddId": "1827563734",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563734~10/1&bet=1",
+              "player": "Marshall Munetsi"
+            },
+            {
+              "oddId": "1827563739",
+              "value": "11/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563739~11/1&bet=1",
+              "player": "Mamadou Diakhon"
+            },
+            {
+              "oddId": "1827563750",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563750~12/1&bet=1",
+              "player": "Edan Diop"
+            },
+            {
+              "oddId": "1827563748",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563748~12/1&bet=1",
+              "player": "Lamine Camara"
+            },
+            {
+              "oddId": "1827563696",
+              "value": "14/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563696~14/1&bet=1",
+              "player": "No Goalscorer"
+            },
+            {
+              "oddId": "1827563742",
+              "value": "16/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563742~16/1&bet=1",
+              "player": "Mohamed Diadie"
+            },
+            {
+              "oddId": "1827563694",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563694~18/1&bet=1",
+              "player": "Amadou Kone"
+            },
+            {
+              "oddId": "1827563701",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563701~18/1&bet=1",
+              "player": "Mohamed Bamba"
+            },
+            {
+              "oddId": "1827563761",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563761~18/1&bet=1",
+              "player": "Stephane Singo"
+            },
+            {
+              "oddId": "1827563709",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563709~18/1&bet=1",
+              "player": "Valentin Atangana Edoa"
+            },
+            {
+              "oddId": "1827563767",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563767~18/1&bet=1",
+              "player": "Yaya Fofana"
+            },
+            {
+              "oddId": "1827563746",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563746~20/1&bet=1",
+              "player": "Aladji Bamba"
+            },
+            {
+              "oddId": "1827563755",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563755~20/1&bet=1",
+              "player": "Campos Vanderson"
+            },
+            {
+              "oddId": "1827563736",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563736~20/1&bet=1",
+              "player": "Christian Mawissa Elebi"
+            },
+            {
+              "oddId": "1827563744",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563744~20/1&bet=1",
+              "player": "de Salles Gabriel Moscardo"
+            },
+            {
+              "oddId": "1827563752",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563752~20/1&bet=1",
+              "player": "Emmanuel Agbadou"
+            },
+            {
+              "oddId": "1827563725",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563725~20/1&bet=1",
+              "player": "Saimon Bouabre"
+            },
+            {
+              "oddId": "1827563691",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563691~20/1&bet=1",
+              "player": "Samuel Nibombe"
+            },
+            {
+              "oddId": "1827563760",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563760~20/1&bet=1",
+              "player": "Sergio Akieme"
+            },
+            {
+              "oddId": "1827563764",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563764~20/1&bet=1",
+              "player": "Thilo Kehrer"
+            },
+            {
+              "oddId": "1827563733",
+              "value": "22/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563733~22/1&bet=1",
+              "player": "Aurelio Buta"
+            },
+            {
+              "oddId": "1827563756",
+              "value": "22/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563756~22/1&bet=1",
+              "player": "Soungoutou Magassa"
+            },
+            {
+              "oddId": "1827563680",
+              "value": "25/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563680~25/1&bet=1",
+              "player": "Kassoum Ouattara"
+            },
+            {
+              "oddId": "1827563740",
+              "value": "28/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563740~28/1&bet=1",
+              "player": "Bradel Kiwa"
+            },
+            {
+              "oddId": "1827563730",
+              "value": "28/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563730~28/1&bet=1",
+              "player": "Eliot Matazo"
+            },
+            {
+              "oddId": "1827563728",
+              "value": "28/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563728~28/1&bet=1",
+              "player": "Maxime Busi"
+            },
+            {
+              "oddId": "1827563732",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563732~33/1&bet=1",
+              "player": "Abdoul Kone"
+            },
+            {
+              "oddId": "1827563743",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563743~33/1&bet=1",
+              "player": "Caio Henrique"
+            },
+            {
+              "oddId": "1827563735",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563735~33/1&bet=1",
+              "player": "Cedric Kipre"
+            },
+            {
+              "oddId": "1827563753",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563753~33/1&bet=1",
+              "player": "Jordan Teze"
+            },
+            {
+              "oddId": "1827563737",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563737~33/1&bet=1",
+              "player": "Joseph Okumu"
+            },
+            {
+              "oddId": "1827563745",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563745~33/1&bet=1",
+              "player": "Mohammed Salisu"
+            },
+            {
+              "oddId": "1827563741",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563741~33/1&bet=1",
+              "player": "Nhoa Sangui"
+            },
+            {
+              "oddId": "1827563738",
+              "value": "50/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563738~50/1&bet=1",
+              "player": "Thibault De Smet"
+            }
+          ],
+          "preMatchAnyTimeGoalScorer": [
+            {
+              "oddId": "1827563916",
+              "value": "7/5",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563916~7/5&bet=1",
+              "player": "Breel Embolo"
+            },
+            {
+              "oddId": "1827563936",
+              "value": "7/5",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563936~7/5&bet=1",
+              "player": "Folarin Balogun"
+            },
+            {
+              "oddId": "1827563914",
+              "value": "2/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563914~2/1&bet=1",
+              "player": "George Ilenikhena"
+            },
+            {
+              "oddId": "1827563919",
+              "value": "2/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563919~2/1&bet=1",
+              "player": "Lucas Michal"
+            },
+            {
+              "oddId": "1827563912",
+              "value": "11/5",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563912~11/5&bet=1",
+              "player": "Niama Sissoko"
+            },
+            {
+              "oddId": "1827563900",
+              "value": "12/5",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563900~12/5&bet=1",
+              "player": "Joan Tincres"
+            },
+            {
+              "oddId": "1827563938",
+              "value": "5/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563938~5/2&bet=1",
+              "player": "Eliesse Seghir"
+            },
+            {
+              "oddId": "1827563898",
+              "value": "5/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563898~5/2&bet=1",
+              "player": "Keito Nakamura"
+            },
+            {
+              "oddId": "1827563869",
+              "value": "5/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563869~5/2&bet=1",
+              "player": "Maghnes Akliouche"
+            },
+            {
+              "oddId": "1827563908",
+              "value": "5/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563908~5/2&bet=1",
+              "player": "Takumi Minamino"
+            },
+            {
+              "oddId": "1827563882",
+              "value": "11/4",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563882~11/4&bet=1",
+              "player": "Krepin Diatta"
+            },
+            {
+              "oddId": "1827563940",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563940~3/1&bet=1",
+              "player": "Alexandr Golovin"
+            },
+            {
+              "oddId": "1827563866",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563866~3/1&bet=1",
+              "player": "Amine Salama"
+            },
+            {
+              "oddId": "1827563892",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563892~3/1&bet=1",
+              "player": "Junya Ito"
+            },
+            {
+              "oddId": "1827563934",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563934~3/1&bet=1",
+              "player": "Mohamed Daramy"
+            },
+            {
+              "oddId": "1827563893",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563893~3/1&bet=1",
+              "player": "Oumar Diakite"
+            },
+            {
+              "oddId": "1827563929",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563929~3/1&bet=1",
+              "player": "Reda Khadra"
+            },
+            {
+              "oddId": "1827563884",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563884~3/1&bet=1",
+              "player": "Teddy Teuma"
+            },
+            {
+              "oddId": "1827563923",
+              "value": "7/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563923~7/2&bet=1",
+              "player": "Denis Zakaria"
+            },
+            {
+              "oddId": "1827563865",
+              "value": "7/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563865~7/2&bet=1",
+              "player": "Marshall Munetsi"
+            },
+            {
+              "oddId": "1827563880",
+              "value": "15/4",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563880~15/4&bet=1",
+              "player": "Mamadou Diakhon"
+            },
+            {
+              "oddId": "1827563875",
+              "value": "4/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563875~4/1&bet=1",
+              "player": "Edan Diop"
+            },
+            {
+              "oddId": "1827563886",
+              "value": "4/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563886~4/1&bet=1",
+              "player": "Lamine Camara"
+            },
+            {
+              "oddId": "1827563878",
+              "value": "11/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563878~11/2&bet=1",
+              "player": "Mohamed Diadie"
+            },
+            {
+              "oddId": "1827563885",
+              "value": "13/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563885~13/2&bet=1",
+              "player": "Amadou Kone"
+            },
+            {
+              "oddId": "1827563889",
+              "value": "13/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563889~13/2&bet=1",
+              "player": "Mohamed Bamba"
+            },
+            {
+              "oddId": "1827563879",
+              "value": "13/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563879~13/2&bet=1",
+              "player": "Stephane Singo"
+            },
+            {
+              "oddId": "1827563910",
+              "value": "13/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563910~13/2&bet=1",
+              "player": "Valentin Atangana Edoa"
+            },
+            {
+              "oddId": "1827563942",
+              "value": "13/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563942~13/2&bet=1",
+              "player": "Yaya Fofana"
+            },
+            {
+              "oddId": "1827563915",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563915~7/1&bet=1",
+              "player": "Aladji Bamba"
+            },
+            {
+              "oddId": "1827563918",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563918~7/1&bet=1",
+              "player": "Campos Vanderson"
+            },
+            {
+              "oddId": "1827563901",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563901~7/1&bet=1",
+              "player": "Christian Mawissa Elebi"
+            },
+            {
+              "oddId": "1827563872",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563872~7/1&bet=1",
+              "player": "de Salles Gabriel Moscardo"
+            },
+            {
+              "oddId": "1827563877",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563877~7/1&bet=1",
+              "player": "Emmanuel Agbadou"
+            },
+            {
+              "oddId": "1827563913",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563913~7/1&bet=1",
+              "player": "Saimon Bouabre"
+            },
+            {
+              "oddId": "1827563871",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563871~7/1&bet=1",
+              "player": "Samuel Nibombe"
+            },
+            {
+              "oddId": "1827563881",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563881~7/1&bet=1",
+              "player": "Sergio Akieme"
+            },
+            {
+              "oddId": "1827563867",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563867~7/1&bet=1",
+              "player": "Thilo Kehrer"
+            },
+            {
+              "oddId": "1827563891",
+              "value": "8/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563891~8/1&bet=1",
+              "player": "Aurelio Buta"
+            },
+            {
+              "oddId": "1827563888",
+              "value": "8/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563888~8/1&bet=1",
+              "player": "Soungoutou Magassa"
+            },
+            {
+              "oddId": "1827563883",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563883~9/1&bet=1",
+              "player": "Kassoum Ouattara"
+            },
+            {
+              "oddId": "1827563903",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563903~10/1&bet=1",
+              "player": "Bradel Kiwa"
+            },
+            {
+              "oddId": "1827563874",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563874~10/1&bet=1",
+              "player": "Eliot Matazo"
+            },
+            {
+              "oddId": "1827563873",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563873~10/1&bet=1",
+              "player": "Maxime Busi"
+            },
+            {
+              "oddId": "1827563907",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563907~12/1&bet=1",
+              "player": "Abdoul Kone"
+            },
+            {
+              "oddId": "1827563902",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563902~12/1&bet=1",
+              "player": "Caio Henrique"
+            },
+            {
+              "oddId": "1827563876",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563876~12/1&bet=1",
+              "player": "Cedric Kipre"
+            },
+            {
+              "oddId": "1827563890",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563890~12/1&bet=1",
+              "player": "Jordan Teze"
+            },
+            {
+              "oddId": "1827563945",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563945~12/1&bet=1",
+              "player": "Joseph Okumu"
+            },
+            {
+              "oddId": "1827563887",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563887~12/1&bet=1",
+              "player": "Mohammed Salisu"
+            },
+            {
+              "oddId": "1827563896",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563896~12/1&bet=1",
+              "player": "Nhoa Sangui"
+            },
+            {
+              "oddId": "1827563906",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563906~18/1&bet=1",
+              "player": "Thibault De Smet"
+            }
+          ],
+          "liveAnyTimeGoalScorer": [
+            {
+              "oddId": "1875763478",
+              "value": "12/5",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763478~12/5&bet=1",
+              "player": "George Ilenikhena"
+            },
+            {
+              "oddId": "1875763521",
+              "value": "11/4",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763521~11/4&bet=1",
+              "player": "Eliesse Seghir"
+            },
+            {
+              "oddId": "1875763496",
+              "value": "11/4",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763496~11/4&bet=1",
+              "player": "Keito Nakamura"
+            },
+            {
+              "oddId": "1875763541",
+              "value": "11/4",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763541~11/4&bet=1",
+              "player": "Takumi Minamino"
+            },
+            {
+              "oddId": "1875763557",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763557~3/1&bet=1",
+              "player": "Junya Ito"
+            },
+            {
+              "oddId": "1875763579",
+              "value": "3/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763579~3/1&bet=1",
+              "player": "Oumar Diakite"
+            },
+            {
+              "oddId": "1875763595",
+              "value": "10/3",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763595~10/3&bet=1",
+              "player": "Alexandr Golovin"
+            },
+            {
+              "oddId": "1875763613",
+              "value": "15/4",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763613~15/4&bet=1",
+              "player": "Marshall Munetsi"
+            },
+            {
+              "oddId": "1875763645",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763645~7/1&bet=1",
+              "player": "Amadou Kone"
+            },
+            {
+              "oddId": "1875763667",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763667~7/1&bet=1",
+              "player": "Stephane Singo"
+            },
+            {
+              "oddId": "1875763629",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763629~7/1&bet=1",
+              "player": "Valentin Atangana Edoa"
+            },
+            {
+              "oddId": "1875763683",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763683~15/2&bet=1",
+              "player": "Emmanuel Agbadou"
+            },
+            {
+              "oddId": "1875763702",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763702~15/2&bet=1",
+              "player": "Sergio Akieme"
+            },
+            {
+              "oddId": "1875764221",
+              "value": "8/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764221~8/1&bet=1",
+              "player": "Breel Embolo"
+            },
+            {
+              "oddId": "1875763761",
+              "value": "17/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763761~17/2&bet=1",
+              "player": "Aurelio Buta"
+            },
+            {
+              "oddId": "1875763741",
+              "value": "17/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763741~17/2&bet=1",
+              "player": "Christian Mawissa Elebi"
+            },
+            {
+              "oddId": "1875763724",
+              "value": "17/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763724~17/2&bet=1",
+              "player": "Thilo Kehrer"
+            },
+            {
+              "oddId": "1875763795",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763795~10/1&bet=1",
+              "player": "Kassoum Ouattara"
+            },
+            {
+              "oddId": "1875763782",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763782~10/1&bet=1",
+              "player": "Soungoutou Magassa"
+            },
+            {
+              "oddId": "1875763896",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763896~12/1&bet=1",
+              "player": "Cedric Kipre"
+            },
+            {
+              "oddId": "1875764069",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764069~12/1&bet=1",
+              "player": "Maghnes Akliouche"
+            },
+            {
+              "oddId": "1875763854",
+              "value": "14/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763854~14/1&bet=1",
+              "player": "Jordan Teze"
+            },
+            {
+              "oddId": "1875763965",
+              "value": "25/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763965~25/1&bet=1",
+              "player": "Amine Salama"
+            },
+            {
+              "oddId": "1875764129",
+              "value": "25/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764129~25/1&bet=1",
+              "player": "Lamine Camara"
+            },
+            {
+              "oddId": "1875763910",
+              "value": "25/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875763910~25/1&bet=1",
+              "player": "Yaya Fofana"
+            },
+            {
+              "oddId": "1875764317",
+              "value": "28/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764317~28/1&bet=1",
+              "player": "Mamadou Diakhon"
+            },
+            {
+              "oddId": "1875764465",
+              "value": "40/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764465~40/1&bet=1",
+              "player": "Mohammed Salisu"
+            },
+            {
+              "oddId": "1875764023",
+              "value": "80/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166569319-1875764023~80/1&bet=1",
+              "player": "Caio Henrique"
+            }
+          ],
+          "preMatchLastGoalScorer": [
+            {
+              "oddId": "1827563821",
+              "value": "9/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563821~9/2&bet=1",
+              "player": "Breel Embolo"
+            },
+            {
+              "oddId": "1827563864",
+              "value": "9/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563864~9/2&bet=1",
+              "player": "Folarin Balogun"
+            },
+            {
+              "oddId": "1827563785",
+              "value": "6/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563785~6/1&bet=1",
+              "player": "George Ilenikhena"
+            },
+            {
+              "oddId": "1827563853",
+              "value": "6/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563853~6/1&bet=1",
+              "player": "Lucas Michal"
+            },
+            {
+              "oddId": "1827563789",
+              "value": "13/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563789~13/2&bet=1",
+              "player": "Niama Sissoko"
+            },
+            {
+              "oddId": "1827563855",
+              "value": "7/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563855~7/1&bet=1",
+              "player": "Joan Tincres"
+            },
+            {
+              "oddId": "1827563794",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563794~15/2&bet=1",
+              "player": "Eliesse Seghir"
+            },
+            {
+              "oddId": "1827563797",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563797~15/2&bet=1",
+              "player": "Keito Nakamura"
+            },
+            {
+              "oddId": "1827563857",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563857~15/2&bet=1",
+              "player": "Maghnes Akliouche"
+            },
+            {
+              "oddId": "1827563792",
+              "value": "15/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563792~15/2&bet=1",
+              "player": "Takumi Minamino"
+            },
+            {
+              "oddId": "1827563790",
+              "value": "8/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563790~8/1&bet=1",
+              "player": "Krepin Diatta"
+            },
+            {
+              "oddId": "1827563838",
+              "value": "17/2",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563838~17/2&bet=1",
+              "player": "Alexandr Golovin"
+            },
+            {
+              "oddId": "1827563859",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563859~9/1&bet=1",
+              "player": "Amine Salama"
+            },
+            {
+              "oddId": "1827563777",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563777~9/1&bet=1",
+              "player": "Junya Ito"
+            },
+            {
+              "oddId": "1827563799",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563799~9/1&bet=1",
+              "player": "Mohamed Daramy"
+            },
+            {
+              "oddId": "1827563772",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563772~9/1&bet=1",
+              "player": "Oumar Diakite"
+            },
+            {
+              "oddId": "1827563793",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563793~9/1&bet=1",
+              "player": "Reda Khadra"
+            },
+            {
+              "oddId": "1827563769",
+              "value": "9/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563769~9/1&bet=1",
+              "player": "Teddy Teuma"
+            },
+            {
+              "oddId": "1827563775",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563775~10/1&bet=1",
+              "player": "Denis Zakaria"
+            },
+            {
+              "oddId": "1827563863",
+              "value": "10/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563863~10/1&bet=1",
+              "player": "Marshall Munetsi"
+            },
+            {
+              "oddId": "1827563858",
+              "value": "11/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563858~11/1&bet=1",
+              "player": "Mamadou Diakhon"
+            },
+            {
+              "oddId": "1827563779",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563779~12/1&bet=1",
+              "player": "Edan Diop"
+            },
+            {
+              "oddId": "1827563846",
+              "value": "12/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563846~12/1&bet=1",
+              "player": "Lamine Camara"
+            },
+            {
+              "oddId": "1827563770",
+              "value": "14/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563770~14/1&bet=1",
+              "player": "No Goalscorer"
+            },
+            {
+              "oddId": "1827563860",
+              "value": "16/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563860~16/1&bet=1",
+              "player": "Mohamed Diadie"
+            },
+            {
+              "oddId": "1827563786",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563786~18/1&bet=1",
+              "player": "Amadou Kone"
+            },
+            {
+              "oddId": "1827563852",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563852~18/1&bet=1",
+              "player": "Mohamed Bamba"
+            },
+            {
+              "oddId": "1827563778",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563778~18/1&bet=1",
+              "player": "Stephane Singo"
+            },
+            {
+              "oddId": "1827563796",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563796~18/1&bet=1",
+              "player": "Valentin Atangana Edoa"
+            },
+            {
+              "oddId": "1827563771",
+              "value": "18/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563771~18/1&bet=1",
+              "player": "Yaya Fofana"
+            },
+            {
+              "oddId": "1827563774",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563774~20/1&bet=1",
+              "player": "Aladji Bamba"
+            },
+            {
+              "oddId": "1827563847",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563847~20/1&bet=1",
+              "player": "Campos Vanderson"
+            },
+            {
+              "oddId": "1827563805",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563805~20/1&bet=1",
+              "player": "Christian Mawissa Elebi"
+            },
+            {
+              "oddId": "1827563783",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563783~20/1&bet=1",
+              "player": "de Salles Gabriel Moscardo"
+            },
+            {
+              "oddId": "1827563788",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563788~20/1&bet=1",
+              "player": "Emmanuel Agbadou"
+            },
+            {
+              "oddId": "1827563776",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563776~20/1&bet=1",
+              "player": "Saimon Bouabre"
+            },
+            {
+              "oddId": "1827563848",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563848~20/1&bet=1",
+              "player": "Samuel Nibombe"
+            },
+            {
+              "oddId": "1827563773",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563773~20/1&bet=1",
+              "player": "Sergio Akieme"
+            },
+            {
+              "oddId": "1827563798",
+              "value": "20/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563798~20/1&bet=1",
+              "player": "Thilo Kehrer"
+            },
+            {
+              "oddId": "1827563782",
+              "value": "22/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563782~22/1&bet=1",
+              "player": "Aurelio Buta"
+            },
+            {
+              "oddId": "1827563768",
+              "value": "22/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563768~22/1&bet=1",
+              "player": "Soungoutou Magassa"
+            },
+            {
+              "oddId": "1827563854",
+              "value": "25/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563854~25/1&bet=1",
+              "player": "Kassoum Ouattara"
+            },
+            {
+              "oddId": "1827563849",
+              "value": "28/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563849~28/1&bet=1",
+              "player": "Bradel Kiwa"
+            },
+            {
+              "oddId": "1827563784",
+              "value": "28/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563784~28/1&bet=1",
+              "player": "Eliot Matazo"
+            },
+            {
+              "oddId": "1827563862",
+              "value": "28/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563862~28/1&bet=1",
+              "player": "Maxime Busi"
+            },
+            {
+              "oddId": "1827563781",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563781~33/1&bet=1",
+              "player": "Abdoul Kone"
+            },
+            {
+              "oddId": "1827563861",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563861~33/1&bet=1",
+              "player": "Caio Henrique"
+            },
+            {
+              "oddId": "1827563787",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563787~33/1&bet=1",
+              "player": "Cedric Kipre"
+            },
+            {
+              "oddId": "1827563780",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563780~33/1&bet=1",
+              "player": "Jordan Teze"
+            },
+            {
+              "oddId": "1827563856",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563856~33/1&bet=1",
+              "player": "Joseph Okumu"
+            },
+            {
+              "oddId": "1827563800",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563800~33/1&bet=1",
+              "player": "Mohammed Salisu"
+            },
+            {
+              "oddId": "1827563791",
+              "value": "33/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563791~33/1&bet=1",
+              "player": "Nhoa Sangui"
+            },
+            {
+              "oddId": "1827563795",
+              "value": "50/1",
+              "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=166061074-1827563795~50/1&bet=1",
+              "player": "Thibault De Smet"
+            }
+          ]
+        }
+      },
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "home",
+            "desktop",
+            "bets",
+            "bet-365"
+          ],
+          "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=166569319-1861330755~16/1",
+          "text": "Home Bet",
+          "shortText": "Home Bet",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "away",
+            "desktop",
+            "bets",
+            "bet-365"
+          ],
+          "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=166569319-1861330804~13/2",
+          "text": "Away Bet",
+          "shortText": "Away Bet",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "draw",
+            "desktop",
+            "bets",
+            "bet-365"
+          ],
+          "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=166569319-1861330785~1/7",
+          "text": "Draw Bet",
+          "shortText": "Draw Bet",
+          "isExternal": true,
+          "isPremium": false
+        }
+      ],
+      "moneylineWinner": false,
+      "spreadWinner": false
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/events/706555/competitions/706555/odds/58?lang=en&region=us",
+      "provider": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/providers/58?lang=en&region=us",
+        "id": "58",
+        "name": "ESPN BET",
+        "priority": 0
+      },
+      "details": "MON -0.5",
+      "overUnder": 2.5,
+      "spread": 0.5,
+      "overOdds": -125.0,
+      "underOdds": -105.0,
+      "awayTeamOdds": {
+        "favorite": true,
+        "underdog": false,
+        "moneyLine": 120,
+        "spreadOdds": 105.0,
+        "open": {
+          "favorite": true,
+          "pointSpread": {
+            "alternateDisplayValue": "-0.5",
+            "american": "-0.5"
+          },
+          "spread": {
+            "value": 2.0,
+            "displayValue": "1/1",
+            "alternateDisplayValue": "EVEN",
+            "decimal": 2.0,
+            "fraction": "1/1",
+            "american": "EVEN"
+          },
+          "moneyLine": {
+            "value": 2.05,
+            "displayValue": "21/20",
+            "alternateDisplayValue": "+105",
+            "decimal": 2.05,
+            "fraction": "21/20",
+            "american": "+105"
+          }
+        },
+        "close": {
+          "pointSpread": {
+            "alternateDisplayValue": "-0.5",
+            "american": "-0.5"
+          },
+          "spread": {
+            "value": 2.05,
+            "displayValue": "21/20",
+            "alternateDisplayValue": "+105",
+            "decimal": 2.05,
+            "fraction": "21/20",
+            "american": "+105"
+          },
+          "moneyLine": {
+            "value": 2.2,
+            "displayValue": "6/5",
+            "alternateDisplayValue": "+120",
+            "decimal": 2.2,
+            "fraction": "6/5",
+            "american": "+120"
+          }
+        },
+        "current": {
+          "pointSpread": {
+            "alternateDisplayValue": "-0.5",
+            "american": "-0.5"
+          },
+          "spread": {
+            "value": 2.05,
+            "displayValue": "21/20",
+            "alternateDisplayValue": "+105",
+            "decimal": 2.05,
+            "fraction": "21/20",
+            "american": "+105"
+          },
+          "moneyLine": {
+            "value": 2.2,
+            "displayValue": "6/5",
+            "alternateDisplayValue": "+120",
+            "decimal": 2.2,
+            "fraction": "6/5",
+            "american": "+120"
+          }
+        },
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/174?lang=en&region=us"
+        }
+      },
+      "homeTeamOdds": {
+        "favorite": false,
+        "underdog": true,
+        "moneyLine": 230,
+        "spreadOdds": -150.0,
+        "open": {
+          "favorite": false,
+          "pointSpread": {
+            "value": 1.714,
+            "displayValue": "5/7",
+            "alternateDisplayValue": "+0.5",
+            "decimal": 1.714,
+            "fraction": "5/7",
+            "american": "+0.5"
+          },
+          "spread": {
+            "value": 1.714,
+            "displayValue": "5/7",
+            "alternateDisplayValue": "-140",
+            "decimal": 1.714,
+            "fraction": "5/7",
+            "american": "-140"
+          },
+          "moneyLine": {
+            "value": 3.25,
+            "displayValue": "9/4",
+            "alternateDisplayValue": "+225",
+            "decimal": 3.25,
+            "fraction": "9/4",
+            "american": "+225"
+          }
+        },
+        "close": {
+          "pointSpread": {
+            "alternateDisplayValue": "+0.5",
+            "american": "+0.5"
+          },
+          "spread": {
+            "value": 1.667,
+            "displayValue": "2/3",
+            "alternateDisplayValue": "-150",
+            "decimal": 1.667,
+            "fraction": "2/3",
+            "american": "-150"
+          },
+          "moneyLine": {
+            "value": 3.3,
+            "displayValue": "23/10",
+            "alternateDisplayValue": "+230",
+            "decimal": 3.3,
+            "fraction": "23/10",
+            "american": "+230"
+          }
+        },
+        "current": {
+          "pointSpread": {
+            "alternateDisplayValue": "+0.5",
+            "american": "+0.5"
+          },
+          "spread": {
+            "value": 1.667,
+            "displayValue": "2/3",
+            "alternateDisplayValue": "-150",
+            "decimal": 1.667,
+            "fraction": "2/3",
+            "american": "-150"
+          },
+          "moneyLine": {
+            "value": 3.3,
+            "displayValue": "23/10",
+            "alternateDisplayValue": "+230",
+            "decimal": 3.3,
+            "fraction": "23/10",
+            "american": "+230"
+          }
+        },
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/3243?lang=en&region=us"
+        }
+      },
+      "drawOdds": {
+        "moneyLine": 235.0
+      },
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "home",
+            "desktop",
+            "bets",
+            "espn-bet"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=724b51ae-8433-413b-84b4-a74454216679&odds_numerator[0]=33&odds_denominator[0]=10",
+          "text": "Home Bet",
+          "shortText": "Home Bet",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "away",
+            "desktop",
+            "bets",
+            "espn-bet"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=09b47aeb-44bf-452b-b23e-6b04015e6a6c&odds_numerator[0]=11&odds_denominator[0]=5",
+          "text": "Away Bet",
+          "shortText": "Away Bet",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "draw",
+            "desktop",
+            "bets",
+            "espn-bet"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=0d8600ef-ea68-4f74-812c-0a8e7116a335&odds_numerator[0]=67&odds_denominator[0]=20",
+          "text": "Draw Bet",
+          "shortText": "Draw Bet",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "homeSpread",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=7dcf80af-5560-47ec-8954-c15dc20a92d2&odds_numerator[0]=5&odds_denominator[0]=3",
+          "text": "Home Point Spread",
+          "shortText": "Home Point Spread",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "awaySpread",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=0c2da5d9-401b-4182-be31-3fc8f3706703&odds_numerator[0]=41&odds_denominator[0]=20",
+          "text": "Away Point Spread",
+          "shortText": "Away Point Spread",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "over",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=ada7d59a-59b2-43c9-9a52-71bc4a5c4402&odds_numerator[0]=9&odds_denominator[0]=5",
+          "text": "Over Odds",
+          "shortText": "Over Odds",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "under",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=15c6ab22-102c-47ab-a8c4-62819e4c874e&odds_numerator[0]=41&odds_denominator[0]=21",
+          "text": "Under Odds",
+          "shortText": "Under Odds",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "game",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96",
+          "text": "Game",
+          "shortText": "Game",
+          "isExternal": true,
+          "isPremium": false
+        }
+      ],
+      "moneylineWinner": false,
+      "spreadWinner": false,
+      "open": {
+        "over": {
+          "value": 1.588,
+          "displayValue": "10/17",
+          "alternateDisplayValue": "-170",
+          "decimal": 1.588,
+          "fraction": "10/17",
+          "american": "-170"
+        },
+        "under": {
+          "value": 2.2,
+          "displayValue": "6/5",
+          "alternateDisplayValue": "+120",
+          "decimal": 2.2,
+          "fraction": "6/5",
+          "american": "+120"
+        },
+        "total": {
+          "value": 1.588,
+          "displayValue": "10/17",
+          "alternateDisplayValue": "2.5",
+          "decimal": 1.588,
+          "fraction": "10/17",
+          "american": "2.5"
+        },
+        "draw": {
+          "value": 3.6,
+          "displayValue": "13/5",
+          "alternateDisplayValue": "+260",
+          "decimal": 3.6,
+          "fraction": "13/5",
+          "american": "+260"
+        }
+      },
+      "close": {
+        "over": {
+          "value": 1.8,
+          "displayValue": "4/5",
+          "alternateDisplayValue": "-125",
+          "decimal": 1.8,
+          "fraction": "4/5",
+          "american": "-125"
+        },
+        "under": {
+          "value": 1.952,
+          "displayValue": "20/21",
+          "alternateDisplayValue": "-105",
+          "decimal": 1.952,
+          "fraction": "20/21",
+          "american": "-105"
+        },
+        "total": {
+          "alternateDisplayValue": "2.5",
+          "american": "2.5"
+        },
+        "draw": {
+          "value": 3.35,
+          "displayValue": "47/20",
+          "alternateDisplayValue": "+235",
+          "decimal": 3.35,
+          "fraction": "47/20",
+          "american": "+235"
+        }
+      },
+      "current": {
+        "over": {
+          "value": 1.8,
+          "displayValue": "4/5",
+          "alternateDisplayValue": "-125",
+          "decimal": 1.8,
+          "fraction": "4/5",
+          "american": "-125"
+        },
+        "under": {
+          "value": 1.952,
+          "displayValue": "20/21",
+          "alternateDisplayValue": "-105",
+          "decimal": 1.952,
+          "fraction": "20/21",
+          "american": "-105"
+        },
+        "total": {
+          "alternateDisplayValue": "2.5",
+          "american": "2.5"
+        },
+        "draw": {
+          "value": 3.35,
+          "displayValue": "47/20",
+          "alternateDisplayValue": "+235",
+          "decimal": 3.35,
+          "fraction": "47/20",
+          "american": "+235"
+        }
+      }
+    },
+    {
+      "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/events/706555/competitions/706555/odds/59?lang=en&region=us",
+      "provider": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/providers/59?lang=en&region=us",
+        "id": "59",
+        "name": "ESPN BET - Live Odds",
+        "priority": 0
+      },
+      "details": "MON -0.5",
+      "overUnder": 0.5,
+      "spread": 0.5,
+      "overOdds": 700.0,
+      "underOdds": -2500.0,
+      "awayTeamOdds": {
+        "favorite": true,
+        "underdog": false,
+        "moneyLine": 1300,
+        "spreadOdds": 750.0,
+        "open": {
+          "favorite": true,
+          "pointSpread": {
+            "alternateDisplayValue": "-0.5",
+            "american": "-0.5"
+          },
+          "spread": {
+            "value": 2.0,
+            "displayValue": "1/1",
+            "alternateDisplayValue": "EVEN",
+            "decimal": 2.0,
+            "fraction": "1/1",
+            "american": "EVEN"
+          },
+          "moneyLine": {
+            "value": 2.05,
+            "displayValue": "21/20",
+            "alternateDisplayValue": "+105",
+            "decimal": 2.05,
+            "fraction": "21/20",
+            "american": "+105"
+          }
+        },
+        "current": {
+          "pointSpread": {
+            "alternateDisplayValue": "-0.5",
+            "american": "-0.5"
+          },
+          "spread": {
+            "value": 8.5,
+            "displayValue": "15/2",
+            "alternateDisplayValue": "+750",
+            "decimal": 8.5,
+            "fraction": "15/2",
+            "american": "+750"
+          },
+          "moneyLine": {
+            "value": 14.0,
+            "displayValue": "13/1",
+            "alternateDisplayValue": "+1300",
+            "decimal": 14.0,
+            "fraction": "13/1",
+            "american": "+1300"
+          }
+        },
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/174?lang=en&region=us"
+        }
+      },
+      "homeTeamOdds": {
+        "favorite": false,
+        "underdog": true,
+        "moneyLine": 2300,
+        "spreadOdds": -7500.0,
+        "open": {
+          "favorite": false,
+          "pointSpread": {
+            "value": 1.714,
+            "displayValue": "5/7",
+            "alternateDisplayValue": "+0.5",
+            "decimal": 1.714,
+            "fraction": "5/7",
+            "american": "+0.5"
+          },
+          "spread": {
+            "value": 1.714,
+            "displayValue": "5/7",
+            "alternateDisplayValue": "-140",
+            "decimal": 1.714,
+            "fraction": "5/7",
+            "american": "-140"
+          },
+          "moneyLine": {
+            "value": 3.25,
+            "displayValue": "9/4",
+            "alternateDisplayValue": "+225",
+            "decimal": 3.25,
+            "fraction": "9/4",
+            "american": "+225"
+          }
+        },
+        "current": {
+          "pointSpread": {
+            "alternateDisplayValue": "+0.5",
+            "american": "+0.5"
+          },
+          "spread": {
+            "value": 1.013,
+            "displayValue": "1/75",
+            "alternateDisplayValue": "-7500",
+            "decimal": 1.013,
+            "fraction": "1/75",
+            "american": "-7500"
+          },
+          "moneyLine": {
+            "value": 24.0,
+            "displayValue": "23/1",
+            "alternateDisplayValue": "+2300",
+            "decimal": 24.0,
+            "fraction": "23/1",
+            "american": "+2300"
+          }
+        },
+        "team": {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1/seasons/2024/teams/3243?lang=en&region=us"
+        }
+      },
+      "drawOdds": {
+        "moneyLine": -2500.0
+      },
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "home",
+            "desktop",
+            "bets",
+            "espn-bet---live-odds"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=724b51ae-8433-413b-84b4-a74454216679&odds_numerator[0]=24&odds_denominator[0]=1",
+          "text": "Home Bet",
+          "shortText": "Home Bet",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "away",
+            "desktop",
+            "bets",
+            "espn-bet---live-odds"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=09b47aeb-44bf-452b-b23e-6b04015e6a6c&odds_numerator[0]=14&odds_denominator[0]=1",
+          "text": "Away Bet",
+          "shortText": "Away Bet",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "draw",
+            "desktop",
+            "bets",
+            "espn-bet---live-odds"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=0d8600ef-ea68-4f74-812c-0a8e7116a335&odds_numerator[0]=26&odds_denominator[0]=25",
+          "text": "Draw Bet",
+          "shortText": "Draw Bet",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "homeSpread",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=7dcf80af-5560-47ec-8954-c15dc20a92d2&odds_numerator[0]=76&odds_denominator[0]=75",
+          "text": "Home Point Spread",
+          "shortText": "Home Point Spread",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "awaySpread",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=0c2da5d9-401b-4182-be31-3fc8f3706703&odds_numerator[0]=17&odds_denominator[0]=2",
+          "text": "Away Point Spread",
+          "shortText": "Away Point Spread",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "over",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=f11f64aa-a623-4829-9e89-e2e9886dd363&odds_numerator[0]=8&odds_denominator[0]=1",
+          "text": "Over Odds",
+          "shortText": "Over Odds",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "under",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96&market_selection_id[0]=a1142fda-9f41-4412-b8dd-fbbaf85ceb35&odds_numerator[0]=26&odds_denominator[0]=25",
+          "text": "Under Odds",
+          "shortText": "Under Odds",
+          "isExternal": true,
+          "isPremium": false
+        },
+        {
+          "language": "en-US",
+          "rel": [
+            "game",
+            "desktop",
+            "bets"
+          ],
+          "href": "https://espnbet.app.link?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/soccer/organization/france/competition/ligue-1/event/22645ed1-0454-4c38-81b2-c295479f0a96",
+          "text": "Game",
+          "shortText": "Game",
+          "isExternal": true,
+          "isPremium": false
+        }
+      ],
+      "moneylineWinner": false,
+      "spreadWinner": false,
+      "open": {
+        "over": {
+          "value": 1.588,
+          "displayValue": "10/17",
+          "alternateDisplayValue": "-170",
+          "decimal": 1.588,
+          "fraction": "10/17",
+          "american": "-170"
+        },
+        "under": {
+          "value": 2.2,
+          "displayValue": "6/5",
+          "alternateDisplayValue": "+120",
+          "decimal": 2.2,
+          "fraction": "6/5",
+          "american": "+120"
+        },
+        "total": {
+          "value": 1.588,
+          "displayValue": "10/17",
+          "alternateDisplayValue": "2.5",
+          "decimal": 1.588,
+          "fraction": "10/17",
+          "american": "2.5"
+        },
+        "draw": {
+          "value": 3.6,
+          "displayValue": "13/5",
+          "alternateDisplayValue": "+260",
+          "decimal": 3.6,
+          "fraction": "13/5",
+          "american": "+260"
+        }
+      },
+      "current": {
+        "over": {
+          "value": 8.0,
+          "displayValue": "7/1",
+          "alternateDisplayValue": "+700",
+          "decimal": 8.0,
+          "fraction": "7/1",
+          "american": "+700"
+        },
+        "under": {
+          "value": 1.04,
+          "displayValue": "1/25",
+          "alternateDisplayValue": "-2500",
+          "decimal": 1.04,
+          "fraction": "1/25",
+          "american": "-2500"
+        },
+        "total": {
+          "alternateDisplayValue": "0.5",
+          "american": "0.5"
+        },
+        "draw": {
+          "value": 1.04,
+          "displayValue": "1/25",
+          "alternateDisplayValue": "-2500",
+          "decimal": 1.04,
+          "fraction": "1/25",
+          "american": "-2500"
+        }
+      }
+    }
+  ]
+}

@@ -378,6 +378,42 @@ class TestParseOddsData:
         assert result["odds_away"] is None
         assert result["over_under_line"] == Decimal("2.5")
 
+    def test_parse_format_2000(self):
+        """Provider 2000 uses bettingOdds + homeTeamOdds.odds.value."""
+        raw = {
+            "provider": {"id": "2000", "name": "Bet 365"},
+            "homeTeamOdds": {"odds": {"summary": "16/1", "value": 17.0}},
+            "awayTeamOdds": {"odds": {"summary": "13/2", "value": 7.5}},
+            "drawOdds": {"summary": "1/7", "value": 1.143},
+            "bettingOdds": {
+                "teamOdds": {
+                    "preMatchGoalLineOver": {"value": "22/25"},
+                    "preMatchGoalLineUnder": {"value": "19/20"},
+                    "preMatchOverUnderHandicap": {"value": "2.5"},
+                }
+            },
+        }
+        result = parse_odds_data(raw)
+        assert result["odds_home"] == Decimal("17.0")
+        assert result["odds_away"] == Decimal("7.5")
+        assert result["odds_draw"] == Decimal("1.143")
+        assert result["odds_over"] == Decimal("1.88")
+        assert result["odds_under"] == Decimal("1.95")
+        assert result["over_under_line"] == Decimal("2.5")
+
+    def test_parse_format_2000_no_over_under(self):
+        """Provider 2000 without over/under markets."""
+        raw = {
+            "homeTeamOdds": {"odds": {"value": 2.0}},
+            "awayTeamOdds": {"odds": {"value": 3.5}},
+            "drawOdds": {"value": 3.0},
+            "bettingOdds": {"teamOdds": {}},
+        }
+        result = parse_odds_data(raw)
+        assert result["odds_home"] == Decimal("2.0")
+        assert result["odds_away"] == Decimal("3.5")
+        assert result["odds_over"] is None
+
 
 @pytest.mark.django_db
 class TestScoreboardIngestionWithOdds:

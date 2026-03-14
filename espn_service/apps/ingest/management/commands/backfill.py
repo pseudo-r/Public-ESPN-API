@@ -52,16 +52,14 @@ class Command(BaseCommand):
             created = 0
             updated = 0
             errors = 0
+            odds_stats = {"created": 0, "updated": 0, "no_odds": 0, "no_provider": 0, "error": 0}
 
             for idx, event_id in enumerate(event_ids, 1):
                 try:
                     # Fetch event summary
                     response = client.get_event(sport, league, event_id)
-                    # The summary response wraps events differently
-                    # Try to extract event data in scoreboard format
                     events_data = response.data.get("events", [])
                     if not events_data:
-                        # Build event data from header if available
                         header = response.data.get("header", {})
                         if header:
                             events_data = [self._header_to_event(header, response.data)]
@@ -84,14 +82,16 @@ class Command(BaseCommand):
                         )
                         event.competitors.all().delete()
                         service._create_competitors(event, competitors_data, league_obj)
-                        service._ingest_odds(event, sport, league)
+                        odds_status = service._ingest_odds(event, sport, league)
+                        odds_stats[odds_status] = odds_stats.get(odds_status, 0) + 1
 
                         if was_created:
                             created += 1
                         else:
                             updated += 1
 
-                    self.stdout.write(f"[{idx}/{total}] Event {event_id} ✓")
+                    odds_icon = "🎲" if odds_status in ("created", "updated") else "⊘"
+                    self.stdout.write(f"[{idx}/{total}] Event {event_id} ✓ {odds_icon}")
 
                 except Exception as e:
                     self.stderr.write(f"[{idx}/{total}] Event {event_id} ✗ {e}")
@@ -102,8 +102,11 @@ class Command(BaseCommand):
 
             self.stdout.write(
                 self.style.SUCCESS(
-                    f"\nBackfill complete: created={created}, "
-                    f"updated={updated}, errors={errors}"
+                    f"\nBackfill complete:"
+                    f"\n  Events: created={created}, updated={updated}, errors={errors}"
+                    f"\n  Odds:   created={odds_stats['created']}, updated={odds_stats['updated']}, "
+                    f"no_odds={odds_stats['no_odds']}, no_provider={odds_stats['no_provider']}, "
+                    f"errors={odds_stats['error']}"
                 )
             )
 
