@@ -10,8 +10,7 @@ services:
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.local
       - DATABASE_URL=postgres://espn:espn@db:5432/espn_service
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=dev-secret-key-change-in-production
       - DEBUG=True
       - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
@@ -54,15 +53,14 @@ services:
       timeout: 5s
       retries: 5
 
-  celery:
+  qcluster:
     build:
       context: .
       target: production
     environment:
       - DJANGO_SETTINGS_MODULE=config.settings.local
       - DATABASE_URL=postgres://espn:espn@db:5432/espn_service
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=dev-secret-key-change-in-production
     depends_on:
       db:
@@ -71,28 +69,7 @@ services:
         condition: service_healthy
     volumes:
       - .:/app
-    command: celery -A config worker -l INFO
-
-  celery-beat:
-    build:
-      context: .
-      target: production
-    environment:
-      - DJANGO_SETTINGS_MODULE=config.settings.local
-      - DATABASE_URL=postgres://espn:espn@db:5432/espn_service
-      - CELERY_BROKER_URL=redis://redis:6379/0
-      - CELERY_RESULT_BACKEND=redis://redis:6379/0
-      - SECRET_KEY=dev-secret-key-change-in-production
-    depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-      celery:
-        condition: service_started
-    volumes:
-      - .:/app
-    command: celery -A config beat -l INFO
+    command: python manage.py qcluster
 
 volumes:
   postgres_data:

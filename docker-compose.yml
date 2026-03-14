@@ -43,24 +43,10 @@ services:
       redis:
         condition: service_healthy
 
-  worker:
+  qcluster:
     build:
       context: ./espn_service
-    command: celery -A config worker --loglevel=info
-    volumes:
-      - ./espn_service:/app
-    env_file:
-      - espn_service/.env
-    depends_on:
-      db:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-
-  beat:
-    build:
-      context: ./espn_service
-    command: celery -A config beat --loglevel=info
+    command: python manage.py qcluster
     volumes:
       - ./espn_service:/app
     env_file:
