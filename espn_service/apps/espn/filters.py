@@ -101,9 +101,11 @@ class EventFilter(django_filters.FilterSet):
         help_text="Filter by event status",
     )
     season_year = django_filters.NumberFilter(
+        field_name="season__year",
         help_text="Filter by season year",
     )
     season_type = django_filters.NumberFilter(
+        field_name="season__season_type",
         help_text="Filter by season type (1=preseason, 2=regular, 3=postseason)",
     )
     team = django_filters.CharFilter(

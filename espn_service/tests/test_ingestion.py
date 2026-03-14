@@ -217,8 +217,6 @@ class TestScoreboardIngestionService:
             date=datetime(2024, 12, 15, tzinfo=UTC),
             name="Old Name",
             status=Event.STATUS_SCHEDULED,
-            season_year=2024,
-            season_type=2,
         )
 
         mock_client = MagicMock()

@@ -121,8 +121,6 @@ class TestEventModel:
             espn_id="123",
             date=datetime.now(UTC),
             name="Test Event",
-            season_year=2024,
-            season_type=2,
             status=Event.STATUS_IN_PROGRESS,
         )
         assert event.status == "in_progress"
@@ -135,8 +133,6 @@ class TestEventModel:
                 espn_id="401584666",  # Same as event fixture
                 date=datetime.now(UTC),
                 name="Duplicate Event",
-                season_year=2024,
-                season_type=2,
             )
 
 
@@ -247,10 +243,10 @@ class TestSeason:
 
         season = Season.objects.create(
             league=league,
-            year=2024,
+            year=2023,
             season_type=2,
-            start_date=date(2024, 10, 22),
-            end_date=date(2025, 4, 13),
+            start_date=date(2023, 10, 22),
+            end_date=date(2024, 4, 13),
         )
         event.season = season
         event.save()

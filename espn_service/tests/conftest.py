@@ -102,20 +102,19 @@ def season(db, league: League) -> Season:
 
 
 @pytest.fixture
-def event(db, league: League, venue: Venue) -> Event:
+def event(db, league: League, venue: Venue, season: Season) -> Event:
     """Create a test event."""
     from datetime import datetime
 
     return Event.objects.create(
         league=league,
         venue=venue,
+        season=season,
         espn_id="401584666",
         uid="s:40~l:46~e:401584666",
         date=datetime(2024, 12, 15, 19, 30, tzinfo=UTC),
         name="Test Team at Opponent Team",
         short_name="TST @ OPP",
-        season_year=2024,
-        season_type=2,
         status=Event.STATUS_FINAL,
         status_detail="Final",
     )

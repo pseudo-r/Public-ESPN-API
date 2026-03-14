@@ -175,10 +175,7 @@ class Event(TimestampMixin):
     name = models.CharField(max_length=200)
     short_name = models.CharField(max_length=100, blank=True)
 
-    # Season information
-    season_year = models.PositiveIntegerField()
-    season_type = models.PositiveSmallIntegerField(default=2)  # 1=preseason, 2=regular, 3=postseason
-    season_slug = models.CharField(max_length=50, blank=True)
+    # Event week (sport-specific)
     week = models.PositiveSmallIntegerField(null=True, blank=True)
 
     # Status
