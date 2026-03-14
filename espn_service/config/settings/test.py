@@ -24,9 +24,8 @@ CACHES = {
     }
 }
 
-# Celery - Always eager for tests
-CELERY_TASK_ALWAYS_EAGER = True
-CELERY_TASK_EAGER_PROPAGATES = True
+# Django-Q2 - Synchronous for tests
+Q_CLUSTER["sync"] = True  # noqa: F405
 
 # Logging - Reduce noise during tests
 LOGGING["root"]["level"] = "WARNING"  # noqa: F405

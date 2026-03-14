@@ -50,11 +50,6 @@ for logger in LOGGING["loggers"].values():  # noqa: F405
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])  # noqa: F405
 
-# Celery
-CELERY_TASK_ALWAYS_EAGER = False
-CELERY_BROKER_URL = env("CELERY_BROKER_URL")  # noqa: F405
-CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND")  # noqa: F405
-
 # Static files
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -70,14 +65,12 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="")  # noqa: F405
 SENTRY_DSN = env("SENTRY_DSN", default="")  # noqa: F405
 if SENTRY_DSN:
     import sentry_sdk
-    from sentry_sdk.integrations.celery import CeleryIntegration
     from sentry_sdk.integrations.django import DjangoIntegration
 
     sentry_sdk.init(
         dsn=SENTRY_DSN,
         integrations=[
             DjangoIntegration(),
-            CeleryIntegration(),
         ],
         traces_sample_rate=env.float("SENTRY_TRACES_SAMPLE_RATE", default=0.1),  # noqa: F405
         send_default_pii=False,

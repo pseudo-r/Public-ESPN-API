@@ -179,30 +179,18 @@ CACHES = {
 }
 
 
-# Celery settings
-CELERY_BROKER_URL = env("CELERY_BROKER_URL", default="redis://localhost:6379/0")
-CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND", default="redis://localhost:6379/0")
-CELERY_ACCEPT_CONTENT = ["json"]
-CELERY_TASK_SERIALIZER = "json"
-CELERY_RESULT_SERIALIZER = "json"
-CELERY_TIMEZONE = TIME_ZONE
-CELERY_TASK_TRACK_STARTED = True
-CELERY_TASK_TIME_LIMIT = 30 * 60  # 30 minutes
-CELERY_BEAT_SCHEDULE = {
-    "refresh-nba-scoreboard-daily": {
-        "task": "apps.ingest.tasks.refresh_scoreboard_task",
-        "schedule": 3600.0,  # Every hour
-        "args": ("basketball", "nba"),
-    },
-    "refresh-nfl-scoreboard-daily": {
-        "task": "apps.ingest.tasks.refresh_scoreboard_task",
-        "schedule": 3600.0,  # Every hour
-        "args": ("football", "nfl"),
-    },
-    "refresh-teams-weekly": {
-        "task": "apps.ingest.tasks.refresh_all_teams_task",
-        "schedule": 86400.0 * 7,  # Weekly
-    },
+# Django-Q2 settings
+Q_CLUSTER = {
+    "name": "espn_service",
+    "workers": 2,
+    "timeout": 1800,          # 30 min max per task
+    "retry": 2400,            # crash detection: re-check after 40 min
+    "queue_limit": 50,
+    "bulk": 10,
+    "redis": env("REDIS_URL", default="redis://localhost:6379/0"),
+    "max_attempts": 1,        # no auto-retry, manual relaunch only
+    "ack_failures": True,
+    "save_limit": 0,          # save all results (rotation via purge task)
 }
 
 
@@ -306,7 +294,7 @@ LOGGING = {
             "level": LOGGING_LEVEL,
             "propagate": False,
         },
-        "celery": {
+        "django_q": {
             "handlers": ["console"],
             "level": LOGGING_LEVEL,
             "propagate": False,
