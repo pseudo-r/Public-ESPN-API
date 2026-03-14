@@ -141,20 +141,43 @@ class Command(BaseCommand):
         }
 
     def _get_season_dates(self, client, sport: str, league: str, season: int) -> str:
-        """Fetch season start/end dates from ESPN API."""
+        """Fetch season start/end dates from ESPN API and cache in Season model."""
+        from datetime import date
+
+        from apps.espn.models import Season
+
         response = client.get(
             f"/v2/sports/{sport}/leagues/{league}/seasons/{season}",
             domain=ESPNEndpointDomain.CORE,
         )
         data = response.data
-        start = data.get("startDate", "")[:10].replace("-", "")
-        end = data.get("endDate", "")[:10].replace("-", "")
+        start = data.get("startDate", "")[:10]
+        end = data.get("endDate", "")[:10]
         if not start or not end:
             raise CommandError(
                 f"Could not determine dates for season {season}. "
                 f"Use --dates YYYYMMDD-YYYYMMDD manually."
             )
-        return f"{start}-{end}"
+
+        # Cache season metadata
+        _, league_obj = get_or_create_sport_and_league(sport, league)
+        season_type_val = data.get("type", 2)
+        if isinstance(season_type_val, dict):
+            season_type_val = season_type_val.get("type", 2)
+        Season.objects.update_or_create(
+            league=league_obj,
+            year=season,
+            season_type=season_type_val,
+            defaults={
+                "start_date": date.fromisoformat(start),
+                "end_date": date.fromisoformat(end),
+                "display_name": data.get("displayName", ""),
+                "slug": data.get("slug", ""),
+                "raw_data": data,
+            },
+        )
+
+        return f"{start.replace('-', '')}-{end.replace('-', '')}"
 
     def _list_season_events(
         self, client, sport: str, league: str, dates: str, delay: float
