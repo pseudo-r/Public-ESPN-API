@@ -39,7 +39,7 @@ jobs:
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/espn_test
       SECRET_KEY: ci-test-secret-key-not-for-production
       DEBUG: "False"
-      CELERY_BROKER_URL: ""
+
 
     steps:
       - name: Checkout

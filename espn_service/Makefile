@@ -1,4 +1,4 @@
-.PHONY: help install dev test lint format migrate run shell docker-up docker-down docker-build clean celery beat
+.PHONY: help install dev test lint format migrate run shell docker-up docker-down docker-build clean qcluster
 
 # Default target
 help:
@@ -28,9 +28,8 @@ help:
 	@echo "  docker-build Build Docker images"
 	@echo "  docker-logs View logs"
 	@echo ""
-	@echo "Celery:"
-	@echo "  celery      Start Celery worker"
-	@echo "  beat        Start Celery beat scheduler"
+	@echo "Django-Q2:"
+	@echo "  qcluster   Start Django-Q2 worker + scheduler"
 	@echo ""
 	@echo "Data:"
 	@echo "  ingest-teams   Ingest teams (SPORT=basketball LEAGUE=nba)"
@@ -104,12 +103,9 @@ docker-shell:
 docker-test:
 	docker compose exec web pytest
 
-# Celery
-celery:
-	celery -A config worker -l INFO
-
-beat:
-	celery -A config beat -l INFO
+# Django-Q2
+qcluster:
+	python manage.py qcluster
 
 # Data Ingestion
 SPORT ?= basketball
