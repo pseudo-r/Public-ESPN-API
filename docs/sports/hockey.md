@@ -128,6 +128,7 @@ GET https://site.api.espn.com/apis/site/v2/sports/hockey/{league}/{resource}
 | `teams/{id}/schedule` | Team schedule |
 | `teams/{id}/injuries` | Injury report |
 | `standings` | League standings |
+| `injuries` | Injuries across the league |
 | `news` | Latest news |
 | `summary?event={id}` | Full game summary |
 
