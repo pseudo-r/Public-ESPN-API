@@ -93,6 +93,8 @@ ESPN provides undocumented APIs that power their website and mobile apps. These 
 - **No Authentication Required:** Most endpoints are publicly accessible
 - **Rate Limiting:** Be respectful — no official limits published, but excessive requests may be blocked
 - **Best Practice:** Implement caching and error handling in your applications
+- **`$ref` URLs with `.pvt` domain:** Some Core API responses contain `$ref` URLs pointing to `sports.core.api.espn.pvt` — this is ESPN's internal domain and is not publicly accessible. Replace `.pvt` with `.com` to get a working URL (e.g. `sports.core.api.espn.pvt/v2/...` → `sports.core.api.espn.com/v2/...`). See [#20](https://github.com/pseudo-r/Public-ESPN-API/issues/20).
+- **Season dates may not match event availability:** The dates returned by the seasons/calendar endpoint (e.g. start/end of a soccer season) may not perfectly align with when scoreboard data is available. If the scoreboard returns empty for the reported start date, try a date range closer to when matches actually begin. See [#17](https://github.com/pseudo-r/Public-ESPN-API/issues/17).
 
 ---
 

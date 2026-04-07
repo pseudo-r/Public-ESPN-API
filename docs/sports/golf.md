@@ -135,6 +135,8 @@ GET https://site.api.espn.com/apis/site/v2/sports/golf/{league}/{resource}
 
 > ⚠️ **Injuries endpoint returns 500** for Golf — not supported.
 
+> ⚠️ **`$ref` URLs may use internal domain:** Scoreboard and event responses may contain `$ref` URLs pointing to `sports.core.api.espn.pvt` — this is ESPN's internal domain and is not publicly accessible. Replace `.pvt` with `.com` to resolve. See [#20](https://github.com/pseudo-r/Public-ESPN-API/issues/20).
+
 ---
 
 ## Example API Calls

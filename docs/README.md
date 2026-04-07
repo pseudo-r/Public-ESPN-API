@@ -61,6 +61,10 @@ Each file covers leagues & competitions, API endpoints, Site API resources, and 
 - 🏉 **Rugby Union standings** → core API: `sports.core.api.espn.com/v2/sports/rugby/leagues/{league}/standings`
 - ⛳ **Golf / 🎾 Tennis scoreboard** → slug required: `pga`, `lpga`, `atp`, `wta` (not numeric IDs)
 
+**Known quirks:**
+- ⚠️ **`$ref` URLs with `.pvt` domain:** Some Core API responses return `$ref` URLs pointing to `sports.core.api.espn.pvt` — ESPN's internal domain. Replace `.pvt` with `.com` to get a working public URL.
+- ⚠️ **Season dates vs. scoreboard data:** Season start/end dates from the `/seasons` endpoint may not align with actual scoreboard data availability. If a scoreboard query returns empty for the reported start date, adjust the date range to when matches actually begin.
+
 
 ---
 
