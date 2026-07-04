@@ -276,6 +276,9 @@ GET https://site.web.api.espn.com/apis/{path}
 | `/search/v2?query={q}&limit={n}` | Global ESPN search |
 | `/search/v2?query={q}&sport={sport}` | Sport-scoped search |
 | `/v2/scoreboard/header` | Scoreboard header/nav state |
+| `/apis/personalized/v2/scoreboard/header?sport={sport}&region={region}&tz={tz}` | Personalized multi-sport header. Returns `sports[].leagues[]` (each an active series/competition with numeric `id`, `name`, `isTournament`, `events[]`) — ideal for **cricket series discovery** |
+| `/apis/site/v2/sports/golf/{tour}/leaderboard/{eventId}/playersummary?season={year}&player={id}` | Golf hole-by-hole player scoring (`rounds[].linescores[]` = per-hole strokes/par/scoreType) |
+| `/apis/site/v2/sports/cricket/{leagueId}/summary?event={id}&lang=en&region=in` | Cricket match summary/scorecard (web API, numeric `leagueId` from the personalized header) |
 | `/apis/common/v3/sports/{sport}/{league}/athletes/{id}/overview` | Athlete overview (stats snapshot, news, next game) |
 | `/apis/common/v3/sports/{sport}/{league}/athletes/{id}/stats` | Season stats (NFL/NBA/NHL/MLB ✅, Soccer ❌) |
 | `/apis/common/v3/sports/{sport}/{league}/athletes/{id}/gamelog` | Game-by-game log (NFL/NBA/MLB ✅) |
@@ -310,6 +313,29 @@ GET https://now.core.api.espn.com/v1/sports/news
 | `/v1/sports/news?sport={sport}&limit={n}` | Sport-filtered news |
 | `/v1/sports/news?leagues={league}&limit={n}` | League-filtered news |
 | `/v1/sports/news?team={abbrev}&limit={n}` | Team-filtered news |
+
+### Image & Asset URLs (CDN)
+
+ESPN serves athlete headshots and team logos from `a.espncdn.com`. **All patterns below were live-verified (HTTP 200) on 2026-07-04.**
+
+| URL pattern | Description |
+|-------------|-------------|
+| `https://a.espncdn.com/i/headshots/{sport}/players/full/{playerId}.png` | Athlete headshot (full size) |
+| `https://a.espncdn.com/i/teamlogos/{sport}/500/{abbrev}.png` | Team logo (500 px) |
+
+**Verified sport slugs for headshots:** `nfl`, `nba`, `mlb`, `nhl`, `soccer`
+**Verified sport slugs for team logos:** `nfl`, `nba`, `mlb` (uses the team's lowercase abbreviation, e.g. `dal`, `lal`, `nyy`)
+
+Verified examples:
+
+```bash
+curl -I "https://a.espncdn.com/i/headshots/nba/players/full/1966.png"   # LeBron James
+curl -I "https://a.espncdn.com/i/headshots/mlb/players/full/33039.png"
+curl -I "https://a.espncdn.com/i/headshots/soccer/players/full/45843.png"
+curl -I "https://a.espncdn.com/i/teamlogos/nfl/500/dal.png"             # Dallas Cowboys
+```
+
+> **Note:** Not every athlete ID has a headshot on file — missing IDs return 404. Prefer the `headshot` / `logos` URLs returned inline by team, roster, and athlete endpoints when available. Team-logo sizes other than `500` (e.g. `100`) also exist.
 
 ---
 
@@ -493,6 +519,9 @@ Base: `sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}`
 | `region` | Regional content filter | `us`, `gb`, `au` |
 | `xhr` | CDN JSON signal | `1` (returns JSON on cdn.espn.com) |
 | `calendartype` | Calendar view type | `ondays`, `offdays`, `blacklist` |
+| `tz` | Timezone (personalized header) | `Asia/Calcutta`, `America/New_York` |
+
+> 💡 **Getting *every* game (college sports):** the scoreboard endpoint truncates results by default. For NCAA sports pass `groups=50` (all Division I) together with a high `limit` (e.g. `limit=500`) to retrieve the full slate for a date or date range. **Verified 2026-07-04:** `.../mens-college-basketball/scoreboard?dates=20260120` returned **12** events, while adding `&groups=50&limit=500` returned **36** events for the same date.
 
 ### Season Types
 
@@ -763,4 +792,4 @@ MIT License — See LICENSE file
 
 ---
 
-*Last Updated: March 2026 · 17 sports · 139 leagues · 370 v2 + 79 v3 endpoints · 6 API domains*
+*Last Updated: July 2026 · 17 sports · 139 leagues · 370 v2 + 79 v3 endpoints · 7 API domains*

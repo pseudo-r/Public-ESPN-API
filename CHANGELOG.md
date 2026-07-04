@@ -4,6 +4,34 @@ All notable changes to the Public ESPN API documentation are listed here.
 
 ---
 
+## [2.1.0] — July 2026
+
+### 🆕 Added
+
+#### Documentation — Newly Discovered Endpoints
+> All endpoints below were **live-verified (HTTP 200) on 2026-07-04**, and their response structures were inspected and documented field-by-field.
+
+- **Personalized Scoreboard Header** — `site.api.espn.com/apis/personalized/v2/scoreboard/header?sport={sport}&region={region}&tz={tz}` — returns `sports[].leagues[]`, each an active series/competition with numeric `id`, `name`, `isTournament`, `smartdates`, and `events[]`. Notably useful for **cricket series discovery** (the series `id` feeds the cricket web-API summary). Added to README Search & Web API table, `docs/README.md` routing guide/quick links, and `cricket.md` (with a documented discovery → summary workflow).
+- **Golf Player Summary (hole-by-hole)** — `site.web.api.espn.com/apis/site/v2/sports/golf/{tour}/leaderboard/{eventId}/playersummary?season={year}&player={id}`. Verified structure: `profile`, `rounds[]` (each with `linescores[]` = per-hole `value`/`par`/`scoreType`), and `stats[]`. Added to README and `golf.md` with a response-field table.
+- **Cricket Match Summary (web API)** — `site.web.api.espn.com/apis/site/v2/sports/cricket/{leagueId}/summary?event={id}&lang=en&region=in`. Verified top-level keys: `notes`, `gameInfo`, `rosters`, `matchcards`, `debuts`, `news`, `leaders`, `article`, `videos`, `header`, `meta`. Added to README and `cricket.md`.
+- **Image & Asset URLs** — new `a.espncdn.com` section documenting athlete headshot (`/i/headshots/{sport}/players/full/{id}.png`) and team logo (`/i/teamlogos/{sport}/500/{abbrev}.png`) URL patterns. Verified across `nfl`, `nba`, `mlb`, `nhl`, `soccer` headshots and `nfl`/`nba`/`mlb` logos. Added to README, and as a new row in the `docs/README.md` domain routing guide (now **7 API domains**).
+
+#### Documentation — MMA (`mma.md`) rewrite
+> Live-verified 2026-03-27.
+- Replaced the estimated "50+ promotions" list with **48 confirmed slugs** and a Core API status matrix.
+- Added **Core v2 / v3 live-status tables** (working vs. 400/500 endpoints), a **Site API status table** (scoreboard works only for `ufc`, `bellator`, `pfl`), the personalized scoreboard header, and a step-by-step **fight-statistics data-flow** guide (event → competition → competitor statistics/linescores/plays/odds).
+- Documented MMA-specific caveats: `common/v3` athlete stats are unavailable; athletes use a different ID space (resolve via competitor `$ref` URLs); `active` filter unsupported.
+
+#### Documentation — Parameters
+- **`tz` parameter** documented (timezone for the personalized header).
+- **`groups` + `limit` guidance** — added a tip explaining how to retrieve *every* college game for a date/range using `groups=50` (all Division I) with a high `limit`. **Verified:** `mens-college-basketball/scoreboard?dates=20260120` returned 12 events vs. 36 with `&groups=50&limit=500`.
+
+### 🔧 Changed
+- README footer updated to **July 2026 · 7 API domains**.
+- `docs/README.md` domain routing note now records the **2026-07-04** re-verification for the image domain and personalized/web-API endpoints.
+
+---
+
 ## [Unreleased] — March 2026
 
 ### 🆕 Added

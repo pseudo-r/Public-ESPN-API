@@ -1,6 +1,6 @@
 # 🥊 MMA
 
-> Mixed Martial Arts from the UFC, Bellator, and dozens of international promotions.
+> Mixed Martial Arts from the UFC, Bellator, PFL, and 45+ international promotions.
 
 **Sport slug:** `mma`  
 **Base URL (v2):** `https://sports.core.api.espn.com/v2/sports/mma/`  
@@ -10,161 +10,254 @@
 
 ## Leagues & Competitions
 
-> ESPN tracks **50+ MMA organizations**. Key slugs listed below. Use `https://sports.core.api.espn.com/v2/sports/mma/leagues` for the full list.
+> ESPN tracks **48 confirmed MMA organizations** (live-verified 2026-03-27). Use `https://sports.core.api.espn.com/v2/sports/mma/leagues` for the authoritative list.
 
 ### Major Promotions
 
-| Abbreviation | League Name | Slug | Full URL |
-| --- | --- | --- | --- |
-| `UFC` | Ultimate Fighting Championship | `ufc` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc` |
-| `BEL` | Bellator MMA | `bellator` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/bellator` |
-| `IFC` | Invicta FC (Women's) | `ifc` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/ifc` |
-| `LFA` | Legacy Fighting Alliance | `lfa` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/lfa` |
-| `KSW` | Konfrontacja Sztuk Walki | `ksw` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/ksw` |
-| `CW` | Cage Warriors | `cage-warriors` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/cage-warriors` |
-| `ACB` | Absolute Championship Berkut | `absolute` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/absolute` |
-| `FNG` | Fight Nights Global | `fng` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/fng` |
-| `K1` | K-1 | `k1` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/k1` |
-| `M1` | M-1 Mix-Fight Championship | `m1` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/m1` |
-| `IFL` | International Fight League | `ifl` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/ifl` |
-| `DRM` | Dream | `dream` | `https://sports.core.api.espn.com/v2/sports/mma/leagues/dream` |
+| Slug | League Name | Site Scoreboard |
+|------|-------------|-----------------|
+| `ufc` | Ultimate Fighting Championship | ✅ |
+| `bellator` | Bellator MMA (now PFL) | ✅ |
+| `pfl` | Professional Fighters League | ✅ |
+| `one-championship` | ONE Championship | ❌ (400) |
+| `ifc` | Invicta FC (Women's) | ❌ (400) |
+| `lfa` | Legacy Fighting Alliance | ❌ (400) |
+| `ksw` | Konfrontacja Sztuk Walki | ❌ (400) |
+| `cage-warriors` | Cage Warriors | ❌ (400) |
 
-### Additional International Promotions (partial)
+### All 48 Confirmed Slugs (Core API Only)
 
-| Slug | Name |
-|------|------|
-| `affliction` | Affliction |
-| `bang-fighting` | Bang Fighting Championships |
-| `banzay` | Banzay Fight Championship |
-| `battlezone` | Battlezone Fighting Championships |
-| `blackout` | Blackout Fighting Championship |
-| `bosnia` | Bosnia Fight Championship |
-| `boxe` | Boxe Fight Combat |
-| `brazilian-freestyle` | Brazilian Freestyle Circuit |
-| `budo` | Budo Fighting Championships |
-| `lfc` | Legacy Fighting Championship |
+| Slug | Slug | Slug | Slug |
+|------|------|------|------|
+| `absolute` | `affliction` | `bang-fighting` | `banni-fight` |
+| `banzay` | `barracao` | `battlezone` | `bellator` |
+| `benevides` | `big-fight` | `blackout` | `boku` |
+| `bosnia` | `boxe` | `brazilian-freestyle` | `budo` |
+| `cage-warriors` | `dream` | `fng` | `ifc` |
+| `ifl` | `k1` | `ksw` | `lfa` |
+| `lfc` | `m1` | `mfc` | `one-championship` |
+| `pfl` | `pride` | `resurrection` | `rings` |
+| `road-fc` | `shoxc` | `shooto-japan` | `strikeforce` |
+| `tfc` | `tpf` | `ufc` | `vfc` |
+| `wec` | `xfc` | `xfcbrazil` | *(+ 4 additional)* |
 
 ---
 
-## API Endpoints
+## Core v2 API Endpoints — Live Status
 
-> All endpoints below follow the pattern:  
+> All endpoints: `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/`
 
-### Seasons & Calendar
+### ✅ Working Endpoints
 
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/calendar` | `getCalendars` | `dates`, `page`, `limit`, `dates`, `groups`, `smartdates`, `advance`, `utcOffset`, `weeks`, `seasontype` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/seasons` | `getSeasons` | `page`, `limit`, `utcOffset`, `dates`, `start`, `end`, `eventsback`, `eventsforward`, `eventsrange`, `eventcompleted`, `groups`, `profile`, `competitions.types`, `types`, `season`, `weeks`, `tournamentId`, `dates`, `sort`, `type`, `date`, `group`, `position`, `week`, `qualified`, `types`, `limit`, `page`, `sort`, `position`, `status`, `sort`, `sortByRanks`, `stats`, `groupId`, `position`, `qualified`, `rookie`, `international`, `category`, `type`, `sort`, `sortByRanks`, `stats`, `groupId`, `qualified`, `category`, `sort`, `groupId`, `allStar`, `group`, `gender`, `types`, `country`, `association`, `lastNameInitial`, `lastName`, `active`, `statuses`, `sort`, `position`, `dates`, `groups`, `smartdates`, `advance`, `utcOffset`, `weeks`, `seasontype` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/seasons/{season}/athletes` | `getAthletes` | `active`, `sort`, `page`, `limit`, `seasontypes`, `played`, `teamtypes`, `group`, `gender`, `types`, `country`, `association`, `lastNameInitial`, `lastName`, `active`, `statuses`, `sort`, `position` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/seasons/{season}/draft` | `getDraftByYear` | `page`, `limit`, `available`, `position`, `team`, `sort`, `filter` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/seasons/{season}/freeagents` | `getFreeAgents` | `page`, `limit`, `types`, `oldteams`, `newteams`, `position`, `sort` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/seasons/{season}/manufacturers` | `getManufacturers` | `page`, `limit` |
+| Endpoint | Notes |
+|----------|-------|
+| `seasons` | Full season list |
+| `season` | Current season shortcut |
+| `athletes` | All fighters (no `active` filter — see warning) |
+| `events` | All events; supports `?dates=YYYY` |
+| `events?dates=YYYY` | Date-filtered event list |
+| `teams` | Returns (empty — MMA has no teams) |
+| `rankings` | Weight class rankings |
+| `venues` | Arenas/octagon venues |
+| `circuits` | |
+| `countries` | Participating countries |
+| `providers` | Broadcast providers |
+| `casinos` | Sportsbooks/odds providers |
+| `recruiting` | (empty — MMA has no recruiting) |
+| `calendar` | Event calendar |
+| `seasons/{year}/athletes` | Season-scoped fighters |
+| `seasons/{year}/draft` | (empty — MMA has no draft) |
+| `seasons/{year}/freeagents` | |
+| `seasons/{year}/manufacturers` | |
+| `seasons/{year}/types` | Season types |
+| `seasons/{year}/standings` | (empty — MMA has no standings) |
+| `seasons/{year}/rankings` | Season rankings by weight class |
+| `seasons/{year}/powerindex` | |
+| `seasons/{year}/leaders` | |
+| `seasons/{year}/weeks` | |
+| `seasons/{year}/groups` | Weight class groups |
 
-### Teams
+### ❌ Broken Endpoints (return 500 — not applicable for MMA)
 
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/teams` | `getTeams` | `page`, `limit`, `utcOffset`, `dates`, `start`, `end`, `eventsback`, `eventsforward`, `eventsrange`, `eventcompleted`, `groups`, `profile`, `competitions.types`, `types`, `season`, `weeks`, `tournamentId`, `active`, `national`, `start`, `group`, `dates`, `recent`, `types`, `winnertype`, `date`, `eventsback`, `excludestatuses`, `includestatuses`, `dates`, `groups`, `smartdates`, `advance`, `utcOffset`, `weeks`, `seasontype` |
-
-### Athletes / Players
-
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/athletes` | `getAthletes` | `page`, `limit`, `group`, `gender`, `types`, `country`, `association`, `lastNameInitial`, `lastName`, `active`, `statuses`, `sort`, `position` |
-
-### Events / Games
-
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/events/{event}` | `getEvent` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/events/{event}/competitions/{competition}` | `getCompetition` | `page`, `limit`, `date`, `group`, `position`, `week`, `qualified`, `types`, `limit`, `page`, `types`, `period`, `sort`, `source`, `showsubplays` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/events/{event}/competitions/{competition}/broadcasts` | `getBroadcasts` | `lang`, `region`, `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/events/{event}/competitions/{competition}/competitors/{competitor}` | `getCompetitor` | `page`, `limit`, `date`, `group`, `position`, `week`, `qualified`, `types`, `limit`, `page` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/events/{event}/competitions/{competition}/odds` | `getCompetitionOdds` | `provider.priority`, `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/events/{event}/competitions/{competition}/officials` | `getOfficials` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/events/{event}/competitions/{competition}/plays/{play}/personnel` | `getPersonnel` | `page`, `limit` |
-
-### News & Media
-
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/media` | `getMedia` | `page`, `limit` |
-
-### Rankings & Awards
-
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/rankings` | `getRankings` | `page`, `limit` |
-
-### Venues
-
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/venues` | `getVenues` | `page`, `limit` |
-
-### Other
-
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/casinos` | `getCasinos` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/circuits` | `getCircuits` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/countries` | `getCountries` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/franchises` | `getFranchises` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/positions` | `getPositions` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/providers` | `getProviders` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/recruiting` | `getRecruitingSeasons` | `page`, `limit`, `sort`, `position`, `status` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/season` | `getCurrentSeason` | `page`, `limit` |
-| `https://sports.core.api.espn.com/v2/sports/mma/leagues/{league}/tournaments` | `getTournaments` | `majorsOnly`, `page`, `limit` |
+| Endpoint | Status | Reason |
+|----------|--------|--------|
+| `media` | ❌ 500 | Not supported for MMA |
+| `franchises` | ❌ 500 | Not applicable |
+| `positions` | ❌ 500 | Not applicable |
+| `tournaments` | ❌ 500 | Not applicable |
+| `seasons/{year}/draft` | ❌ 500 | No draft system |
+| `athletes?active=true` | ❌ 400 | `active` filter unsupported for MMA |
 
 ---
 
-## V3 Endpoints
+## Core v3 API Endpoints
 
-| Endpoint | Method ID | Query Params |
-| --- | --- | --- |
-| `https://sports.core.api.espn.com/v3/sports/{sport}/athletes` | `getAthletes` | `page`, `limit`, `_hoist`, `_help`, `_trace`, `_nocache`, `enable`, `disable`, `pq`, `q`, `page`, `limit`, `lang`, `region`, `utcOffset`, `dates`, `weeks`, `advance`, `event.recurring`, `ids`, `type`, `types`, `seasontypes`, `calendar.type`, `calendar.groups`, `status`, `statuses`, `groups`, `provider`, `provider.priority`, `site`, `league.type`, `split`, `splits`, `record.splits`, `record.seasontype`, `statistic.splits`, `statistic.seasontype`, `statistic.qualified`, `statistic.context`, `sort`, `roster.positions`, `roster.athletes`, `team.athletes`, `powerindex.rundatetimekey`, `eventsback`, `eventsforward`, `eventsrange`, `eventstates`, `eventresults`, `seek`, `tournaments`, `competitions`, `competition.types`, `teams`, `situation.play`, `oldteams`, `newteams`, `played`, `period`, `position`, `filter`, `available`, `active`, `ids.sportware`, `profile`, `opponent`, `eventId`, `homeAway`, `season`, `athlete.position`, `postalCode`, `award.type`, `notes.type`, `tidbit.type`, `networks`, `bets.promotion`, `guids`, `competitors`, `source` |
-| `https://sports.core.api.espn.com/v3/sports/{sport}/{league}` | `getLeague` | `page`, `limit`, `_hoist`, `_help`, `_trace`, `_nocache`, `enable`, `disable`, `pq`, `q`, `page`, `limit`, `lang`, `region`, `utcOffset`, `dates`, `weeks`, `advance`, `event.recurring`, `ids`, `type`, `types`, `seasontypes`, `calendar.type`, `calendar.groups`, `status`, `statuses`, `groups`, `provider`, `provider.priority`, `site`, `league.type`, `split`, `splits`, `record.splits`, `record.seasontype`, `statistic.splits`, `statistic.seasontype`, `statistic.qualified`, `statistic.context`, `sort`, `roster.positions`, `roster.athletes`, `team.athletes`, `powerindex.rundatetimekey`, `eventsback`, `eventsforward`, `eventsrange`, `eventstates`, `eventresults`, `seek`, `tournaments`, `competitions`, `competition.types`, `teams`, `situation.play`, `oldteams`, `newteams`, `played`, `period`, `position`, `filter`, `available`, `active`, `ids.sportware`, `profile`, `opponent`, `eventId`, `homeAway`, `season`, `athlete.position`, `postalCode`, `award.type`, `notes.type`, `tidbit.type`, `networks`, `bets.promotion`, `guids`, `competitors`, `source` |
-| `https://sports.core.api.espn.com/v3/sports/{sport}/{league}/seasons/{season}` | `getSeason` | `page`, `limit`, `_hoist`, `_help`, `_trace`, `_nocache`, `enable`, `disable`, `pq`, `q`, `page`, `limit`, `lang`, `region`, `utcOffset`, `dates`, `weeks`, `advance`, `event.recurring`, `ids`, `type`, `types`, `seasontypes`, `calendar.type`, `calendar.groups`, `status`, `statuses`, `groups`, `provider`, `provider.priority`, `site`, `league.type`, `split`, `splits`, `record.splits`, `record.seasontype`, `statistic.splits`, `statistic.seasontype`, `statistic.qualified`, `statistic.context`, `sort`, `roster.positions`, `roster.athletes`, `team.athletes`, `powerindex.rundatetimekey`, `eventsback`, `eventsforward`, `eventsrange`, `eventstates`, `eventresults`, `seek`, `tournaments`, `competitions`, `competition.types`, `teams`, `situation.play`, `oldteams`, `newteams`, `played`, `period`, `position`, `filter`, `available`, `active`, `ids.sportware`, `profile`, `opponent`, `eventId`, `homeAway`, `season`, `athlete.position`, `postalCode`, `award.type`, `notes.type`, `tidbit.type`, `networks`, `bets.promotion`, `guids`, `competitors`, `source` |
+| Endpoint | Status | Notes |
+|----------|--------|-------|
+| `https://sports.core.api.espn.com/v3/sports/mma/athletes` | ✅ 200 | All MMA athletes (cross-league) |
+| `https://sports.core.api.espn.com/v3/sports/mma/ufc` | ✅ 200 | League detail |
+| `https://sports.core.api.espn.com/v3/sports/mma/ufc/seasons/{year}` | ✅ 200 | Season detail |
+| `https://sports.core.api.espn.com/v3/sports/mma/ufc/events` | ✅ 200 | Event list |
+| `https://sports.core.api.espn.com/v3/sports/mma/ufc/teams` | ✅ 200 | (empty) |
+| `https://sports.core.api.espn.com/v3/sports/mma/ufc/athletes` | ✅ 200 | League-scoped athletes |
+| `…/athletes?active=true` | ❌ 400 | Same v2 limitation |
 
 ---
 
 ## Site API Endpoints
 
-> These use `site.api.espn.com` and return user-friendly data (scores, rosters, news, etc.)
+> Base: `https://site.api.espn.com/apis/site/v2/sports/mma/{league}/`
+
+| Resource | Status | Notes |
+|----------|--------|-------|
+| `scoreboard` | ✅ 200 | Current/upcoming fight cards |
+| `scoreboard?dates=YYYYMMDD` | ✅ 200 | Date-specific events |
+| `news` | ✅ 200 | MMA news feed |
+| `teams` | ✅ 200 | (returns empty array) |
+| `athletes/{id}/news` | ✅ 200 | Fighter-specific news |
+| `summary?event={id}` | ✅ 200 | Full fight card summary with results |
+| `injuries` | ❌ 500 | Not supported for MMA |
+| `standings` | ❌ 400 | Not applicable for MMA |
+| `schedule` | ❌ 400 | Use `scoreboard` instead |
+| `roster` | ❌ 400 | Not applicable |
+| `leaders` | ❌ 400 | Not applicable |
+| `statistics` | ❌ 400 | Not applicable |
+| `depth-charts` | ❌ 400 | Not applicable |
+| `groups` | ❌ 400 | Not applicable |
+| `draft` | ❌ 500 | Not applicable |
+| `transactions` | ❌ 400 | Not applicable |
+
+> ✅ **Site API scoreboard** works for: `ufc`, `bellator`, `pfl`  
+> ❌ All other league slugs return 400 for scoreboard.
+
+---
+
+## Personalized Scoreboard Header (NEW)
 
 ```
-GET https://site.api.espn.com/apis/site/v2/sports/mma/{league}/{resource}
+GET https://site.api.espn.com/apis/personalized/v2/scoreboard/header?sport=mma&league=ufc
 ```
 
-| Resource | Description |
-|----------|-------------|
-| `scoreboard` | Event results & schedules |
-| `scoreboard?dates={YYYYMMDD}` | Events for a specific date |
-| `teams` | Fighter teams/stables (if available) |
-| `news` | Latest news |
-| `athletes/{id}/news` | Fighter-specific news |
-| `summary?event={id}` | Event summary + fight results |
+Returns scoreboard header data for widget/app embedding. Supports `?league=ufc` or omit for all MMA.
 
-> ⚠️ **Injuries endpoint returns 500** for MMA — not supported.  
-> ⚠️ **Standings not applicable** for MMA — use event/athlete endpoints.  
-> ✅ For fighter profiles and fight history, use the Core API:  
-> `sports.core.api.espn.com/v2/sports/mma/leagues/ufc/athletes/{id}`
+---
+
+## 🔥 Fight Statistics — Correct Data Flow
+
+> **`common/v3` athlete stats are NOT available for MMA.** Use the event drill-down below instead.
+
+### Step-by-Step: Get Fight Statistics
+
+```
+1. GET https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/events?dates=YYYYMMDD&limit=5
+   → Returns items[] with $ref URLs → extract event_id
+
+2. GET https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/events/{event_id}
+   → Returns event metadata + competitions[] (one per fight)
+   → Extract: competition.id, competition.competitors[].id
+
+3. GET …/events/{event_id}/competitions/{comp_id}/competitors/{competitor_id}/statistics
+   → ✅ 200 — Returns: significant strikes landed/attempted, takedowns, grappling control time
+
+4. GET …/events/{event_id}/competitions/{comp_id}/competitors/{competitor_id}/linescores
+   → ✅ 200 — Returns: round-by-round judging scores
+
+5. GET …/events/{event_id}/competitions/{comp_id}/plays
+   → ✅ 200 — Returns: play-by-play (strikes, takedowns per round)
+
+6. GET …/events/{event_id}/competitions/{comp_id}/odds
+   → ✅ 200 — Returns: pre-fight moneyline odds per fighter
+
+7. GET …/events/{event_id}/competitions/{comp_id}/officials
+   → ✅ 200 — Returns: referee + judge names
+
+8. GET …/events/{event_id}/competitions/{comp_id}/broadcasts
+   → ✅ 200 — Returns: ESPN/ESPN+ broadcast info
+
+9. GET …/events/{event_id}/competitions/{comp_id}/status
+   → ✅ 200 — Returns: fight result (KO/TKO/Decision/Sub), winner, rounds
+```
+
+### Competition Sub-Resources Summary
+
+| Sub-resource | Status | Returns |
+|-------------|--------|---------|
+| `competitors/{id}/statistics` | ✅ 200 | Strikes, takedowns, grappling control |
+| `competitors/{id}/linescores` | ✅ 200 | Round-by-round judging |
+| `competitors/{id}/plays` | ❌ 404 | Not supported at competitor level |
+| `odds` | ✅ 200 | Moneyline odds |
+| `officials` | ✅ 200 | Referee + judges |
+| `broadcasts` | ✅ 200 | Broadcast networks |
+| `plays` | ✅ 200 | Play-by-play sequence |
+| `status` | ✅ 200 | Fight result |
+| `linescores` | ❌ 404 | Not supported at competition level |
+
+---
+
+## Athlete Sub-Resources
+
+> ⚠️ Athlete IDs in MMA use a **different ID space** than other sports.  
+> Get the correct ID from competitor `$ref` URLs in event/scoreboard responses — do not assume an ID.
+
+| Sub-resource | Status | Notes |
+|-------------|--------|-------|
+| `athletes/{id}` (profile) | ⚠️ Context-dependent | Use ID from event $ref |
+| `athletes/{id}/eventlog` | ✅ 200 | Fighter's event history |
+| `athletes/{id}/statistics` | ❌ 404 (league path) | Use event drill-down instead |
+| `athletes/{id}/statisticslog` | ❌ 404 | |
+| `athletes/{id}/splits` | ❌ 404 | |
+| `athletes/{id}/injuries` | ❌ 404 | |
+| `common/v3/.../athletes/{id}/overview` | ❌ 404 | **Not available for MMA** |
+| `common/v3/.../athletes/{id}/stats` | ❌ 404 | **Not available for MMA** |
+| `common/v3/.../athletes/{id}/gamelog` | ❌ 404 | **Not available for MMA** |
+
+---
+
+## CDN
+
+> ❌ `cdn.espn.com/core/mma/scoreboard` returns **404** — CDN scoreboard is **not available** for MMA.
 
 ---
 
 ## Example API Calls
 
 ```bash
-# UFC scoreboard (events)
+# Get all 48 MMA leagues
+curl "https://sports.core.api.espn.com/v2/sports/mma/leagues?limit=100"
+
+# UFC scoreboard (current events)
 curl "https://site.api.espn.com/apis/site/v2/sports/mma/ufc/scoreboard"
 
-# Get all MMA leagues (core API)
-curl "https://sports.core.api.espn.com/v2/sports/mma/leagues"
+# PFL scoreboard
+curl "https://site.api.espn.com/apis/site/v2/sports/mma/pfl/scoreboard"
 
-# UFC athletes (core API)
-curl "https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/athletes?limit=100&active=true"
+# UFC events with date filter
+curl "https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/events?dates=2025&limit=10"
 
-# UFC events (core API)
-curl "https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/events"
+# UFC weight class rankings
+curl "https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/rankings"
+
+# Get fight statistics for a specific fight
+EVENT_ID=600051442   # UFC 311
+COMP_ID=401737005    # Main event fight
+FIGHTER_ID=4423876   # Competitor ID (from $ref)
+curl "https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/events/${EVENT_ID}/competitions/${COMP_ID}/competitors/${FIGHTER_ID}/statistics"
+
+# Round-by-round scoring
+curl "https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/events/${EVENT_ID}/competitions/${COMP_ID}/competitors/${FIGHTER_ID}/linescores"
+
+# Fight play-by-play
+curl "https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/events/${EVENT_ID}/competitions/${COMP_ID}/plays"
+
+# Moneyline odds
+curl "https://sports.core.api.espn.com/v2/sports/mma/leagues/ufc/events/${EVENT_ID}/competitions/${COMP_ID}/odds"
+
+# Event summary (fight card results)
+curl "https://site.api.espn.com/apis/site/v2/sports/mma/ufc/summary?event=${EVENT_ID}"
+
+# Fighter news
+curl "https://site.api.espn.com/apis/site/v2/sports/mma/ufc/athletes/3023164/news"
+
+# Personalized scoreboard header
+curl "https://site.api.espn.com/apis/personalized/v2/scoreboard/header?sport=mma&league=ufc"
 ```

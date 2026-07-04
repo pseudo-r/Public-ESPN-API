@@ -133,6 +133,36 @@ GET https://site.api.espn.com/apis/site/v2/sports/golf/{league}/{resource}
 > ⚠️ **Slug required:** Golf scoreboard requires a named league slug — numeric IDs return 400.
 > Use: `pga`, `lpga`, `liv`, `eur` (European Tour)
 
+### Player Summary (Hole-by-Hole) — Web API
+
+> ✅ **Live-verified 2026-07-04 (HTTP 200).** Per-round, per-hole scoring breakdown for a single player in a tournament.
+
+```
+GET https://site.web.api.espn.com/apis/site/v2/sports/golf/{tour}/leaderboard/{eventId}/playersummary?season={year}&player={playerId}
+```
+
+| Param | Description |
+|-------|-------------|
+| `{tour}` | Tour slug (`pga`, `lpga`, `liv`, `eur`) |
+| `{eventId}` | Tournament/event ID (from the leaderboard/scoreboard) |
+| `season` | Season year, e.g. `2026` |
+| `player` | Athlete ID |
+
+**Response structure** (verified 2026-07-04):
+
+| Key | Type | Contents |
+|-----|------|----------|
+| `profile` | object | `id`, `uid`, `guid`, `displayName`, `age`, `dateOfBirth`, `college`, `hand`, `headshot`, `link`, `birthPlace`, `rank`, `earnings` |
+| `rounds[]` | array | One entry per round played. Each has `value`, `displayValue`, `period` (round #), `inScore`, `outScore`, `courseId`, `startTee`, `groupNumber`, `teeTime`, `hasStream`, `currentPosition`, `linescores[]`, `statistics[]` |
+| `rounds[].linescores[]` | array | **Per-hole scoring** — each hole: `value` (strokes), `displayValue`, `period` (hole #), `par`, `scoreType` → `{ name (e.g. PAR/BIRDIE), displayName, displayValue }` |
+| `stats[]` | array | Player tournament stats — each: `{ name, displayName, displayValue }` (e.g. `tournamentsPlayed`) |
+
+```bash
+curl "https://site.web.api.espn.com/apis/site/v2/sports/golf/pga/leaderboard/401811952/playersummary?season=2026&player=4690755"
+```
+
+> 💡 The `{eventId}` is the same tournament ID returned by `site.api.espn.com/apis/site/v2/sports/golf/{tour}/scoreboard` (`events[].id`) and the `leaderboard` endpoint. `player` is the athlete `id` from the leaderboard's competitor list.
+
 > ⚠️ **Injuries endpoint returns 500** for Golf — not supported.
 
 > ⚠️ **`$ref` URLs may use internal domain:** Scoreboard and event responses may contain `$ref` URLs pointing to `sports.core.api.espn.pvt` — this is ESPN's internal domain and is not publicly accessible. Replace `.pvt` with `.com` to resolve. See [#20](https://github.com/pseudo-r/Public-ESPN-API/issues/20).

@@ -45,7 +45,7 @@ Each file covers leagues & competitions, API endpoints, Site API resources, and 
 
 ### Domain Routing Guide
 
-> All domains below were **live-verified via browser HTTP tests on 2026-03-26** — all returned HTTP 200 OK.
+> All domains below were **live-verified via browser HTTP tests on 2026-03-26** — all returned HTTP 200 OK. The `a.espncdn.com` image domain and the personalized/web-API endpoints were additionally verified on **2026-07-04**.
 
 | Domain | Use for | Verified Response Keys |
 |--------|---------|----------------------|
@@ -55,6 +55,7 @@ Each file covers leagues & competitions, API endpoints, Site API resources, and 
 | `cdn.espn.com/core/` | Full game packages — drives, plays, odds (requires `?xhr=1`) | Varies by sport |
 | `now.core.api.espn.com/v1/` | Real-time news feed — filter by `sport=`, `league=`, `team=` | `resultsCount`, `resultsLimit`, `resultsOffset`, `headlines[]` |
 | `sports.core.api.espn.com/v2/` | Core data — events, odds, play-by-play, athletes, coaches | Leagues: `$ref`, `id`, `name`, `season`, `teams`, `athletes`; Collections: `count`, `pageIndex`, `pageSize`, `items[]` |
+| `a.espncdn.com/i/` | Athlete headshots & team logos (image assets) | Binary PNG (`headshots/{sport}/players/full/{id}.png`, `teamlogos/{sport}/500/{abbrev}.png`) |
 
 **Sport-specific exceptions:**
 - 🏏 **Cricket scoreboard** → core API: `sports.core.api.espn.com/v2/sports/cricket/leagues/{league}/events`
@@ -82,4 +83,8 @@ Each file covers leagues & competitions, API endpoints, Site API resources, and 
 | Stats leaderboard | `https://site.web.api.espn.com/apis/common/v3/sports/{sport}/{league}/statistics/byathlete` |
 | Real-time news | `https://now.core.api.espn.com/v1/sports/news?sport=football` |
 | Core API | `https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/...` |
+| Personalized header | `https://site.api.espn.com/apis/personalized/v2/scoreboard/header?sport={sport}&region={region}&tz={tz}` |
+| Golf player summary | `https://site.web.api.espn.com/apis/site/v2/sports/golf/{tour}/leaderboard/{eventId}/playersummary?season={year}&player={id}` |
+| Cricket match summary | `https://site.web.api.espn.com/apis/site/v2/sports/cricket/{leagueId}/summary?event={id}&lang=en&region=in` |
+| Athlete headshot | `https://a.espncdn.com/i/headshots/{sport}/players/full/{playerId}.png` |
 

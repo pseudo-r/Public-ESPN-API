@@ -124,6 +124,44 @@ GET https://site.api.espn.com/apis/site/v2/sports/cricket/{league}/{resource}
 > https://sports.core.api.espn.com/v2/sports/cricket/leagues/{league}/events
 > ```
 
+### Series Discovery & Match Summary — Web/Personalized API
+
+> ✅ **Live-verified 2026-07-04 (HTTP 200).** The personalized scoreboard header lists all active cricket series/competitions; the web-API summary returns a full match scorecard.
+
+```
+# All active cricket series (nav/header state)
+GET https://site.api.espn.com/apis/personalized/v2/scoreboard/header?sport=cricket&region=in&tz=Asia/Calcutta
+
+# Full match summary / scorecard (web API — leagueId is numeric, e.g. 23694)
+GET https://site.web.api.espn.com/apis/site/v2/sports/cricket/{leagueId}/summary?event={eventId}&lang=en&region=in
+```
+
+**Workflow:** the personalized header returns `sports[0].leagues[]` — each league is a cricket **series** with a numeric `id`. Feed that `id` into the summary endpoint's `{leagueId}` and an `events[].id` from the series as `{eventId}`.
+
+**Personalized header — `sports[0].leagues[]` fields** (verified 2026-07-04):
+
+| Field | Description |
+|-------|-------------|
+| `id` | Numeric series/league ID → use as `{leagueId}` in the summary endpoint |
+| `name` | Series name (e.g. *"India tour of England 2026"*) |
+| `abbreviation`, `shortName`, `shortAlternateName` | Short forms |
+| `slug` | URL slug |
+| `isTournament` | `true` for league/tournament formats (e.g. leagues), `false` for bilateral tours |
+| `smartdates` | Relevant date window |
+| `events[]` | Live/upcoming matches in that series (each with an `id` → use as `{eventId}`) |
+
+**Match summary — top-level keys** (verified 2026-07-04):
+
+`notes`, `gameInfo`, `rosters`, `matchcards`, `debuts`, `news`, `leaders`, `article`, `videos`, `header`, `wallclockAvailable`, `meta` — `matchcards` holds the innings-by-innings scorecard; `rosters` holds both squads; `leaders` holds top batters/bowlers.
+
+```bash
+# List active cricket series
+curl "https://site.api.espn.com/apis/personalized/v2/scoreboard/header?sport=cricket&region=in&tz=Asia/Calcutta"
+
+# Match summary (leagueId 23694, event 1490237)
+curl "https://site.web.api.espn.com/apis/site/v2/sports/cricket/23694/summary?contentorigin=espn&event=1490237&lang=en&region=in"
+```
+
 ---
 
 ## Example API Calls
