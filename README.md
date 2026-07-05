@@ -226,6 +226,7 @@ GET https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/{resourc
 | `athletes/{id}/injuries` | Athlete injury history |
 | `athletes/{id}/vsathlete/{opponentId}` | Head-to-head stats |
 | `events` | Events with full detail |
+  `events/{id}` | Specific event details | 
 | `events/{id}/competitions/{id}/odds` | Betting odds |
 | `events/{id}/competitions/{id}/probabilities` | Win probabilities |
 | `events/{id}/competitions/{id}/plays` | Play-by-play |
