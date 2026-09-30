@@ -1,0 +1,1157 @@
+{
+  "checked_at": "2026-09-30T12:34:55.409984+00:00",
+  "sports": {
+    "australian-football": {
+      "count": 1,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/australian-football/leagues/afl?lang=en&region=us"
+        }
+      ]
+    },
+    "baseball": {
+      "count": 12,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/caribbean-series?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/college-baseball?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/college-softball?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/dominican-winter-league?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/llb?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/lls?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mexican-winter-league?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/olympics-baseball?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/puerto-rican-winter-league?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/venezuelan-winter-league?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/baseball/leagues/world-baseball-classic?lang=en&region=us"
+        }
+      ]
+    },
+    "basketball": {
+      "count": 15,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/fiba?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-olympics-basketball?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba-development?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba-summer-california?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba-summer-golden-state?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba-summer-las-vegas?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba-summer-orlando?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba-summer-sacramento?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba-summer-utah?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nbl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/wnba?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-college-basketball?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/basketball/leagues/womens-olympics-basketball?lang=en&region=us"
+        }
+      ]
+    },
+    "cricket": {
+      "count": 0,
+      "items": []
+    },
+    "field-hockey": {
+      "count": 1,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/field-hockey/leagues/womens-college-field-hockey?lang=en&region=us"
+        }
+      ]
+    },
+    "football": {
+      "count": 5,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/cfl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/college-football?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/ufl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/xfl?lang=en&region=us"
+        }
+      ]
+    },
+    "golf": {
+      "count": 9,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/champions-tour?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/eur?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/liv?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/lpga?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/mens-olympics-golf?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/ntw?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/pga?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/tgl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/golf/leagues/womens-olympics-golf?lang=en&region=us"
+        }
+      ]
+    },
+    "hockey": {
+      "count": 6,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/hockey/leagues/hockey-world-cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/hockey/leagues/mens-college-hockey?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/hockey/leagues/nhl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/hockey/leagues/olympics-mens-ice-hockey?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/hockey/leagues/olympics-womens-ice-hockey?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/hockey/leagues/womens-college-hockey?lang=en&region=us"
+        }
+      ]
+    },
+    "lacrosse": {
+      "count": 4,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/lacrosse/leagues/mens-college-lacrosse?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/lacrosse/leagues/nll?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/lacrosse/leagues/pll?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/lacrosse/leagues/womens-college-lacrosse?lang=en&region=us"
+        }
+      ]
+    },
+    "mma": {
+      "count": 48,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/absolute?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/affliction?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/bang-fighting?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/banni-fight?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/banzay?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/barracao?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/battlezone?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/bellator?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/benevides?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/big-fight?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/blackout?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/bosnia?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/boxe?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/brazilian-freestyle?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/budo?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/cage-warriors?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/dream?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/fng?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/ifc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/ifl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/k1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/ksw?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/lfa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/lfc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/m1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/mfc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/mvp?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/ofc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/other?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/pancrase?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/pfl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/pride?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/proelite?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/rfa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/rizin?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/roc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/sfl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/shark-fights?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/shooto-brazil?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/shooto-japan?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/shoxc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/strikeforce?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/tfc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/tpf?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/ufc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/vfc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/wec?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/mma/leagues/xfc?lang=en&region=us"
+        }
+      ]
+    },
+    "racing": {
+      "count": 5,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/racing/leagues/f1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/racing/leagues/irl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/racing/leagues/nascar-premier?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/racing/leagues/nascar-secondary?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/racing/leagues/nascar-truck?lang=en&region=us"
+        }
+      ]
+    },
+    "rugby": {
+      "count": 25,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/268565?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/164205?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/180659?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/244293?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/271937?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/272073?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/267979?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/270557?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/270559?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/2009?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/17567?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/242041?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/289271?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/289272?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/289277?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/289279?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/270555?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/270563?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/236461?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/289274?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/282?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/283?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/289237?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/289262?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby/leagues/289234?lang=en&region=us"
+        }
+      ]
+    },
+    "rugby-league": {
+      "count": 1,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/rugby-league/leagues/3?lang=en&region=us"
+        }
+      ]
+    },
+    "soccer": {
+      "count": 218,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.world?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.wwc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.champions?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.fa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.league_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/esp.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.charity?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.nations?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.friendly?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.nwsl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/esp.super_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/esp.copa_del_rey?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.leagues.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/campeones.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.nwsl.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.shebelieves?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.w.champions_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.wchampions?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.europa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.europa.conf?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/mex.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ger.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ger.playoff.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ger.dfb_pokal?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ita.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ita.coppa_italia?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.super_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ita.super_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ger.super_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.w.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.w.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ned.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/por.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.coupe_de_france?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.open?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ksa.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.nations.league?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/conmebol.libertadores?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.champions?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.worldq.uefa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.wcq.ply?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.worldq.concacaf?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.worldq.afc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.worldq.caf?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.worldq.conmebol?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.worldq.ofc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.friendly.w?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.wworldq.uefa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.wwcq.ply?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.w.nations?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.w.usl.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.champions_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.wchampions_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.w.fa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.w.league_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/esp.w.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/esp.copa_de_la_reina?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.w.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ned.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/sco.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/sco.tennents?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/sco.cis?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/aus.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/aus.w.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ksa.kings.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/por.taca.portugal?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/tur.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/caf.nations?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/afc.champions?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/caf.nations_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/afc.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.cwc?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.olympics?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.w.olympics?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.gold?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.gold_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.w.gold?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.confederations_playoff?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.w.champions_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.womens.championship?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.euro?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.euroq?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.weuro?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.euro_u21?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.super_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/conmebol.america?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/conmebol.america.femenina?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.usl.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.usl.l1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.usl.l1.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/mex.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/global.finalissima?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/global.u20.intercontinental_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/global.w.finalissima?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.world.u20?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/afc.asian.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/afc.w.asian.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/afc.cupq?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/aff.championship?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/caf.w.nations?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/caf.championship?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/can.w.nsl?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.europa_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.europa.conf_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.w.europa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.intercontinental_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/afc.champions_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/afc.cup_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/club.friendly?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/nonfifa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/rus.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/rus.1.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bel.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bel.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/esp.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ger.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ita.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.1.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fra.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/por.1.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/aut.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/gre.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/chn.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/global.club_challenge?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ned.supercup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/global.pinatar_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/friendly.emirates_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/esp.joan_gamper?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/jpn.world_challenge?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/global.arnold.clark_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.conmebol.olympicsq?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.concacaf.olympicsq?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.w.concacaf.olympicsq?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.world.u17?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.wworld.u17?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.euro_u21_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uefa.euro.u19?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.friendly_u21?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ger.2.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.trophy?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.3?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.4?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.5?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/eng.fa_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/sco.1.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/sco.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/sco.2.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/sco.challenge?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/sco.tennents_qual?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ned.playoff.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ned.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ned.3.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ned.w.knvb_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ned.w.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/swe.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/swe.1.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/den.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/nor.1.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/nor.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/conmebol.sudamericana?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/conmebol.recopa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/arg.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/arg.copa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/arg.copa_de_la_superliga?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/arg.trofeo_de_la_campeones?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/arg.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/arg.supercopa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/arg.supercopa.internacional?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/arg.3?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.supercopa_do_brazil?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.copa_do_brazil?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.camp.carioca?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.camp.paulista?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.camp.gaucho?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bra.camp.mineiro?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/chi.super_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/chi.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/chi.1.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/chi.copa_chi?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uru.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/uru.2?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/col.superliga?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/col.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/col.copa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/per.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/par.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/par.1.supercopa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ecu.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ven.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bol.ply.rel?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bol.copa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/bol.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/jpn.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/mex.campeon?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.central.american.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.champions_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/concacaf.u23?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/hon.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/crc.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/gua.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/slv.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/fifa.intercontinental.cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/afc.saff.championship?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/chn.1.promotion.relegation?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/ind.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/global.gulf_cup?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/caf.cosafa?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/caf.champions?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/caf.confed?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/rsa.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.ncaa.m.1?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/soccer/leagues/usa.ncaa.w.1?lang=en&region=us"
+        }
+      ]
+    },
+    "tennis": {
+      "count": 2,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/tennis/leagues/atp?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/tennis/leagues/wta?lang=en&region=us"
+        }
+      ]
+    },
+    "volleyball": {
+      "count": 2,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/volleyball/leagues/mens-college-volleyball?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/volleyball/leagues/womens-college-volleyball?lang=en&region=us"
+        }
+      ]
+    },
+    "water-polo": {
+      "count": 2,
+      "items": [
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/water-polo/leagues/mens-college-water-polo?lang=en&region=us"
+        },
+        {
+          "$ref": "http://sports.core.api.espn.com/v2/sports/water-polo/leagues/womens-college-water-polo?lang=en&region=us"
+        }
+      ]
+    }
+  }
+}

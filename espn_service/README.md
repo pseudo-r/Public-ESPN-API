@@ -1,6 +1,6 @@
 # ESPN Service API
 
-A production-ready Django REST API for ingesting and querying ESPN sports data.
+A Django REST API for ingesting and querying ESPN sports data.
 
 ## Features
 
@@ -367,3 +367,7 @@ Once running:
 ## License
 
 MIT License - See LICENSE file
+
+## September 2026 audit changes
+
+Production ingestion POST endpoints require an authenticated staff user. Local and test settings retain anonymous ingestion. `AthleteStatsIngestionService` requires an explicit season if the upstream response has no season year; it preserves the returned Common v3 categories. See [the audit report](../docs/audit-2026-09-30.md) for evidence and limitations.

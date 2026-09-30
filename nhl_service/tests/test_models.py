@@ -1,6 +1,7 @@
 """Tests for NHL models."""
 
 import pytest
+
 from apps.nhl.models import Team
 
 pytestmark = pytest.mark.django_db

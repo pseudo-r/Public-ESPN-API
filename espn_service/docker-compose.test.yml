@@ -27,7 +27,7 @@ services:
       - .:/app
     environment:
       DJANGO_SETTINGS_MODULE: config.settings.test
-      DATABASE_URL: postgres://postgres:postgres@db:5432/espn_test
+      TEST_DATABASE_URL: postgres://postgres:postgres@db:5432/espn_test
       SECRET_KEY: docker-test-secret-key-not-for-production
       DEBUG: "False"
       CELERY_BROKER_URL: ""

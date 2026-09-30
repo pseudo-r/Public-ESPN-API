@@ -269,7 +269,7 @@ class TestGetStandingsDomainFix:
         client = ESPNClient()
         # Inspect the path string that would be composed
         # get_standings produces: /apis/v2/sports/{sport}/{league}/standings
-        from unittest.mock import patch, MagicMock
+        from unittest.mock import MagicMock, patch
         mock_resp = MagicMock()
         mock_resp.is_success = True
         mock_resp.data = {}

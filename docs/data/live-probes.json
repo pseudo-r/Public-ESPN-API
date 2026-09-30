@@ -1,0 +1,597 @@
+{
+  "checked_at": "2026-09-30T13:41:54.254966+00:00",
+  "results": [
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+      "status": 200,
+      "keys": [
+        "events",
+        "leagues",
+        "provider",
+        "season",
+        "week"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams",
+      "status": 200,
+      "keys": [
+        "sports"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries",
+      "status": 200,
+      "keys": [
+        "injuries",
+        "season",
+        "status",
+        "timestamp"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/transactions",
+      "status": 200,
+      "keys": [
+        "count",
+        "pageCount",
+        "pageIndex",
+        "pageSize",
+        "requestedYear",
+        "season",
+        "status",
+        "timestamp",
+        "transactions"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/groups",
+      "status": 200,
+      "keys": [
+        "groups",
+        "status"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/calendar",
+      "status": 404
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/12/schedule",
+      "status": 200,
+      "keys": [
+        "byeWeek",
+        "events",
+        "requestedSeason",
+        "season",
+        "status",
+        "team",
+        "timestamp"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/12/depthcharts",
+      "status": 200,
+      "keys": [
+        "depthchart",
+        "season",
+        "status",
+        "team",
+        "timestamp"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/12/injuries",
+      "status": 200,
+      "keys": [],
+      "empty": true
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/athletes/3139477",
+      "status": 404
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/athletes/3139477/gamelog",
+      "status": 404
+    },
+    {
+      "url": "https://site.api.espn.com/apis/v2/sports/football/nfl/standings",
+      "status": 200,
+      "keys": [
+        "abbreviation",
+        "children",
+        "id",
+        "isConference",
+        "links",
+        "name",
+        "season",
+        "seasons",
+        "shortName",
+        "uid"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v3/sports/football/nfl/scoreboard",
+      "status": 404
+    },
+    {
+      "url": "https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/3139477/overview",
+      "status": 200,
+      "keys": [
+        "awards",
+        "fantasy",
+        "gameLog",
+        "news",
+        "nextGame",
+        "rotowire",
+        "statistics"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/3139477/stats",
+      "status": 200,
+      "keys": [
+        "categories",
+        "filters",
+        "glossary",
+        "teams"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/3139477/gamelog",
+      "status": 200,
+      "keys": [
+        "categories",
+        "displayNames",
+        "events",
+        "filters",
+        "glossary",
+        "labels",
+        "names",
+        "seasonTypes"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/3139477/splits",
+      "status": 200,
+      "keys": [
+        "categories",
+        "descriptions",
+        "displayName",
+        "displayNames",
+        "filters",
+        "labels",
+        "names",
+        "splitCategories"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/3139477/bio",
+      "status": 200,
+      "keys": [
+        "awards",
+        "teamHistory"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/statistics/byathlete?limit=1",
+      "status": 200,
+      "keys": [
+        "athletes",
+        "categories",
+        "currentSeason",
+        "glossary",
+        "league",
+        "pagination",
+        "requestedSeason"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/personalized/v2/scoreboard/header?sport=cricket&region=in",
+      "status": 200,
+      "keys": [
+        "sports"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v3/sports/football/nfl/athletes?limit=1",
+      "status": 200,
+      "keys": [
+        "count",
+        "items",
+        "pageCount",
+        "pageIndex",
+        "pageSize"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v3/sports/football/leagues/nfl/athletes?limit=1",
+      "status": 404
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/providers?limit=100",
+      "status": 200,
+      "keys": [
+        "count",
+        "items",
+        "pageCount",
+        "pageIndex",
+        "pageSize"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988",
+      "status": 200,
+      "keys": [
+        "$ref",
+        "competitions",
+        "date",
+        "id",
+        "league",
+        "links",
+        "name",
+        "season",
+        "seasonType",
+        "shortName",
+        "timeValid",
+        "uid",
+        "venues",
+        "week"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988",
+      "status": 200,
+      "keys": [
+        "$ref",
+        "attendance",
+        "boxscoreAvailable",
+        "boxscoreSource",
+        "bracketAvailable",
+        "broadcasts",
+        "commentaryAvailable",
+        "competitors",
+        "conferenceCompetition",
+        "conversationAvailable",
+        "date",
+        "dateValid",
+        "details",
+        "divisionCompetition",
+        "drives",
+        "format",
+        "gameSource",
+        "gamecastAvailable",
+        "guid",
+        "hasDefensiveStats",
+        "highlightsAvailable",
+        "id",
+        "leaders",
+        "linescoreSource",
+        "lineupAvailable",
+        "links",
+        "liveAvailable",
+        "neutralSite",
+        "notes",
+        "odds",
+        "officials",
+        "onWatchESPN",
+        "pickcenterAvailable",
+        "playByPlayAvailable",
+        "playByPlaySource",
+        "possessionArrowAvailable",
+        "powerIndexes",
+        "predictor",
+        "previewAvailable",
+        "probabilities",
+        "recapAvailable",
+        "recent",
+        "relevancy",
+        "shotChartAvailable",
+        "situation",
+        "statsSource",
+        "status",
+        "summaryAvailable",
+        "ticketsAvailable",
+        "timeValid",
+        "timeoutsAvailable",
+        "type",
+        "uid",
+        "venue",
+        "wallclockAvailable"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/status",
+      "status": 200,
+      "keys": [
+        "$ref",
+        "clock",
+        "displayClock",
+        "period",
+        "type"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/drives?limit=1",
+      "status": 200,
+      "keys": [
+        "$ref",
+        "count",
+        "items",
+        "pageCount",
+        "pageIndex",
+        "pageSize"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/17/roster?limit=1",
+      "status": 200,
+      "keys": [
+        "$ref",
+        "competition",
+        "entries",
+        "team"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/17/statistics",
+      "status": 200,
+      "keys": [
+        "$ref",
+        "competition",
+        "splits",
+        "team"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/17/linescores",
+      "status": 200,
+      "keys": [
+        "count",
+        "items",
+        "pageCount",
+        "pageIndex",
+        "pageSize"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/calendar",
+      "status": 200,
+      "keys": [
+        "count",
+        "items",
+        "pageCount",
+        "pageIndex",
+        "pageSize"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types",
+      "status": 200,
+      "keys": [
+        "count",
+        "items",
+        "pageCount",
+        "pageIndex",
+        "pageSize"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2026/types/2/weeks",
+      "status": 200,
+      "keys": [
+        "count",
+        "items",
+        "pageCount",
+        "pageIndex",
+        "pageSize"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477/eventlog",
+      "status": 200,
+      "keys": [
+        "$ref",
+        "events",
+        "teams"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/3139477/statisticslog",
+      "status": 200,
+      "keys": [
+        "$ref",
+        "entries"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.web.api.espn.com/apis/search/v2?query=Patrick%20Mahomes&limit=1",
+      "status": 200,
+      "keys": [
+        "resultTypes",
+        "results",
+        "totalFound"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams",
+      "status": 200,
+      "keys": [
+        "sports"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+      "status": 200,
+      "keys": [
+        "day",
+        "events",
+        "leagues",
+        "provider",
+        "season"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?limit=1",
+      "status": 200,
+      "keys": [
+        "articles",
+        "header",
+        "link"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/teams",
+      "status": 200,
+      "keys": [
+        "sports"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
+      "status": 200,
+      "keys": [
+        "day",
+        "events",
+        "leagues",
+        "provider",
+        "season"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/news?limit=1",
+      "status": 200,
+      "keys": [
+        "articles",
+        "header",
+        "link"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams",
+      "status": 200,
+      "keys": [
+        "sports"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard",
+      "status": 200,
+      "keys": [
+        "day",
+        "events",
+        "leagues",
+        "provider",
+        "season"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/news?limit=1",
+      "status": 200,
+      "keys": [
+        "articles",
+        "header",
+        "link"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams",
+      "status": 200,
+      "keys": [
+        "sports"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
+      "status": 200,
+      "keys": [
+        "day",
+        "events",
+        "leagues",
+        "provider",
+        "season"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/news?limit=1",
+      "status": 200,
+      "keys": [
+        "articles",
+        "header",
+        "link"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams",
+      "status": 200,
+      "keys": [
+        "sports"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
+      "status": 200,
+      "keys": [
+        "events",
+        "leagues",
+        "provider",
+        "season",
+        "week"
+      ],
+      "empty": false
+    },
+    {
+      "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/news?limit=1",
+      "status": 200,
+      "keys": [
+        "articles",
+        "header",
+        "link"
+      ],
+      "empty": false
+    }
+  ]
+}

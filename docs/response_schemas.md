@@ -227,6 +227,8 @@
 
 ## Team Injuries (`/apis/site/v2/sports/{sport}/{league}/teams/{id}/injuries`)
 
+**Audit 2026-09-30:** NFL team 12 returned an empty object. The following is a historical illustrative schema, not a verified current response. Prefer the league-wide injuries endpoint and filter its team groups.
+
 ```json
 {
   "team": {
@@ -333,6 +335,98 @@
   }
 }
 ```
+
+---
+
+## Event detail (Core API v2)
+
+`GET https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/events/{id}`
+
+Verified on 2026-09-30 using NFL event `401772988`. This is an abbreviated live
+response; omitted optional fields are not implied to be absent.
+
+```json
+{
+  "id": "401772988",
+  "date": "2026-02-08T23:30Z",
+  "name": "Seattle Seahawks at New England Patriots",
+  "shortName": "SEA VS NE",
+  "season": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025?lang=en&region=us"
+  },
+  "seasonType": {
+    "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/types/3?lang=en&region=us"
+  },
+  "competitions": [
+    {
+      "id": "401772988",
+      "date": "2026-02-08T23:30Z",
+      "neutralSite": true,
+      "status": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/status?lang=en&region=us"
+      },
+      "odds": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/odds?lang=en&region=us"
+      },
+      "drives": {
+        "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/drives?lang=en&region=us"
+      },
+      "competitors": [
+        {
+          "id": "17",
+          "homeAway": "home",
+          "winner": false,
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/17?lang=en&region=us"
+          },
+          "score": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/17/score?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/17/statistics?lang=en&region=us"
+          },
+          "roster": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/17/roster?lang=en&region=us"
+          }
+        },
+        {
+          "id": "26",
+          "homeAway": "away",
+          "winner": true,
+          "team": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2025/teams/26?lang=en&region=us"
+          },
+          "score": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/26/score?lang=en&region=us"
+          },
+          "statistics": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/26/statistics?lang=en&region=us"
+          },
+          "roster": {
+            "$ref": "http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401772988/competitions/401772988/competitors/26/roster?lang=en&region=us"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+Core events provide competition metadata and `$ref` links. A competitor's
+`score`, `statistics`, and `roster`, and a competition's `status`, can be
+references rather than inline values. Follow those URLs to obtain their data;
+do not treat them as Site scoreboard strings. Event and competition IDs can
+differ, particularly in multi-competition sports. Use `get_core_event()` for
+this response; `get_event()` continues to fetch the Site summary.
+
+Collection resources such as drives and linescores can include `count`,
+`pageIndex`, `pageSize`, `pageCount`, and `items`. Game rosters can instead return
+`entries`; do not apply a single collection parser to every resource.
+
+The event-schema addition was proposed by **Chinmay Khachane** in
+[PR #22](https://github.com/pseudo-r/Public-ESPN-API/pull/22). Integrated manually
+with a corrected README table row, a shorter freshly verified example, and
+reference-handling guidance; the PR itself was not merged.
 
 ---
 

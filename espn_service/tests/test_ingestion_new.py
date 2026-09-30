@@ -6,23 +6,21 @@ Celery tasks, and REST GET endpoints for news/injuries/transactions/athlete-stat
 
 from __future__ import annotations
 
-from datetime import date, datetime, timezone
+from datetime import date
 from unittest.mock import MagicMock, patch
 
 import pytest
 from django.test import TestCase
-from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APIClient
 
 from apps.espn.models import Injury, League, NewsArticle, Sport, Team, Transaction
 from apps.ingest.services import (
-    InjuryIngestionService,
     IngestionResult,
+    InjuryIngestionService,
     NewsIngestionService,
     TransactionIngestionService,
 )
-
 
 # ---------------------------------------------------------------------------
 # Helpers

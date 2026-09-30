@@ -39,19 +39,19 @@ class Command(BaseCommand):
         service = NewsIngestionService()
         total_created = total_updated = total_errors = 0
 
-        for s, l in leagues:
+        for s, league_slug in leagues:
             try:
-                result = service.ingest_news(s, l, limit=limit)
+                result = service.ingest_news(s, league_slug, limit=limit)
                 total_created += result.created
                 total_updated += result.updated
                 total_errors += result.errors
                 self.stdout.write(
                     self.style.SUCCESS(
-                        f"  [{s}/{l}] created={result.created} updated={result.updated} errors={result.errors}"
+                        f"  [{s}/{league_slug}] created={result.created} updated={result.updated} errors={result.errors}"
                     )
                 )
             except Exception as e:
-                self.stdout.write(self.style.ERROR(f"  [{s}/{l}] FAILED: {e}"))
+                self.stdout.write(self.style.ERROR(f"  [{s}/{league_slug}] FAILED: {e}"))
                 total_errors += 1
 
         self.stdout.write(

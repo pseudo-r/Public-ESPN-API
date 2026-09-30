@@ -5,19 +5,36 @@ from typing import Any
 
 import httpx
 from django.conf import settings
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_exponential
 
 logger = logging.getLogger(__name__)
 
 
-class NHLWebClient:
+def _is_transient(exc):
+    return isinstance(exc, httpx.TransportError) or (
+        isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code >= 500
+    )
+
+
+class ManagedClient:
+    def close(self):
+        self.client.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        self.close()
+
+
+class NHLWebClient(ManagedClient):
     """Client for modern api-web.nhle.com endpoints."""
 
     def __init__(self) -> None:
         self.base_url = settings.NHL_API_WEB_BASE_URL
         self.client = httpx.Client(timeout=settings.NHL_API_TIMEOUT)
 
-    @retry(stop=stop_after_attempt(settings.NHL_API_RETRIES), wait=wait_exponential(multiplier=1, min=2, max=10))
+    @retry(retry=retry_if_exception(_is_transient), stop=stop_after_attempt(settings.NHL_API_RETRIES), wait=wait_exponential(multiplier=1, min=2, max=10), reraise=True)
     def _get(self, endpoint: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
         url = f"{self.base_url.rstrip('/')}/{endpoint.lstrip('/')}"
         logger.debug("NHLWebClient GET %s", url)
@@ -47,14 +64,14 @@ class NHLWebClient:
         return self._get(f"v1/gamecenter/{game_id}/boxscore")
 
 
-class NHLStatsClient:
+class NHLStatsClient(ManagedClient):
     """Client for api.nhle.com/stats/rest endpoints."""
 
     def __init__(self) -> None:
         self.base_url = settings.NHL_API_STATS_BASE_URL
         self.client = httpx.Client(timeout=settings.NHL_API_TIMEOUT)
 
-    @retry(stop=stop_after_attempt(settings.NHL_API_RETRIES), wait=wait_exponential(multiplier=1, min=2, max=10))
+    @retry(retry=retry_if_exception(_is_transient), stop=stop_after_attempt(settings.NHL_API_RETRIES), wait=wait_exponential(multiplier=1, min=2, max=10), reraise=True)
     def _get(self, endpoint: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
         url = f"{self.base_url.rstrip('/')}/{endpoint.lstrip('/')}"
         logger.debug("NHLStatsClient GET %s", url)

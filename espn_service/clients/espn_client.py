@@ -16,7 +16,7 @@ from django.conf import settings
 from tenacity import (
     RetryError,
     retry,
-    retry_if_exception_type,
+    retry_if_exception,
     stop_after_attempt,
     wait_exponential,
 )
@@ -28,6 +28,10 @@ from apps.core.exceptions import (
 )
 
 logger = structlog.get_logger(__name__)
+
+
+class ESPNTransientError(ESPNClientError):
+    """An upstream server failure that can be retried safely."""
 
 
 class ESPNEndpointDomain(str, Enum):
@@ -43,7 +47,7 @@ class ESPNEndpointDomain(str, Enum):
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Sports & League Registry
-# All 17 sports and 139 leagues discovered from the ESPN v2/v3 WADL.
+# Curated metadata for 17 sports; see docs/data/leagues.json for live discovery.
 # Format: "sport_slug": "Display Name"
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -131,6 +135,7 @@ LEAGUE_INFO: dict[str, tuple[str, str]] = {
     "pll": ("Premier Lacrosse League", "PLL"),
     "womens-college-lacrosse": ("NCAA Women's Lacrosse", "NCAWL"),
     # MMA
+    "ufc": ("Ultimate Fighting Championship", "UFC"),
     "absolute": ("Absolute Championship Berkut", "ACB"),
     "affliction": ("Affliction", "AFF"),
     "bang-fighting": ("Bang Fighting Championships", "BFC"),
@@ -190,6 +195,7 @@ LEAGUE_INFO: dict[str, tuple[str, str]] = {
     # Rugby League
     "3": ("Rugby League", "RL"),
     # Soccer
+    "eng.2": ("English League Championship", "EFL"),
     "fifa.world": ("FIFA World Cup", "WC"),
     "fifa.wwc": ("FIFA Women's World Cup", "WWC"),
     "uefa.champions": ("UEFA Champions League", "UCL"),
@@ -384,7 +390,7 @@ class ESPNClient:
                 status_code=response.status_code,
             )
             # Raise for retry
-            raise ESPNClientError(f"ESPN server error: {response.status_code}")
+            raise ESPNTransientError(f"ESPN server error: {response.status_code}")
 
         if response.status_code >= 400:
             logger.error(
@@ -415,7 +421,9 @@ class ESPNClient:
         """
 
         @retry(
-            retry=retry_if_exception_type((httpx.TransportError, ESPNClientError)),
+            retry=retry_if_exception(
+                lambda exc: isinstance(exc, httpx.TransportError | ESPNTransientError)
+            ),
             stop=stop_after_attempt(self.max_retries),
             wait=wait_exponential(multiplier=self.retry_backoff, min=1, max=10),
             reraise=True,
@@ -1043,6 +1051,22 @@ class ESPNClient:
 
     # --------------------- Team Sub-Resource Endpoints ---------------------
 
+    def get_team_schedule(
+        self, sport: str, league: str, team_id: str, season: int | None = None,
+    ) -> ESPNResponse:
+        """Get a team's schedule, optionally for a historical season."""
+        return self.get(
+            f"/apis/site/v2/sports/{sport}/{league}/teams/{team_id}/schedule",
+            params={"season": season} if season is not None else None,
+        )
+
+    def get_athlete_bio(self, sport: str, league: str, athlete_id: str | int) -> ESPNResponse:
+        """Get athlete awards and team history from the Common v3 API."""
+        return self.get(
+            f"/apis/common/v3/sports/{sport}/{league}/athletes/{athlete_id}/bio",
+            domain=ESPNEndpointDomain.WEB_V3,
+        )
+
     def get_team_injuries(
         self,
         sport: str,
@@ -1603,6 +1627,77 @@ class ESPNClient:
             params["team"] = team
         logger.info("fetching_now_news", sport=sport, league=league, team=team)
         return self.get(path, domain=ESPNEndpointDomain.NOW, params=params)
+
+
+    # Additional discovery and event resources verified in the September audit.
+
+    def get_core_event(self, sport: str, league: str, event_id: str) -> ESPNResponse:
+        """Core event metadata and references; get_event() returns the Site summary."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/events/{event_id}", domain=ESPNEndpointDomain.CORE)
+
+    def get_competition(self, sport: str, league: str, event_id: str, competition_id: str) -> ESPNResponse:
+        """Competition metadata; event and competition IDs need not be equal."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}", domain=ESPNEndpointDomain.CORE)
+
+    def get_competition_status(self, sport: str, league: str, event_id: str, competition_id: str) -> ESPNResponse:
+        """Resolve the competition status reference."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/status", domain=ESPNEndpointDomain.CORE)
+
+    def get_competitor_roster(self, sport: str, league: str, event_id: str, competition_id: str, competitor_id: str, page: int = 1, limit: int = 100) -> ESPNResponse:
+        """Game roster (often entries rather than items); paging support varies."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/roster", domain=ESPNEndpointDomain.CORE, params={"page": page, "limit": limit})
+
+    def get_competitor_statistics(self, sport: str, league: str, event_id: str, competition_id: str, competitor_id: str) -> ESPNResponse:
+        """Game statistics for one competitor."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/statistics", domain=ESPNEndpointDomain.CORE)
+
+    def get_competitor_linescores(self, sport: str, league: str, event_id: str, competition_id: str, competitor_id: str) -> ESPNResponse:
+        """Period/inning scores for one competitor."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/competitors/{competitor_id}/linescores", domain=ESPNEndpointDomain.CORE)
+
+    def get_drives(self, sport: str, league: str, event_id: str, competition_id: str, page: int = 1, limit: int = 100) -> ESPNResponse:
+        """Football drive references; follow each drive's plays for detail."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/events/{event_id}/competitions/{competition_id}/drives", domain=ESPNEndpointDomain.CORE, params={"page": page, "limit": limit})
+
+    def get_athlete_eventlog(self, sport: str, league: str, athlete_id: str, season: int | None = None) -> ESPNResponse:
+        """Core athlete event participation references."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/eventlog", domain=ESPNEndpointDomain.CORE, params={"season": season} if season else None)
+
+    def get_athlete_statisticslog(self, sport: str, league: str, athlete_id: str) -> ESPNResponse:
+        """References to available athlete statistics by season/type."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/athletes/{athlete_id}/statisticslog", domain=ESPNEndpointDomain.CORE)
+
+    def get_calendar(self, sport: str, league: str) -> ESPNResponse:
+        """Core calendar; Site v2 calendar is not interchangeable."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/calendar", domain=ESPNEndpointDomain.CORE)
+
+    def get_season_types(self, sport: str, league: str, season: int) -> ESPNResponse:
+        """Discover supported season types rather than assuming all four exist."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/seasons/{season}/types", domain=ESPNEndpointDomain.CORE)
+
+    def get_season_weeks(self, sport: str, league: str, season: int, season_type: int = 2) -> ESPNResponse:
+        """Weeks for a season type (primarily football)."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/seasons/{season}/types/{season_type}/weeks", domain=ESPNEndpointDomain.CORE)
+
+    def get_providers(self, sport: str, league: str, page: int = 1, limit: int = 100) -> ESPNResponse:
+        """Discover odds providers instead of relying on stale hard-coded IDs."""
+        return self.get(f"/v2/sports/{sport}/leagues/{league}/providers", domain=ESPNEndpointDomain.CORE, params={"page": page, "limit": limit})
+
+    def search(self, query: str, limit: int = 10) -> ESPNResponse:
+        """Global ESPN search; query values are encoded by httpx."""
+        return self.get("/apis/search/v2", domain=ESPNEndpointDomain.WEB_V3, params={"query": query, "limit": limit})
+
+    def get_personalized_scoreboard(self, sport: str, region: str = "us", timezone: str = "UTC") -> ESPNResponse:
+        """Header leagues/events, useful for cricket series discovery."""
+        return self.get("/apis/personalized/v2/scoreboard/header", params={"sport": sport, "region": region, "tz": timezone})
+
+    def get_cricket_summary(self, league_id: str, event_id: str, region: str = "in") -> ESPNResponse:
+        """Cricket scorecard on the Web Site API (numeric league ID)."""
+        return self.get(f"/apis/site/v2/sports/cricket/{league_id}/summary", domain=ESPNEndpointDomain.WEB_V3, params={"event": event_id, "lang": "en", "region": region})
+
+    def get_golf_player_summary(self, tour: str, event_id: str, player_id: str, season: int) -> ESPNResponse:
+        """Golf hole-by-hole round data from the Web Site API."""
+        return self.get(f"/apis/site/v2/sports/golf/{tour}/leaderboard/{event_id}/playersummary", domain=ESPNEndpointDomain.WEB_V3, params={"season": season, "player": player_id})
 
 
 # Default singleton instance

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-30 — Endpoint and service audit
+
+- Added a reproducible 509-route Core WADL catalog, 356 league references, and 51 live endpoint probes.
+- Corrected invalid/stub endpoint guidance and added team-schedule and athlete-bio client methods.
+- Fixed grouped injury ingestion, empty snapshots, ID-less transaction refreshes, stats persistence, and terminal-error retries.
+- Required staff authentication for production ingestion and explicit NHL production secrets/hosts.
+- Repaired coverage CI, added regression tests, and resolved Ruff findings.
+- Follow-up: enforce transaction uniqueness, isolate failed records with savepoints, filter stats by season, add 17 client methods, expand NHL coverage, and restore the 80% CI coverage gate.
+- Manually integrate the event schema proposed by Chinmay Khachane in PR #22 without merging the PR.
+- See [audit findings and limitations](docs/audit-2026-09-30.md).
+
 All notable changes to the Public ESPN API documentation are listed here.
 
 ---

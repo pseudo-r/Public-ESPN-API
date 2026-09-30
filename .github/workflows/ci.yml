@@ -36,7 +36,7 @@ jobs:
           --health-retries 5
 
     env:
-      DATABASE_URL: postgres://postgres:postgres@localhost:5432/espn_test
+      TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/espn_test
       SECRET_KEY: ci-test-secret-key-not-for-production
       DEBUG: "False"
       CELERY_BROKER_URL: ""
@@ -55,21 +55,56 @@ jobs:
       - name: Install dependencies
         run: pip install -e ".[dev]"
 
+      - name: Lint both services
+        run: python -m ruff check . ../nhl_service
+
+      - name: Test endpoint catalog parser
+        working-directory: .
+        run: python -m unittest discover -s scripts
+
       - name: Run migrations
         run: python manage.py migrate --settings=config.settings.test
 
-      - name: Run tests (no coverage threshold in CI)
-        run: python -m pytest tests/ --no-cov -q
-
-      - name: Run tests with coverage (report only, no fail-under)
-        run: python -m pytest tests/ --cov=apps --cov=clients --cov-report=term-missing --cov-report=xml -p no:cov --override-ini="addopts=" -q
-        continue-on-error: true
+      - name: Run PostgreSQL tests with required coverage
+        run: python -m pytest tests/ --cov=apps --cov=clients --cov-report=term-missing --cov-report=xml --cov-fail-under=80 --override-ini="addopts=" -q
 
       - name: Upload coverage to Codecov
         if: matrix.python-version == '3.12'
         uses: codecov/codecov-action@v4
         with:
-          file: espn_service/coverage.xml
+          files: espn_service/coverage.xml
           flags: unittests
           fail_ci_if_error: false
+
+  nhl-test:
+    name: NHL service tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: nhl_service
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+      - name: Check Django and run tests
+        run: |
+          python manage.py check --settings=config.settings.test
+          python -m pytest tests/ --cov=apps --cov=clients --cov-report=term --cov-fail-under=80 --override-ini="addopts=" -q
+
+  docker-test:
+    name: Docker and PostgreSQL integration
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: espn_service
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test application image
+        run: docker compose -p espn-ci -f docker-compose.test.yml run --build --rm test
+      - name: Stop disposable test containers
+        if: always()
+        run: docker compose -p espn-ci -f docker-compose.test.yml down
 

@@ -404,6 +404,7 @@ class Transaction(TimestampMixin):
         Team, on_delete=models.SET_NULL, null=True, blank=True, related_name="transactions"
     )
     espn_id = models.CharField(max_length=100, blank=True, db_index=True)
+    identity_key = models.CharField(max_length=64, editable=False, default="")
     date = models.DateField(null=True, blank=True, db_index=True)
     description = models.TextField()
     type = models.CharField(max_length=100, blank=True)
@@ -415,6 +416,22 @@ class Transaction(TimestampMixin):
         ordering = ["-date", "-updated_at"]
         verbose_name = "Transaction"
         verbose_name_plural = "Transactions"
+        constraints = [
+            models.UniqueConstraint(fields=["league", "identity_key"], name="unique_transaction_identity"),
+        ]
+
+    def save(self, *args, **kwargs):
+        from .identity import transaction_identity
+
+        team_id = (self.raw_data.get("team") or {}).get("id")
+        if not team_id and self.team_id:
+            team_id = self.team.espn_id
+        self.identity_key = transaction_identity(
+            self.espn_id, self.date, self.description, team_id, self.athlete_espn_id,
+        )
+        if kwargs.get("update_fields") is not None:
+            kwargs["update_fields"] = set(kwargs["update_fields"]) | {"identity_key"}
+        super().save(*args, **kwargs)
 
     def __str__(self) -> str:
         return self.description[:80]

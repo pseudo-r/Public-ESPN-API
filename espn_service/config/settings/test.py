@@ -12,6 +12,11 @@ DATABASES = {
     }
 }
 
+# CI and Compose explicitly select an isolated PostgreSQL test database.
+# Local tests still default to SQLite and never reuse DATABASE_URL implicitly.
+if env("TEST_DATABASE_URL", default=""):  # noqa: F405
+    DATABASES = {"default": env.db("TEST_DATABASE_URL")}  # noqa: F405
+
 # Disable password hashing for faster tests
 PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.MD5PasswordHasher",
@@ -35,6 +40,8 @@ for logger in LOGGING["loggers"].values():  # noqa: F405
 
 # Faster static files handling
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+MIDDLEWARE = [m for m in MIDDLEWARE if m != "whitenoise.middleware.WhiteNoiseMiddleware"]  # noqa: F405
+LOGGING["handlers"]["console"]["formatter"] = "json"  # noqa: F405
 
 # ESPN Client - Use test configuration
 ESPN_CLIENT = {

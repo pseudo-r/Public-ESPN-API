@@ -1,6 +1,8 @@
 """Views for ingestion API endpoints."""
 
 import structlog
+from django.conf import settings
+from django.utils.module_loading import import_string
 from drf_spectacular.utils import extend_schema
 from rest_framework import status
 from rest_framework.request import Request
@@ -8,8 +10,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from apps.ingest.serializers import (
-    IngestionResultSerializer,
     IngestInjuriesRequestSerializer,
+    IngestionResultSerializer,
     IngestNewsRequestSerializer,
     IngestScoreboardRequestSerializer,
     IngestTeamsRequestSerializer,
@@ -26,7 +28,15 @@ from apps.ingest.services import (
 logger = structlog.get_logger(__name__)
 
 
-class IngestScoreboardView(APIView):
+class IngestionView(APIView):
+    """Keep public reads separate from configurable ingestion permissions."""
+
+    def get_permissions(self):
+        classes = getattr(settings, "INGEST_PERMISSION_CLASSES", ["rest_framework.permissions.AllowAny"])
+        return [import_string(path)() for path in classes]
+
+
+class IngestScoreboardView(IngestionView):
     """Endpoint for ingesting scoreboard data from ESPN."""
 
     @extend_schema(
@@ -59,7 +69,7 @@ class IngestScoreboardView(APIView):
         return Response(IngestionResultSerializer(result.to_dict()).data, status=status.HTTP_200_OK)
 
 
-class IngestTeamsView(APIView):
+class IngestTeamsView(IngestionView):
     """Endpoint for ingesting team data from ESPN."""
 
     @extend_schema(
@@ -91,7 +101,7 @@ class IngestTeamsView(APIView):
         return Response(IngestionResultSerializer(result.to_dict()).data, status=status.HTTP_200_OK)
 
 
-class IngestNewsView(APIView):
+class IngestNewsView(IngestionView):
     """Endpoint for ingesting news articles from ESPN."""
 
     @extend_schema(
@@ -124,7 +134,7 @@ class IngestNewsView(APIView):
         return Response(IngestionResultSerializer(result.to_dict()).data, status=status.HTTP_200_OK)
 
 
-class IngestInjuriesView(APIView):
+class IngestInjuriesView(IngestionView):
     """Endpoint for ingesting league injury reports from ESPN."""
 
     @extend_schema(
@@ -156,7 +166,7 @@ class IngestInjuriesView(APIView):
         return Response(IngestionResultSerializer(result.to_dict()).data, status=status.HTTP_200_OK)
 
 
-class IngestTransactionsView(APIView):
+class IngestTransactionsView(IngestionView):
     """Endpoint for ingesting league transactions from ESPN."""
 
     @extend_schema(

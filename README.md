@@ -4,8 +4,8 @@
 
 **Disclaimer:** This is documentation for ESPN's undocumented public API. I am not affiliated with ESPN. Use responsibly and follow ESPN's terms of service.
 
-[![CI](https://github.com/pseudo-r/Public-ESPN-API/actions/workflows/ci.yml/badge.svg?branch=Public-Api)](https://github.com/pseudo-r/Public-ESPN-API/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/pseudo-r/Public-ESPN-API/branch/Public-Api/graph/badge.svg)](https://codecov.io/gh/pseudo-r/Public-ESPN-API)
+[![CI](https://github.com/pseudo-r/Public-ESPN-API/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pseudo-r/Public-ESPN-API/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/pseudo-r/Public-ESPN-API/branch/main/graph/badge.svg)](https://codecov.io/gh/pseudo-r/Public-ESPN-API)
 
 ---
 
@@ -62,7 +62,7 @@ These apps are live examples of what you can build using this documentation and 
 - [Sports Coverage](#sports-coverage)
 - [API Endpoint Patterns](#api-endpoint-patterns)
     - [Site API v2](#site-api-v2-scores-teams-standings)
-    - [Site API v3](#site-api-v3-richer-game-data)
+    - [Site API v3](#site-api-v3-unverified)
     - [Core API v2](#core-api-v2-athletes-stats-events-odds)
     - [Core API v3](#core-api-v3-enriched-schema)
     - [Search & Web API](#search--web-api)
@@ -82,8 +82,10 @@ These apps are live examples of what you can build using this documentation and 
 
 ESPN provides undocumented APIs that power their website and mobile apps. These endpoints return JSON data for scores, teams, players, statistics, and more across all major sports.
 
-**Coverage:** 17 sports · 139 leagues · 370 v2 endpoints · 79 v3 endpoints  
-*(Mapped from the ESPN WADL at `sports.core.api.espn.com/v2/application.wadl` and `sports.core.api.espn.com/v3/application.wadl`)*
+**Coverage:** 17 configured sports · 356 Core-discovered league references · 412 v2 routes · 97 v3 routes
+*(Refreshed 2026-09-30; WADL-advertised routes are not all live-verified. Mapped from the ESPN WADL at `sports.core.api.espn.com/v2/application.wadl` and `sports.core.api.espn.com/v3/application.wadl`)*
+
+See the [complete Core catalog](docs/core-endpoints.md), [live probe results](docs/data/live-probes.json), [league snapshot](docs/data/leagues.json), and [audit findings](docs/audit-2026-09-30.md).
 
 **Additional domains documented:** `site.api.espn.com` (v2 + v3) · `site.web.api.espn.com` · `cdn.espn.com` · `now.core.api.espn.com` · `fantasy.espn.com`
 
@@ -122,7 +124,7 @@ curl "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
 curl "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams"
 
 # MLB Scores for a Specific Date
-curl "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=20241215"
+curl "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=20260929"
 
 # NHL Standings — NOTE: use /apis/v2/ (not /apis/site/v2/ which returns a stub)
 curl "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings"
@@ -137,19 +139,19 @@ Each sport has its own detailed endpoint reference document:
 | Sport | Slug | # Leagues | Documentation |
 |-------|------|-----------|---------------|
 | 🏉 Australian Football | `australian-football` | 1 | [docs/sports/australian_football.md](docs/sports/australian_football.md) |
-| ⚾ Baseball | `baseball` | 13 | [docs/sports/baseball.md](docs/sports/baseball.md) |
+| ⚾ Baseball | `baseball` | 12 | [docs/sports/baseball.md](docs/sports/baseball.md) |
 | 🏀 Basketball | `basketball` | 15 | [docs/sports/basketball.md](docs/sports/basketball.md) |
-| 🏏 Cricket | `cricket` | varies | [docs/sports/cricket.md](docs/sports/cricket.md) |
+| 🏏 Cricket | `cricket` | 0 | [docs/sports/cricket.md](docs/sports/cricket.md) |
 | 🏑 Field Hockey | `field-hockey` | 1 | [docs/sports/field_hockey.md](docs/sports/field_hockey.md) |
 | 🏈 Football | `football` | 5 | [docs/sports/football.md](docs/sports/football.md) |
 | ⛳ Golf | `golf` | 9 | [docs/sports/golf.md](docs/sports/golf.md) |
 | 🏒 Hockey | `hockey` | 6 | [docs/sports/hockey.md](docs/sports/hockey.md) |
 | 🥍 Lacrosse | `lacrosse` | 4 | [docs/sports/lacrosse.md](docs/sports/lacrosse.md) |
-| 🥊 MMA | `mma` | 25+ | [docs/sports/mma.md](docs/sports/mma.md) |
+| 🥊 MMA | `mma` | 48 | [docs/sports/mma.md](docs/sports/mma.md) |
 | 🏎️ Racing | `racing` | 5 | [docs/sports/racing.md](docs/sports/racing.md) |
-| 🏉 Rugby | `rugby` | 24 | [docs/sports/rugby.md](docs/sports/rugby.md) |
+| 🏉 Rugby | `rugby` | 25 | [docs/sports/rugby.md](docs/sports/rugby.md) |
 | 🏉 Rugby League | `rugby-league` | 1 | [docs/sports/rugby_league.md](docs/sports/rugby_league.md) |
-| ⚽ Soccer | `soccer` | 24 | [docs/sports/soccer.md](docs/sports/soccer.md) |
+| ⚽ Soccer | `soccer` | 218 | [docs/sports/soccer.md](docs/sports/soccer.md) |
 | 🎾 Tennis | `tennis` | 2 | [docs/sports/tennis.md](docs/sports/tennis.md) |
 | 🏐 Volleyball | `volleyball` | 2 | [docs/sports/volleyball.md](docs/sports/volleyball.md) |
 | 🤽 Water Polo | `water-polo` | 2 | [docs/sports/water_polo.md](docs/sports/water_polo.md) |
@@ -174,27 +176,29 @@ GET https://site.api.espn.com/apis/site/v2/sports/{sport}/{league}/{resource}
 | `teams/{id}/roster` | Team roster |
 | `teams/{id}/schedule` | Team schedule |
 | `teams/{id}/depthcharts` | Depth chart by position |
-| `teams/{id}/injuries` | Current injury report |
+| `teams/{id}/injuries` | NFL probe returned `{}`; use league `injuries` and filter team groups |
 | `teams/{id}/transactions` | Recent transactions/moves |
 | `teams/{id}/history` | Franchise historical record |
-| `athletes/{id}` | Individual athlete profile |
-| `athletes/{id}/gamelog` | Game-by-game log |
-| `athletes/{id}/splits` | Statistical splits |
-| `athletes/{id}/news` | Athlete news |
-| `athletes/{id}/bio` | Athlete bio |
+| `athletes/{id}` | Do not assume Site v2 support; prefer Core athlete detail or Common v3 resources below |
+| `athletes/{id}/gamelog` | Do not assume Site v2 support; prefer Core athlete detail or Common v3 resources below |
+| `athletes/{id}/splits` | Do not assume Site v2 support; prefer Core athlete detail or Common v3 resources below |
+| `athletes/{id}/news` | Do not assume Site v2 support; prefer Core athlete detail or Common v3 resources below |
+| `athletes/{id}/bio` | Do not assume Site v2 support; prefer Core athlete detail or Common v3 resources below |
 | `standings` | League standings ⚠️ use `/apis/v2/` — `/apis/site/v2/` returns a stub |
 | `injuries` | League-wide injury report |
 | `transactions` | Recent signings/trades/waivers |
 | `groups` | Conferences/divisions |
 | `news` | Latest news articles |
 | `rankings` | Rankings (college sports) |
-| `calendar` | Season calendar (all weeks/dates) |
+| `calendar` | NFL Site v2 probe returned 404; use Core league calendar |
 | `calendar/offseason` | Offseason date range |
 | `calendar/regular-season` | Regular season weeks |
 | `calendar/postseason` | Postseason date ranges |
 | `summary?event={id}` | Full game summary |
 
-### Site API v3 (Richer Game Data)
+### Site API v3 (Unverified)
+
+The NFL scoreboard returned **404 on 2026-09-30**. These are historical candidate patterns, not a supported upgrade path; use Site v2 scoreboard and summary.
 
 ```
 GET https://site.api.espn.com/apis/site/v3/sports/{sport}/{league}/{resource}
@@ -226,6 +230,7 @@ GET https://sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}/{resourc
 | `athletes/{id}/injuries` | Athlete injury history |
 | `athletes/{id}/vsathlete/{opponentId}` | Head-to-head stats |
 | `events` | Events with full detail |
+| `events/{id}` | Specific Core event metadata and competition references; [response example](docs/response_schemas.md#event-detail-core-api-v2) |
 | `events/{id}/competitions/{id}/odds` | Betting odds |
 | `events/{id}/competitions/{id}/probabilities` | Win probabilities |
 | `events/{id}/competitions/{id}/plays` | Play-by-play |
@@ -268,17 +273,18 @@ GET https://sports.core.api.espn.com/v3/sports/{sport}/{league}/{resource}
 ### Search & Web API
 
 ```
-GET https://site.web.api.espn.com/apis/{path}
+GET https://site.web.api.espn.com{path}
 ```
 
 | Endpoint | Description |
 |----------|-------------|
-| `/search/v2?query={q}&limit={n}` | Global ESPN search |
-| `/search/v2?query={q}&sport={sport}` | Sport-scoped search |
-| `/v2/scoreboard/header` | Scoreboard header/nav state |
+| `/apis/search/v2?query={q}&limit={n}` | Global ESPN search |
+| `/apis/search/v2?query={q}&sport={sport}` | Sport-scoped search |
+| `/apis/v2/scoreboard/header` | Scoreboard header/nav state |
 | `/apis/personalized/v2/scoreboard/header?sport={sport}&region={region}&tz={tz}` | Personalized multi-sport header. Returns `sports[].leagues[]` (each an active series/competition with numeric `id`, `name`, `isTournament`, `events[]`) — ideal for **cricket series discovery** |
 | `/apis/site/v2/sports/golf/{tour}/leaderboard/{eventId}/playersummary?season={year}&player={id}` | Golf hole-by-hole player scoring (`rounds[].linescores[]` = per-hole strokes/par/scoreType) |
 | `/apis/site/v2/sports/cricket/{leagueId}/summary?event={id}&lang=en&region=in` | Cricket match summary/scorecard (web API, numeric `leagueId` from the personalized header) |
+| `/apis/common/v3/sports/{sport}/{league}/athletes/{id}/bio` | Awards and team history (NFL verified 2026-09-30) |
 | `/apis/common/v3/sports/{sport}/{league}/athletes/{id}/overview` | Athlete overview (stats snapshot, news, next game) |
 | `/apis/common/v3/sports/{sport}/{league}/athletes/{id}/stats` | Season stats (NFL/NBA/NHL/MLB ✅, Soccer ❌) |
 | `/apis/common/v3/sports/{sport}/{league}/athletes/{id}/gamelog` | Game-by-game log (NFL/NBA/MLB ✅) |
@@ -547,11 +553,11 @@ Base: `sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}`
 
 ## ESPN Service (Django Implementation)
 
-This repository includes a production-ready Django REST API that wraps ESPN's endpoints.
+This repository includes a Django REST API that wraps ESPN's endpoints.
 
 ### Features
 
-- Full support for **17 sports** and **139 leagues**
+- Configured metadata for **17 sports** and a curated league subset; endpoint support varies by sport
 - Data ingestion and persistence (teams, events, competitors, athletes, venues)
 - Clean REST API with filtering and pagination
 - Background jobs (Celery)
@@ -594,6 +600,8 @@ docker compose up --build
 
 #### Ingest Triggers
 
+Production settings require an authenticated staff user for all ingestion POSTs. Local/test settings retain anonymous access. Public GET endpoints remain readable.
+
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | `/api/v1/ingest/teams/` | POST | Ingest ESPN teams |
@@ -609,19 +617,23 @@ The `ESPNClient` in `clients/espn_client.py` provides methods covering all major
 | Category | Methods |
 |----------|---------|
 | Scoreboard | `get_scoreboard()` |
-| Teams | `get_teams()`, `get_team()`, `get_team_roster()`, `get_core_teams()` |
-| Events | `get_event()`, `get_core_events()` |
+| Teams | `get_teams()`, `get_team()`, `get_team_roster()`, `get_team_schedule()`, `get_team_depth_chart()`, `get_core_teams()` |
+| Events | `get_event()`, `get_core_events()`, `get_core_event()`, `get_competition()`, `get_competition_status()` |
 | Standings | `get_standings()` (/apis/v2/), `get_core_standings()` |
 | News | `get_news()`, `get_now_news()` |
 | Rankings | `get_rankings()` |
 | League info | `get_league_injuries()`, `get_league_transactions()`, `get_groups()` |
 | Athletes | `get_athletes()`, `get_athlete()`, `get_athletes_v3()`, `get_athlete_statistics()` |
-| Athlete v3 | `get_athlete_overview()`, `get_athlete_stats()`, `get_athlete_gamelog()`, `get_athlete_splits()` |
+| Athlete v3 | `get_athlete_overview()`, `get_athlete_stats()`, `get_athlete_gamelog()`, `get_athlete_splits()`, `get_athlete_bio()` |
 | Stats | `get_leaders()`, `get_leaders_v3()`, `get_statistics_by_athlete()` |
-| Seasons | `get_seasons()` |
-| Betting | `get_odds()`, `get_win_probabilities()` |
+| Seasons | `get_seasons()`, `get_calendar()`, `get_season_types()`, `get_season_weeks()` |
+| Betting | `get_odds()`, `get_win_probabilities()`, `get_providers()` |
 | Play data | `get_plays()`, `get_game_situation()`, `get_game_predictor()`, `get_game_broadcasts()` |
 | CDN | `get_cdn_game()`, `get_cdn_scoreboard()` |
+| Event detail | `get_competitor_roster()`, `get_competitor_statistics()`, `get_competitor_linescores()`, `get_drives()` |
+| Athlete logs | `get_athlete_eventlog()`, `get_athlete_statisticslog()` |
+| Discovery | `search()`, `get_personalized_scoreboard()` |
+| Specialized | `get_cricket_summary()`, `get_golf_player_summary()` |
 | Venues | `get_venues()` |
 | Coaches | `get_coaches()`, `get_coach()` |
 | Metadata | `get_league_info()` |
@@ -792,4 +804,4 @@ MIT License — See LICENSE file
 
 ---
 
-*Last Updated: July 2026 · 17 sports · 139 leagues · 370 v2 + 79 v3 endpoints · 7 API domains*
+*Last audited: September 30, 2026 · 412 v2 + 97 v3 WADL routes · see dated snapshots for discovery counts and limitations*

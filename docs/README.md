@@ -19,10 +19,10 @@ Each file covers leagues & competitions, API endpoints, Site API resources, and 
 
 | File | Sport | Key Leagues |
 |------|-------|-------------|
-| [_global.md](sports/_global.md) | All Sports | Every v2 endpoint — full WADL listing |
+| [_global.md](sports/_global.md) | All Sports | Selected global routes; full current inventory is in core-endpoints.md |
 | [football.md](sports/football.md) | 🏈 Football | NFL, NCAAF, CFL, UFL, XFL |
 | [basketball.md](sports/basketball.md) | 🏀 Basketball | NBA, WNBA, NCAAM, NCAAW, NBL, FIBA |
-| [soccer.md](sports/soccer.md) | ⚽ Soccer | EPL, La Liga, Bundesliga, MLS, UCL, 260+ leagues |
+| [soccer.md](sports/soccer.md) | ⚽ Soccer | EPL, La Liga, Bundesliga, MLS, UCL, 218 Core-listed leagues (2026-09-30) |
 | [baseball.md](sports/baseball.md) | ⚾ Baseball | MLB, NCAAB, WBC, Caribbean/Winter Leagues |
 | [hockey.md](sports/hockey.md) | 🏒 Hockey | NHL, NCAAH, Olympics |
 | [golf.md](sports/golf.md) | ⛳ Golf | PGA TOUR, LPGA, LIV, DP World Tour, TGL |
@@ -41,6 +41,10 @@ Each file covers leagues & competitions, API endpoints, Site API resources, and 
 ### API Reference
 | File | Description |
 |------|-------------|
+| [core-endpoints.md](core-endpoints.md) | Complete fetched Core v2/v3 WADL route catalog |
+| [audit-2026-09-30.md](audit-2026-09-30.md) | Verified findings, fixes, and limitations |
+| [data/leagues.json](data/leagues.json) | Paginated league discovery snapshot |
+| [data/live-probes.json](data/live-probes.json) | Dated HTTP status and response-shape checks |
 | [response_schemas.md](response_schemas.md) | Example JSON responses for scoreboard, teams, roster, injuries, game summary, athlete, odds, standings, Now API |
 
 ### Domain Routing Guide
@@ -49,9 +53,9 @@ Each file covers leagues & competitions, API endpoints, Site API resources, and 
 
 | Domain | Use for | Verified Response Keys |
 |--------|---------|----------------------|
-| `site.api.espn.com/apis/site/v2/` | Scoreboard, teams, news, injuries, transactions, statistics, groups, draft, summary, rankings | `leagues`, `season`, `week`, `events` (scoreboard); `header`, `articles` (news); `uid`, `children` (standings) |
+| `site.api.espn.com/apis/site/v2/` | Scoreboard, teams, news, injuries, transactions, statistics, groups, draft, summary, rankings | `leagues`, `season`, `week`, `events` (scoreboard); `header`, `articles` (news) |
 | `site.api.espn.com/apis/v2/` | **Standings only** — site/v2 returns a stub | `uid`, `id`, `name`, `abbreviation`, `children` |
-| `site.web.api.espn.com/apis/common/v3/` | Athlete stats, gamelog, overview, splits (`statistics/byathlete`) | `leagues`, `season`, `day`, `events` (same as site.api) |
+| `site.web.api.espn.com/apis/common/v3/` | Athlete stats, gamelog, overview, splits (`statistics/byathlete`) | `categories`, `filters`, `teams`, `glossary` (stats); `statistics`, `gameLog` (overview) |
 | `cdn.espn.com/core/` | Full game packages — drives, plays, odds (requires `?xhr=1`) | Varies by sport |
 | `now.core.api.espn.com/v1/` | Real-time news feed — filter by `sport=`, `league=`, `team=` | `resultsCount`, `resultsLimit`, `resultsOffset`, `headlines[]` |
 | `sports.core.api.espn.com/v2/` | Core data — events, odds, play-by-play, athletes, coaches | Leagues: `$ref`, `id`, `name`, `season`, `teams`, `athletes`; Collections: `count`, `pageIndex`, `pageSize`, `items[]` |
