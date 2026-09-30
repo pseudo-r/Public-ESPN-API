@@ -4,6 +4,8 @@
 
 **Disclaimer:** This is documentation for ESPN's undocumented public API. I am not affiliated with ESPN. Use responsibly and follow ESPN's terms of service.
 
+**Project source:** Use [pseudo-r/Public-ESPN-API on GitHub](https://github.com/pseudo-r/Public-ESPN-API) for this project's source and documentation. This repository does not distribute API-key installers or an ESPN API desktop application. Similarly named websites and their download links should not be treated as project releases. See [the reported third-party download concern (#19)](https://github.com/pseudo-r/Public-ESPN-API/issues/19).
+
 [![CI](https://github.com/pseudo-r/Public-ESPN-API/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pseudo-r/Public-ESPN-API/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/pseudo-r/Public-ESPN-API/branch/main/graph/badge.svg)](https://codecov.io/gh/pseudo-r/Public-ESPN-API)
 
@@ -510,9 +512,19 @@ Base: `sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}`
 
 ### Common Query Parameters
 
+**Date-range regression, verified 2026-09-30 ([#23](https://github.com/pseudo-r/Public-ESPN-API/issues/23)):** Site v2 MLB and NFL scoreboards currently return HTTP 400 for `dates=YYYYMMDD-YYYYMMDD`, including a same-day range. Request one day at a time with `dates=YYYYMMDD`, combine results, and deduplicate by event `id`. The MLB single-day request for `20260919` returned 15 events. Alternatively, the Core MLB events endpoint returned 94 references for `20260919-20260925` with `limit=1000`; follow pagination and `$ref` links. Core `items` are not interchangeable with Site scoreboard `events`. Other sports may behave differently; do not assume range support from the parameter syntax alone.
+
+```bash
+# Site API workaround: one day, without a hyphen
+curl "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard?dates=20260919"
+
+# Core alternative: paginated event references, not a Site scoreboard response
+curl "https://sports.core.api.espn.com/v2/sports/baseball/leagues/mlb/events?dates=20260919-20260925&limit=1000"
+```
+
 | Parameter | Description | Example |
 |-----------|-------------|---------|
-| `dates` | Filter by date | `20241215` or `20241201-20241231` |
+| `dates` | Filter by date; Site scoreboard ranges currently fail for tested team sports (see above) | `20260919`; Core range: `20260919-20260925` |
 | `week` | Week number | `1` through `18` |
 | `seasontype` | Season type | `1`=preseason, `2`=regular, `3`=postseason |
 | `season` | Year | `2024` |
