@@ -7,7 +7,7 @@ error handling, retries, and rate limiting.
 
 from dataclasses import dataclass
 from datetime import datetime
-from enum import Enum
+from enum import StrEnum
 from typing import Any
 
 import httpx
@@ -34,7 +34,7 @@ class ESPNTransientError(ESPNClientError):
     """An upstream server failure that can be retried safely."""
 
 
-class ESPNEndpointDomain(str, Enum):
+class ESPNEndpointDomain(StrEnum):
     """ESPN API domain types."""
 
     SITE = "site"          # site.api.espn.com
