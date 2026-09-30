@@ -2,6 +2,8 @@
 
 from rest_framework import serializers
 
+from clients.dates import scoreboard_dates
+
 
 class IngestScoreboardRequestSerializer(serializers.Serializer):
     """Request serializer for scoreboard ingestion."""
@@ -9,10 +11,10 @@ class IngestScoreboardRequestSerializer(serializers.Serializer):
     sport = serializers.CharField(max_length=50, help_text="Sport slug (e.g., 'basketball')")
     league = serializers.CharField(max_length=50, help_text="League slug (e.g., 'nba')")
     date = serializers.CharField(
-        max_length=8,
+        max_length=17,
         required=False,
         allow_blank=True,
-        help_text="Date in YYYYMMDD format (optional, defaults to today)",
+        help_text="YYYYMMDD or inclusive YYYYMMDD-YYYYMMDD, up to 31 days (optional)",
     )
 
     def validate_sport(self, value: str) -> str:
@@ -25,8 +27,10 @@ class IngestScoreboardRequestSerializer(serializers.Serializer):
         if not value:
             return None
         value = value.strip()
-        if len(value) != 8 or not value.isdigit():
-            raise serializers.ValidationError("Date must be in YYYYMMDD format (e.g., '20241215')")
+        try:
+            scoreboard_dates(value)
+        except ValueError as exc:
+            raise serializers.ValidationError(str(exc)) from exc
         return value
 
 

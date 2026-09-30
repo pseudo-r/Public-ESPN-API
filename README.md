@@ -4,7 +4,7 @@
 
 **Disclaimer:** This is documentation for ESPN's undocumented public API. I am not affiliated with ESPN. Use responsibly and follow ESPN's terms of service.
 
-**Project source:** Use [pseudo-r/Public-ESPN-API on GitHub](https://github.com/pseudo-r/Public-ESPN-API) for this project's source and documentation. This repository does not distribute API-key installers or an ESPN API desktop application. Similarly named websites and their download links should not be treated as project releases. See [the reported third-party download concern (#19)](https://github.com/pseudo-r/Public-ESPN-API/issues/19).
+**Project source:** Use [pseudo-r/Public-ESPN-API on GitHub](https://github.com/pseudo-r/Public-ESPN-API) for this project's source and documentation. This repository does not distribute API-key installers or an ESPN API desktop application. Similarly named websites and their download links should not be treated as project releases. See [source verification and reporting guidance](SECURITY.md) and [the reported third-party download concern (#19)](https://github.com/pseudo-r/Public-ESPN-API/issues/19).
 
 [![CI](https://github.com/pseudo-r/Public-ESPN-API/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pseudo-r/Public-ESPN-API/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/pseudo-r/Public-ESPN-API/branch/main/graph/badge.svg)](https://codecov.io/gh/pseudo-r/Public-ESPN-API)
@@ -512,7 +512,7 @@ Base: `sports.core.api.espn.com/v2/sports/{sport}/leagues/{league}`
 
 ### Common Query Parameters
 
-**Date-range regression, verified 2026-09-30 ([#23](https://github.com/pseudo-r/Public-ESPN-API/issues/23)):** Site v2 MLB and NFL scoreboards currently return HTTP 400 for `dates=YYYYMMDD-YYYYMMDD`, including a same-day range. Request one day at a time with `dates=YYYYMMDD`, combine results, and deduplicate by event `id`. The MLB single-day request for `20260919` returned 15 events. Alternatively, the Core MLB events endpoint returned 94 references for `20260919-20260925` with `limit=1000`; follow pagination and `$ref` links. Core `items` are not interchangeable with Site scoreboard `events`. Other sports may behave differently; do not assume range support from the parameter syntax alone.
+**Date-range regression, verified 2026-09-30 ([#23](https://github.com/pseudo-r/Public-ESPN-API/issues/23)):** Site v2 MLB and NFL scoreboards currently return HTTP 400 for `dates=YYYYMMDD-YYYYMMDD`, including a same-day range. The Python client and ingestion API now provide a [tested daily-fetch workaround](docs/scoreboard-date-ranges.md) for inclusive ranges up to 31 days. For direct HTTP requests, request one day at a time with `dates=YYYYMMDD`, combine results, and deduplicate by event `id`. The MLB single-day request for `20260919` returned 15 events. Alternatively, the Core MLB events endpoint returned 94 references for `20260919-20260925` with `limit=1000`; follow pagination and `$ref` links. Core `items` are not interchangeable with Site scoreboard `events`. Other sports may behave differently; do not assume range support from the parameter syntax alone.
 
 ```bash
 # Site API workaround: one day, without a hyphen

@@ -26,6 +26,7 @@ from apps.core.exceptions import (
     ESPNNotFoundError,
     ESPNRateLimitError,
 )
+from clients.dates import scoreboard_dates
 
 logger = structlog.get_logger(__name__)
 
@@ -484,8 +485,8 @@ class ESPNClient:
         Args:
             sport: Sport slug (e.g., "basketball", "football")
             league: League slug (e.g., "nba", "nfl")
-            date: Date to get scoreboard for (YYYYMMDD format or datetime)
-            limit: Maximum number of events to return
+            date: YYYYMMDD, inclusive YYYYMMDD-YYYYMMDD (up to 31 days), or datetime
+            limit: Maximum events requested per day; upstream limits still apply
 
         Returns:
             ESPNResponse with scoreboard data
@@ -493,9 +494,37 @@ class ESPNClient:
         path = f"/apis/site/v2/sports/{sport}/{league}/scoreboard"
         params: dict[str, Any] = {}
 
+        if isinstance(date, str) and "-" in date:
+            days = scoreboard_dates(date)
+            events: dict[str, dict[str, Any]] = {}
+            daily_metadata = []
+            for day in days:
+                response = self.get_scoreboard(sport, league, day, limit)
+                daily_events = response.data.get("events")
+                if not isinstance(daily_events, list):
+                    raise ESPNClientError(f"Missing scoreboard events for {day}")
+                for event in daily_events:
+                    if not isinstance(event, dict) or not event.get("id"):
+                        raise ESPNClientError(f"Invalid scoreboard event for {day}")
+                    events[str(event["id"])] = event
+                daily_metadata.append({
+                    "date": day,
+                    "metadata": {k: v for k, v in response.data.items() if k != "events"},
+                })
+            return ESPNResponse(
+                data={
+                    "events": sorted(events.values(), key=lambda e: (e.get("date", ""), str(e["id"]))),
+                    "dateRange": date,
+                    "dailyMetadata": daily_metadata,
+                },
+                status_code=200,
+                url=self._build_url(ESPNEndpointDomain.SITE, path) + f"?dates={date}",
+            )
+
         if date:
             if isinstance(date, datetime):
                 date = date.strftime("%Y%m%d")
+            scoreboard_dates(date)
             params["dates"] = date
 
         if limit:
